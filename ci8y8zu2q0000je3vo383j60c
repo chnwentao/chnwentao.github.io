@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | CS Learning of CHNwentao</title>
+  <title>我的考研经验及给后人的建议 | CS Learning of CHNwentao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个学习的网站，嘿嘿。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CS Learning of CHNwentao">
-<meta property="og:url" content="http://chnwentao.com/archives/index.html">
+  <meta name="description" content="考研前便说要将自己的考研的经历写下来，让后来的人少走些弯路，可以复试完一个多月了，却一直忙着忙那的，没时间动笔。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的考研经验及给后人的建议">
+<meta property="og:url" content="http://chnwentao.com/ci8y8zu2q0000je3vo383j60c">
 <meta property="og:site_name" content="CS Learning of CHNwentao">
-<meta property="og:description" content="一个学习的网站，嘿嘿。">
+<meta property="og:description" content="考研前便说要将自己的考研的经历写下来，让后来的人少走些弯路，可以复试完一个多月了，却一直忙着忙那的，没时间动笔。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CS Learning of CHNwentao">
-<meta name="twitter:description" content="一个学习的网站，嘿嘿。">
+<meta name="twitter:title" content="我的考研经验及给后人的建议">
+<meta name="twitter:description" content="考研前便说要将自己的考研的经历写下来，让后来的人少走些弯路，可以复试完一个多月了，却一直忙着忙那的，没时间动笔。">
   
   
     <link rel="icon" href="/xiaohu.png">
@@ -67,12 +67,6 @@
     </table>
   </div>
   
-  <div id="header-sub" class="header-sub header-inner">
-    <div class="outer">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">-生活</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-  
 </header>
     <div class="outer">
       <aside id="profile">
@@ -113,26 +107,15 @@
     </div>
   </div>
 </aside>
-      <section id="main">
-  
-  
-    
-    
-      
-        <div class="archive-year-wrap">
-          <i class="fa fa-calendar"></i>
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-    
-    <article id="post-我的考研经验及给后人的建议" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-我的考研经验及给后人的建议" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/ci8y8zu2q0000je3vo383j60c">我的考研经验及给后人的建议</a>
+    <h1 class="article-title" itemprop="name">
+      我的考研经验及给后人的建议
     </h1>
   
 
@@ -167,61 +150,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    
-    
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/ci8y8zu3a0005je3vjo3hlkjt">Hello World</a>
-    </h1>
+    <a href="/ci8y8zu3a0005je3vjo3hlkjt" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
+</nav>
 
-        <div class="article-meta">
-          <div class="article-date">
-  <i class="fa fa-calendar"></i>
-  <a href="/ci8y8zu3a0005je3vjo3hlkjt">
-    <time datetime="2015-04-25T10:26:15.000Z" itemprop="datePublished">2015-04-25</time>
-  </a>
-</div>
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chnwentao.com/ci8y8zu3a0005je3vjo3hlkjt" data-id="ci8y8zu3a0005je3vjo3hlkjt" class="article-share-link">分享到</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
       
         <aside id="sidebar">
