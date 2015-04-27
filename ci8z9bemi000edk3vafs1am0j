@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的考研经验及给后人的建议（01）——数学篇 | CS Learning of CHNwentao</title>
+  <title>Hello World | CS Learning of CHNwentao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="===================（接上篇）===================2.3. 数学的备考    这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就给你们下届的看了：）    五一———6月中旬：打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式    2.4. 英语的备考    2.5. 政治的备考">
+  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的考研经验及给后人的建议（01）——数学篇">
-<meta property="og:url" content="http://chnwentao.com/ci8z99ob90000c43v4ote2nwh">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://chnwentao.com/ci8z9bemi000edk3vafs1am0j">
 <meta property="og:site_name" content="CS Learning of CHNwentao">
-<meta property="og:description" content="===================（接上篇）===================2.3. 数学的备考    这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就给你们下届的看了：）    五一———6月中旬：打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式    2.4. 英语的备考    2.5. 政治的备考">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的考研经验及给后人的建议（01）——数学篇">
-<meta name="twitter:description" content="===================（接上篇）===================2.3. 数学的备考    这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就给你们下届的看了：）    五一———6月中旬：打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式    2.4. 英语的备考    2.5. 政治的备考">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
   
   
     <link rel="icon" href="/xiaohu.png">
@@ -107,7 +110,7 @@
     </div>
   </div>
 </aside>
-      <section id="main"><article id="post-我的考研经验及给后人的建议——数学篇" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -115,54 +118,56 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的考研经验及给后人的建议（01）——数学篇
+      Hello World
     </h1>
   
 
         <div class="article-meta">
           <div class="article-date">
   <i class="fa fa-calendar"></i>
-  <a href="/ci8z99ob90000c43v4ote2nwh">
-    <time datetime="2015-04-26T12:08:21.000Z" itemprop="datePublished">2015-04-26</time>
+  <a href="/ci8z9bemi000edk3vafs1am0j">
+    <time datetime="2015-04-25T10:26:15.000Z" itemprop="datePublished">2015-04-25</time>
   </a>
 </div>
           
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/生活/">生活</a>
-  </div>
-
         </div>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>===================（接上篇）===================<br>2.3. 数学的备考<br>    这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就给你们下届的看了：）<br>    五一———6月中旬：打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式<br>    2.4. 英语的备考<br>    2.5. 政治的备考<br>    2.6. 专业课的备考；</p>
-<ol>
-<li>可能你也会遇到的问题：</li>
-</ol>
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chnwentao.com/ci8z99ob90000c43v4ote2nwh" data-id="ci8z99ob90000c43v4ote2nwh" class="article-share-link">分享到</a>
+      <a data-url="http://chnwentao.com/ci8z9bemi000edk3vafs1am0j" data-id="ci8z9bemi000edk3vafs1am0j" class="article-share-link">分享到</a>
       
-        <a href="http://chnwentao.com/ci8z99ob90000c43v4ote2nwh#disqus_thread" class="article-comment-link">评论</a>
+        <a href="http://chnwentao.com/ci8z9bemi000edk3vafs1am0j#disqus_thread" class="article-comment-link">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/经验/">经验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/考试/">考试</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-  
-    <a href="/ci8z99obn0009c43vcnkpaqx1" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">我的考研经验及给后人的建议（00）</div>
+    <a href="/ci8z9bemc0009dk3vbeap0ctd" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          我的考研经验及给后人的建议（00）
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -188,7 +193,7 @@
           <li>
             
             <div class="item-thumbnail">
-              <a href="/ci8z99ob90000c43v4ote2nwh" class="thumbnail">
+              <a href="/ci8z9bely0000dk3vqqugt336" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -197,7 +202,7 @@
             
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="/categories/生活/">生活</a></p>
-              <p class="item-title"><a href="/ci8z99ob90000c43v4ote2nwh" class="title">我的考研经验及给后人的建议（01）——数学篇</a></p>
+              <p class="item-title"><a href="/ci8z9bely0000dk3vqqugt336" class="title">我的考研经验及给后人的建议（01）——数学篇</a></p>
               <p class="item-date"><time datetime="2015-04-26T12:08:21.000Z" itemprop="datePublished">2015-04-26</time></p>
             </div>
           </li>
@@ -205,7 +210,7 @@
           <li>
             
             <div class="item-thumbnail">
-              <a href="/ci8z99obn0009c43vcnkpaqx1" class="thumbnail">
+              <a href="/ci8z9bemc0009dk3vbeap0ctd" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -214,7 +219,7 @@
             
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="/categories/生活/">生活</a></p>
-              <p class="item-title"><a href="/ci8z99obn0009c43vcnkpaqx1" class="title">我的考研经验及给后人的建议（00）</a></p>
+              <p class="item-title"><a href="/ci8z9bemc0009dk3vbeap0ctd" class="title">我的考研经验及给后人的建议（00）</a></p>
               <p class="item-date"><time datetime="2015-04-26T09:13:50.000Z" itemprop="datePublished">2015-04-26</time></p>
             </div>
           </li>
@@ -222,7 +227,7 @@
           <li>
             
             <div class="item-thumbnail">
-              <a href="/ci8z99obs000ec43v3o4pun4h" class="thumbnail">
+              <a href="/ci8z9bemi000edk3vafs1am0j" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -231,7 +236,7 @@
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/ci8z99obs000ec43v3o4pun4h" class="title">Hello World</a></p>
+              <p class="item-title"><a href="/ci8z9bemi000edk3vafs1am0j" class="title">Hello World</a></p>
               <p class="item-date"><time datetime="2015-04-25T10:26:15.000Z" itemprop="datePublished">2015-04-25</time></p>
             </div>
           </li>
@@ -317,7 +322,7 @@
     
 
 <script>
-  var disqus_shortname = 'chnwnetao';
+  var disqus_shortname = 'chnwentao';
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
