@@ -75,36 +75,28 @@ Quick">
       <aside id="profile">
   <div class="inner profile-inner">
   	<div class="base-info profile-block">
-		  <img id="avatar" src="/css/images/xiaohu.png">
-      <h2 id="name">Wente Guo</h2>
-      <h3 id="title">Graduate Student of CS</h3>
-      <span id="location"><i class="fa fa-map-marker"></i>Wuhan, China</span>
-      <a id="follow" href="undefined">关注我</a>
+		  <img id="avatar" src="<%- url_for(config.avatar) %>">
+      <h2 id="name"><%= config.author %></h2>
+      <h3 id="title"><%= config.author_title %></h3>
+      <span id="location"><i class="fa fa-map-marker"></i><%= config.location %></span>
+      <a id="follow" href="<%= config.follow %>"><%=__('profile.follow')%></a>
   	</div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        3
-        <span>文章</span>
+        <%= site.posts.length %>
+        <span><%= (site.posts.length > 1?__('profile.posts'):__('profile.post')) %></span>
       </div>
       <div class="article-info-block">
-        3
-        <span>标签</span>
+        <%= site.tags.length %>
+        <span><%= (site.tags.length > 1?__('profile.tags'):__('profile.tag')) %></span>
       </div>
     </div>
     <div class="contact-info profile-block">
       <table class="contact-list">
         <tr>
-        
-          <td><a href="https://github.com/chnwentao" title="github"><i class="fa fa-github"></i></a></td>
-        
-          <td><a href="/#" title="twitter"><i class="fa fa-twitter"></i></a></td>
-        
-          <td><a href="/#" title="facebook"><i class="fa fa-facebook"></i></a></td>
-        
-          <td><a href="http://weibo.com/chnwentao" title="weibo"><i class="fa fa-weibo"></i></a></td>
-        
-          <td><a href="/atom.xml" title="rss"><i class="fa fa-rss"></i></a></td>
-        
+        <% for(var i in theme.contacts) { %>
+          <td><a href="<%- url_for(theme.contacts[i]) %>" title="<%= i %>"><i class="fa fa-<%= i %>"></i></a></td>
+        <% } %>
         </tr>
       </table>
     </div>
@@ -285,7 +277,7 @@ Quick">
           </li>
         
           <li>
-            <a href="https://coderq.com,一个面向程序员交流分享的新一代社区">码农圈</a>
+            <a href="https://coderq.com">码农圈</a>
           </li>
         
           <li>
