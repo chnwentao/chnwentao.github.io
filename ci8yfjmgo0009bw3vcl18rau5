@@ -101,7 +101,7 @@
         
           <td><a href="/#" title="facebook"><i class="fa fa-facebook"></i></a></td>
         
-          <td><a href="/#" title="dribbble"><i class="fa fa-dribbble"></i></a></td>
+          <td><a href="http://weibo.com/chnwentao" title="weibo"><i class="fa fa-weibo"></i></a></td>
         
           <td><a href="/atom.xml" title="rss"><i class="fa fa-rss"></i></a></td>
         
@@ -288,15 +288,41 @@
   </div>
 
   
+    
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">sidebar.links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+          <li>
+            <a href="https://coderq.com,一个面向程序员交流分享的新一代社区">码农圈</a>
+          </li>
+        
+          <li>
+            <a href="http://wuchong.me">Jark&#39;s Blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
   <div id="toTop" class="fa fa-chevron-up"></div>
 </aside>
       
     </div>
     <footer id="footer">
-  
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 Wente Guo<br>
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
     </div>
   </div>
