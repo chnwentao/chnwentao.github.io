@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>vim的使用 | CS Learning of CHNwentao</title><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.3"><script>var GLOBAL = { 
+  root: '/',
+  algolia: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  localSearch: {"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}"},"path":"search.xml"}
+} </script><link rel="icon" href="/favicon.ico"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-简单操作"><span class="toc-number">1.</span> <span class="toc-text">vim 简单操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用按键"><span class="toc-number">2.</span> <span class="toc-text">常用按键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多窗口功能"><span class="toc-number">3.</span> <span class="toc-text">多窗口功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim语法补全"><span class="toc-number">4.</span> <span class="toc-text">vim语法补全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-环境设定与记录：-vimrc-viminfo"><span class="toc-number">5.</span> <span class="toc-text">vim 环境设定与记录： ~/.vimrc, ~/.viminfo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与系统相关注意"><span class="toc-number">6.</span> <span class="toc-text">与系统相关注意</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语系编码转换"><span class="toc-number">6.1.</span> <span class="toc-text">语系编码转换</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">129</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">180</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">18</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">vim的使用</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-03-08</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/工具/">工具</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">2,502</span><span class="post-meta__separator">|</span><span>Reading time: 8 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><h2 id="vim-简单操作"><a href="#vim-简单操作" class="headerlink" title="vim 简单操作"></a>vim 简单操作</h2><p>vi 三种模式：<br>command mode 一般命令模式；insert mode 编辑模式 ；command-line mode 命令行模式<br>操作：</p>
+<ol>
+<li><p>使用<code>vi filename</code>进入一般指令模式</p>
+</li>
+<li><p>按下<code>i</code>进入编辑模式，开始编辑文字</p>
+</li>
+<li><p>按下[ESC] 按钮回到一般指令模式<a id="more"></a></p>
+</li>
+<li><p>输入:wq即可存档离开！（如果你的文件权限不对，例如为-r–r–r–时，那么可能会无法写入，此时可以使用<code>:wq!</code>强制写入.</p>
+</li>
+</ol>
+<h2 id="常用按键"><a href="#常用按键" class="headerlink" title="常用按键"></a>常用按键</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>光标移动</strong></td>
+</tr>
+<tr>
+<td>h 或向左方向键(←)</td>
+<td style="text-align:left">游标向左移动一个字母</td>
+</tr>
+<tr>
+<td>j 或向下方向键(↓)</td>
+<td style="text-align:left">游标向下移动一个字母</td>
+</tr>
+<tr>
+<td>k 或向上方向键(↑)</td>
+<td style="text-align:left">游标向上移动一个字母</td>
+</tr>
+<tr>
+<td>l 或向右方向键(→)</td>
+<td style="text-align:left">游标向右移动一个字母</td>
+</tr>
+<tr>
+<td>如果你将右手放在键盘上的话，你会发现hjkl是排列在一起的，因此可以使用这四个按钮来移动游标。如果想要进行多次移动的话，例如向下移动30 列，可以使用”30j” 或”30↓” 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！</td>
+</tr>
+<tr>
+<td>[Ctrl] + [f]</td>
+<td style="text-align:left">萤幕向下移动一页，相当于[Page Down]按键( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td>[Ctrl] + [b]</td>
+<td style="text-align:left">萤幕向上移动一页，相当于[Page Up]按键( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td>[Ctrl] + [d]</td>
+<td style="text-align:left">萤幕向下移动半页</td>
+</tr>
+<tr>
+<td>[Ctrl] + [u]</td>
+<td style="text-align:left">萤幕向上移动半页</td>
+</tr>
+<tr>
+<td>+</td>
+<td style="text-align:left">游标移动到非空白字母的下一列</td>
+</tr>
+<tr>
+<td>-</td>
+<td style="text-align:left">游标移动到非空白字母的上一列</td>
+</tr>
+<tr>
+<td>n<space></space></td>
+<td style="text-align:left">那个n 表示数字，例如20 。按下数字后再按空白键，游标会向右移动这一列的n 个字母。例如20<space> 则游标会向后面移动20 个字母距离。</space></td>
+</tr>
+<tr>
+<td>0 或功能键[Home]</td>
+<td style="text-align:left">这是数字 0 ：移动到这一列的最前面字母处( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td>$ 或功能键[End]</td>
+<td style="text-align:left">移动到这一列的最后面字母处( <strong>常用</strong>)</td>
+</tr>
+<tr>
+<td>H</td>
+<td style="text-align:left">游标移动到这个萤幕的最上方那一列的第一个字母</td>
+</tr>
+<tr>
+<td>M</td>
+<td style="text-align:left">游标移动到这个萤幕的中央那一列的第一个字母</td>
+</tr>
+<tr>
+<td>L</td>
+<td style="text-align:left">游标移动到这个萤幕的最下方那一列的第一个字母</td>
+</tr>
+<tr>
+<td>G</td>
+<td style="text-align:left">移动到这个档案的最后一列(<strong> 常用</strong> )</td>
+</tr>
+<tr>
+<td>nG</td>
+<td style="text-align:left">n 为数字。移动到这个档案的第n 列。例如20G 则会移动到这个档案的第20 列(可配合:set nu)</td>
+</tr>
+<tr>
+<td>gg</td>
+<td style="text-align:left">移动到这个档案的第一列，相当于1G啊！( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td>n<enter></enter></td>
+<td style="text-align:left">n为数字。游标向下移动n列( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><strong>搜寻与取代</strong></td>
+</tr>
+<tr>
+<td><code>/word</code></td>
+<td style="text-align:left">向游标之下寻找一个名称为word的字串。例如要在档案内搜寻vbird这个字串，就输入<code>/vbird</code>即可！( <strong>常用 </strong>)</td>
+</tr>
+<tr>
+<td><code>?word</code></td>
+<td style="text-align:left">向游标之上寻找一个字串名称为word 的字串。</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td style="text-align:left">这个n是英文按键。代表重复前一个搜寻的动作。举例来说，如果刚刚我们执行/vbird去向下搜寻vbird这个字串，则按下n后，会向下继续搜寻下一个名称为vbird的字串。如果是执行?vbird的话，那么按下n则会向上继续搜寻名称为vbird的字串！</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td style="text-align:left">这个N 是英文按键。与n 刚好相反，为反向进行前一个搜寻动作。例如/vbird 后，按下N 则表示向上搜寻vbird 。</td>
+</tr>
+<tr>
+<td><code>:n1,n2s/word1/word2/g</code></td>
+<td style="text-align:left">n1与n2为数字。在第n1与n2列之间寻找word1这个字串，并将该字串取代为word2</td>
+</tr>
+<tr>
+<td><code>:1,$s/word1/word2/g</code></td>
+<td style="text-align:left">从第一列到最后一列寻找word1字串，并将该字串取代为word2 ！( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>:1,$s/word1/word2/gc</code></td>
+<td style="text-align:left">从第一列到最后一列寻找word1字串，并将该字串取代为word2 ！且在取代前显示提示字母给使用者确认(confirm)是否需要取代！( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><strong><em>删除、复制与贴上</em></strong></td>
+</tr>
+<tr>
+<td><code>x, X</code></td>
+<td style="text-align:left">在一列字当中，x为向后删除一个字母(相当于[del]按键)， X为向前删除一个字母(相当于[backspace]亦即是倒退键) ( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>nx</code></td>
+<td style="text-align:left">n 为数字，连续向后删除n 个字母。举例来说，我要连续删除10 个字母， 10xdd    删除游标所在的那一整列( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>ndd</code></td>
+<td style="text-align:left">n为数字。删除游标所在的向下n列，例如20dd则是删除20列( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>d1G</code></td>
+<td style="text-align:left">删除游标所在到第一列的所有资料</td>
+</tr>
+<tr>
+<td><code>dG</code></td>
+<td style="text-align:left">删除游标所在到最后一列的所有资料</td>
+</tr>
+<tr>
+<td><code>d$</code></td>
+<td style="text-align:left">删除游标所在处，到该列的最后一个字母</td>
+</tr>
+<tr>
+<td><code>d0</code></td>
+<td style="text-align:left">那个是数字的0 ，删除游标所在处，到该列的最前面一个字母</td>
+</tr>
+<tr>
+<td><code>yy</code></td>
+<td style="text-align:left">复制游标所在的那一列( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>nyy</code></td>
+<td style="text-align:left">n为数字。复制游标所在的向下n列，例如20yy则是复制20列( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>y1G</code></td>
+<td style="text-align:left">复制游标所在列到第一列的所有资料</td>
+</tr>
+<tr>
+<td><code>yG</code></td>
+<td style="text-align:left">复制游标所在列到最后一列的所有资料</td>
+</tr>
+<tr>
+<td><code>y0</code></td>
+<td style="text-align:left">复制游标所在的那个字母到该列行首的所有资料</td>
+</tr>
+<tr>
+<td><code>y$</code></td>
+<td style="text-align:left">复制游标所在的那个字母到该列行尾的所有资料</td>
+</tr>
+<tr>
+<td><code>p, P</code></td>
+<td style="text-align:left">p为将已复制的资料在游标下一列贴上，P则为贴在游标上一列！举例来说，我目前游标在第20列，且已经复制了10列资料。则按下p后，那10列资料会贴在原本的20列之后，亦即由21列开始贴。但如果是按下P呢？那么原本的第20列会被推到变成30列。( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>J</code></td>
+<td style="text-align:left">将游标所在列与下一列的资料结合成同一列</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td style="text-align:left">重复删除多个资料，例如向下删除10 列，[ 10cj ]</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td style="text-align:left">复原前一个动作。( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>[Ctrl]+r</code></td>
+<td style="text-align:left">重做上一个动作。( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td>这个u 与[Ctrl]+r 是很常用的指令！一个是复原，另一个则是重做一次～利用这两个功能按键，你的编辑，嘿嘿！很快乐的啦！</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td style="text-align:left">不要怀疑！这就是小数点！意思是重复前一个动作的意思。如果你想要重复删除、重复贴上等等动作，按下小数点.就好了！( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><strong>进入插入或取代的编辑模式</strong></td>
+</tr>
+<tr>
+<td><code>i, I</code></td>
+<td style="text-align:left">进入插入模式(Insert mode)：i为从目前游标所在处插入， I为在目前所在列的第一个非空白字母处开始插入。( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>a, A</code></td>
+<td style="text-align:left">进入插入模式(Insert mode)：a为从目前游标所在的下一个字母处开始插入， A为从游标所在列的最后一个字母处开始插入。( <strong>常用</strong>)</td>
+</tr>
+<tr>
+<td><code>o, O</code></td>
+<td style="text-align:left">进入插入模式(Insert mode)：这是英文字母o的大小写。o为在目前游标所在的下一列处插入新的一列；O为在目前游标所在处的上一列插入新的一列！( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>r, R</code></td>
+<td style="text-align:left">进入取代模式(Replace mode)：r只会取代游标所在的那一个字母一次；R会一直取代游标所在的文字，直到按下ESC为止；( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td>上面这些按键中，在vi 画面的左下角处会出现<code>--INSERT--</code>或<code>--REPLACE--</code>的字样。由名称就知道该动作了吧！！特别注意的是，我们上面也提过了，你想要在档案里面输入字母时， 一定要在左下角处看到INSERT 或REPLACE 才能输入喔！</td>
+</tr>
+<tr>
+<td><code>[Esc]</code></td>
+<td style="text-align:left">退出编辑模式，回到一般指令模式中(<strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><strong>指令列模式的储存、离开等指令</strong></td>
+</tr>
+<tr>
+<td><code>:w</code></td>
+<td style="text-align:left">将编辑的资料写入硬碟档案中( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>:w!</code></td>
+<td style="text-align:left">若档案属性为只读时，强制写入该档案。</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td style="text-align:left">离开vi ( <strong>常用</strong>)</td>
+</tr>
+<tr>
+<td><code>:q!</code></td>
+<td style="text-align:left">若曾修改过档案，又不想储存，使用! 为强制离开不储存档案。</td>
+</tr>
+<tr>
+<td><code>:wq</code></td>
+<td style="text-align:left">储存后离开，若为:wq!则为强制储存后离开( <strong>常用</strong> )</td>
+</tr>
+<tr>
+<td><code>ZZ</code></td>
+<td style="text-align:left">若档案没有更动，则不储存离开，若档案已经被更动过，则储存后离开！</td>
+</tr>
+<tr>
+<td><code>:w [filename]</code></td>
+<td style="text-align:left">将编辑的资料储存成另一个档案（类似另存新档）</td>
+</tr>
+<tr>
+<td><code>:r [filename]</code></td>
+<td style="text-align:left">在编辑的资料中，读入另一个档案的资料。亦即将filename这个档案内容加到游标所在列后面</td>
+</tr>
+<tr>
+<td><code>:n1,n2 w [filename]</code></td>
+<td style="text-align:left">将n1 到n2 的内容储存成filename 这个档案。</td>
+</tr>
+<tr>
+<td><code>:! command</code></td>
+<td style="text-align:left">暂时离开vi到指令列模式下执行command的显示结果！例如<code>:! ls /home</code>即可在vi当中察看/home底下以ls输出的档案资讯！</td>
+</tr>
+<tr>
+<td><strong>vim 环境的变更</strong></td>
+</tr>
+<tr>
+<td><code>:set nu</code></td>
+<td style="text-align:left">显示行号，设定之后，会在每一列的字首显示该列的行号</td>
+</tr>
+<tr>
+<td><code>:set nonu</code></td>
+<td style="text-align:left">与set nu 相反，为取消行号！</td>
+</tr>
+</tbody>
+</table>
+<h2 id="多窗口功能"><a href="#多窗口功能" class="headerlink" title="多窗口功能"></a>多窗口功能</h2><p>指令列模式输入<code>:sp {filename}</code>那个filename可有可无，如果想要在新视窗启动另一个档案，就加入档名，否则仅输入:sp时，出现的则是同一个档案在两个视窗间</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>多视窗情况下的按键功能</strong></td>
+</tr>
+<tr>
+<td><code>:sp [filename]</code></td>
+<td style="text-align:left">开启一个新视窗，如果有加filename，表示在新视窗开启一个新档案，否则表示两个视窗为同一个档案内容(同步显示)。</td>
+</tr>
+<tr>
+<td><code>[ctrl]+w+ j`` [ctrl]+w+↓</code></td>
+<td style="text-align:left">按键的按法是：先按下[ctrl] 不放， 再按下w后放开所有的按键，然后再按下j (或向下方向键)，则游标可移动到下方的视窗。</td>
+</tr>
+<tr>
+<td><code>[ctrl]+w+ k</code> <code>[ctrl]+w+↑</code></td>
+<td style="text-align:left">同上，不过游标移动到上面的视窗。</td>
+</tr>
+<tr>
+<td><code>[ctrl]+w+ q</code></td>
+<td style="text-align:left">其实就是:q 结束离开啦！举例来说，如果我想要结束下方的视窗，那么利用[ctrl]+w+↓ 移动到下方视窗后，按下:q 即可离开， 也可以按下[ctrl]+w+q 啊！</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vim语法补全"><a href="#vim语法补全" class="headerlink" title="vim语法补全"></a>vim语法补全</h2><h2 id="vim-环境设定与记录：-vimrc-viminfo"><a href="#vim-环境设定与记录：-vimrc-viminfo" class="headerlink" title="vim 环境设定与记录： ~/.vimrc, ~/.viminfo"></a>vim 环境设定与记录： <code>~/.vimrc, ~/.viminfo</code></h2><h2 id="与系统相关注意"><a href="#与系统相关注意" class="headerlink" title="与系统相关注意"></a>与系统相关注意</h2><h3 id="语系编码转换"><a href="#语系编码转换" class="headerlink" title="语系编码转换"></a>语系编码转换</h3><p>举例来说，想要将big5 编码转成utf8<br><code>iconv --list</code><br><code>iconv -f 原本编码 -t 新编码 filename [-o newfile]</code><br>选项与参数：<br>–list ：列出iconv 支援的语​​系资料<br>-f ：from ，亦即来源之意，后接原本的编码格式；<br>-t ：to ，亦即后来的新编码要是什么格式；<br>-o file：如果要保留原本的档案，那么使用-o 新档名，可以建立新编码档案。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2016/03/工具-vim使用/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/教程/">教程</a><a class="post-meta__tags" href="/tags/配置/">配置</a><a class="post-meta__tags" href="/tags/优化/">优化</a><a class="post-meta__tags" href="/tags/vim/">vim</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/03/Linux-笔记-Shell/"><i class="fa fa-chevron-left">  </i><span>LinuxShell学习笔记</span></a></div><div class="next-post pull-right"><a href="/2016/03/Linux-笔记-初级基本操作/"><span>linux基本功操作</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script></body></html>

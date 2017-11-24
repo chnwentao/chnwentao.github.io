@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Linux软件安装学习笔记 | CS Learning of CHNwentao</title><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.3"><script>var GLOBAL = { 
+  root: '/',
+  algolia: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  localSearch: {"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}"},"path":"search.xml"}
+} </script><link rel="icon" href="/favicon.ico"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础概念"><span class="toc-number">1.</span> <span class="toc-text">基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是make-与configure"><span class="toc-number">1.1.</span> <span class="toc-text">什么是make 与configure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是Tarball-的软件"><span class="toc-number">1.2.</span> <span class="toc-text">什么是Tarball 的软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tarball-安装的基本步骤"><span class="toc-number">1.3.</span> <span class="toc-text">Tarball 安装的基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tarball安装-的建议"><span class="toc-number">1.4.</span> <span class="toc-text">tarball安装 的建议</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">129</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">180</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">18</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">Linux软件安装学习笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-03-12</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/Linux/">Linux</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">1,092</span><span class="post-meta__separator">|</span><span>Reading time: 4 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="什么是make-与configure"><a href="#什么是make-与configure" class="headerlink" title="什么是make 与configure"></a>什么是make 与configure</h3><p>行make时，make会在当时的目录下搜寻Makefile (or makefile) 这个文字档，而Makefile里面则记录了原始码如何编译的详细资讯！make会自动的判别原始码是否经过变动了，而自动更新执行档。</p>
+<p>Makefile 怎么写？通常软件开发商都会写一支侦测程式来侦测使用者的作业环境，及该作业环境是否有软件开发商所需要的其他功能，该侦测程式侦测完毕后，就会主动的建立这个Makefile 的规则文件啦！通常这支侦测程式的文件名为<code>configure</code> 或者是<code>config</code> 。<a id="more"></a></p>
+<h3 id="什么是Tarball-的软件"><a href="#什么是Tarball-的软件" class="headerlink" title="什么是Tarball 的软件"></a>什么是Tarball 的软件</h3><p>所谓的Tarball文件，其实就是将软件的所有原始码文件先以<code>tar</code>打包，然后再以压缩技术来压缩，通常最常见的就是以<code>gzip</code>来压缩了.文件名也会变成<em>.tar.bz2, </em>.tar.xz。</p>
+<p>软件的Tarball 安装的基本流程是这样的啦：</p>
+<ol>
+<li><p>将Tarball 由厂商的网页下载下来；</p>
+</li>
+<li><p>将Tarball 解开，产生很多的原始码文件；</p>
+</li>
+<li><p>开始以gcc 进行原始码的编译(会产生目标档object files)；</p>
+</li>
+<li><p>然后以gcc 进行函式库、主、副程式的连结，以形成主要的binary file；</p>
+</li>
+<li><p>将上述的binary file 以及相关的设定档安装至自己的主机上面。</p>
+</li>
+</ol>
+<h3 id="Tarball-安装的基本步骤"><a href="#Tarball-安装的基本步骤" class="headerlink" title="Tarball 安装的基本步骤"></a>Tarball 安装的基本步骤</h3><ol>
+<li><p>取得原始档：将tarball 文件在/usr/local/src 目录下解压缩；</p>
+</li>
+<li><p>取得步骤流程：进入新建立的目录底下，去查阅INSTALL 与README 等相关文件内容(很重要的步骤！)；</p>
+</li>
+<li><p>相依属性软件安装：根据INSTALL/README 的内容察看并安装好一些相依的软件(非必要)；</p>
+</li>
+<li><p>·建立makefile：以自动侦测程式(configure 或config) 侦测作业环境，并建立Makefile 这个文件；<br><code>./configure --prefix=/usr/local/ntp --enable-all-clocks --enable-parse-clocks</code></p>
+</li>
+</ol>
+<p>prefix后面接的路径就是『这个软件未来要安装到那个目录去？』如果你没有指定<code>--prefix=/path</code>这个参数，通常预设参数就是<code>/usr/local</code>至于其他的参数意义就得要参考<code>./configure --help</code>了</p>
+<ol>
+<li><p><code>make clean</code>make会读取Makefile中关于clean的工作。这个步骤不一定会有，但是希望执行一下，因为他可以去除目标文件！</p>
+</li>
+<li><p><code>make</code> 编译：以make 这个程式并使用该目录下的Makefile 做为他的参数设定档，来进行make (编译或其他) 的动作；</p>
+</li>
+<li><p><code>make install</code> 安装：以make 这个程式，并以Makefile 这个参数设定档，依据 install 这个标的(target) 的指定来安装到正确的路径！</p>
+</li>
+<li><p>为安装到单独目录的软件之man page加入man path搜寻：</p>
+</li>
+</ol>
+<p>如果你安装的软件放置到<code>/usr/local/software/</code>，那么man page搜寻的设定中，可能就得要在<code>/etc/man_db.conf</code>内的40~50行左右处，写入如下的一行：<br><code>MANPATH_MAP /usr/local/software/bin /usr/local/software/man</code><br>这样才可以使用man 来查询该软件的线上文件啰！</p>
+<p>建议大家将自己安装的软件放置在<code>/usr/local</code> 下，至于原始码 (Tarball)则建议放置在<code>/usr/local/src</code> (src 为source 的缩写)底下啊</p>
+<p>软件的内容大致上是摆在etc, lib, bin, man 等目录当中，分别代表『设定档、函式库、执行档、线上说明档』。</p>
+<p>单一软件的文件都在同一个目录之下，那么要移除该软件就简单的多了！只要将该目录移除即可视为该软件已经被移除啰！以上面为例，我想要移除apache只要下达<code>rm -rf /usr/local/apache</code>』就可以了。</p>
+<h3 id="tarball安装-的建议"><a href="#tarball安装-的建议" class="headerlink" title="tarball安装 的建议"></a>tarball安装 的建议</h3><p>最好将tarball 的原始数据解压缩到<code>/usr/local/src</code> 当中；</p>
+<p>安装时，最好安装到<code>/usr/local</code>这个预设路径下；</p>
+<p>考虑未来的反安装步骤，最好可以将每个软件单独的安装在/usr/local 底下；</p>
+<p>为安装到单独目录的软件之man page加入man path搜寻：</p>
+<p>如果你安装的软件放置到<code>/usr/local/software/</code>，那么man page搜寻的设定中，可能就得要在<code>/etc/man_db.conf</code>内的40~50行左右处，写入如下的一行：<br><code>MANPATH_MAP /usr/local/software/bin /usr/local/software/man</code><br>这样才可以使用man 来查询该软件的线上文件啰！</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2016/03/Linux-笔记-软件安装/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/笔记/">笔记</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/管理/">管理</a><a class="post-meta__tags" href="/tags/软件安装/">软件安装</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/03/Linux-笔记-文件目录基本操作/"><i class="fa fa-chevron-left">  </i><span>linux文件、目录、权限的管理</span></a></div><div class="next-post pull-right"><a href="/2016/03/Linux-笔记-文件系统管理/"><span>Linux文件系统管理（进阶）</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script></body></html>
