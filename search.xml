@@ -52,11 +52,11 @@
 <ul>
 <li>
 <p>卷积网络 相邻的两层，一个输入只能影响(连接)少量的输出（如图:CNN_1）：
-<img src="./%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_CNN/CNN_01.png" alt="CNN_1"></p>
+<img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-25/60238378.jpg" alt=""></p>
 </li>
 <li>
 <p>但是通过多层，深层的单元可以间接的连接到全部或大部分的输入（如图:CNN_2）：
-<img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_CNN/CNN_02.png" alt="CNN_2"></p>
+<img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-25/52654500.jpg" alt=""></p>
 </li>
 </ul>
 <h4>参数共享(parameter sharing)</h4>
