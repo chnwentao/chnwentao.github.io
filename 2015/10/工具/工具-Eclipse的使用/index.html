@@ -1,4 +1,10 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Eclipse五分钟快速入门，你值得拥有！ | CS Learning of CHNwentao</title><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.3"><script>var GLOBAL = { 
+<!DOCTYPE html><html lang=""><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Eclipse五分钟快速入门，你值得拥有！ | CS Learning of CHNwentao</title><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.3"><script><!-- hexo-inject:begin --><!-- hexo-inject:end -->var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?js?c4c99183a6a02c53d4760ae1995c3b38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL = { 
   root: '/',
   algolia: undefined,
   copy: {
@@ -7,52 +13,174 @@
     noSupport: 'The browser does not support'
   },
   localSearch: {"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}"},"path":"search.xml"}
-} </script><link rel="icon" href="/favicon.ico"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#更新记录"><span class="toc-number">1.</span> <span class="toc-text">更新记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eclipse的安装（略）"><span class="toc-number">2.</span> <span class="toc-text">Eclipse的安装（略）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个程序"><span class="toc-number">3.</span> <span class="toc-text">第一个程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eclipse空间的基本配置"><span class="toc-number">4.</span> <span class="toc-text">Eclipse空间的基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程序的编译和运行的环境配置-一般不改"><span class="toc-number">4.1.</span> <span class="toc-text">程序的编译和运行的环境配置(一般不改)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何去掉默认注释"><span class="toc-number">4.2.</span> <span class="toc-text">如何去掉默认注释?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行号的显示和隐藏"><span class="toc-number">4.3.</span> <span class="toc-text">行号的显示和隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字体大小及颜色"><span class="toc-number">4.4.</span> <span class="toc-text">字体大小及颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#窗体给弄乱了，怎么办"><span class="toc-number">4.5.</span> <span class="toc-text">窗体给弄乱了，怎么办?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制台找不到了，怎么办"><span class="toc-number">4.6.</span> <span class="toc-text">控制台找不到了，怎么办?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用快捷键（重点）"><span class="toc-number">5.</span> <span class="toc-text">常用快捷键（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何提高开发效率"><span class="toc-number">6.</span> <span class="toc-text">如何提高开发效率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动生成构造方法"><span class="toc-number">6.1.</span> <span class="toc-text">自动生成构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动生成getXxx-setXxx-方法"><span class="toc-number">6.2.</span> <span class="toc-text">自动生成getXxx()/setXxx()方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何继承抽象类和实现接口。"><span class="toc-number">6.3.</span> <span class="toc-text">如何继承抽象类和实现接口。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Override的作用"><span class="toc-number">6.4.</span> <span class="toc-text">Override的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动补全的设置（2015-11-16-新增）"><span class="toc-number">6.5.</span> <span class="toc-text">自动补全的设置（2015-11-16 新增）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除项目和导入项目"><span class="toc-number">7.</span> <span class="toc-text">删除项目和导入项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#要注意的几个小问题"><span class="toc-number">8.</span> <span class="toc-text">要注意的几个小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入项目要注意的问题"><span class="toc-number">8.1.</span> <span class="toc-text">导入项目要注意的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改项目问题"><span class="toc-number">8.2.</span> <span class="toc-text">修改项目问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接收文件的注意事项"><span class="toc-number">8.3.</span> <span class="toc-text">接收文件的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eclipse中代码的高级-Debug-调试"><span class="toc-number">9.</span> <span class="toc-text">Eclipse中代码的高级(Debug)调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用："><span class="toc-number">9.1.</span> <span class="toc-text">作用：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何查看程序执行流程？"><span class="toc-number">9.2.</span> <span class="toc-text">如何查看程序执行流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是断点？"><span class="toc-number">9.3.</span> <span class="toc-text">什么是断点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何设置断点："><span class="toc-number">9.4.</span> <span class="toc-text">如何设置断点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在哪里设置断点："><span class="toc-number">9.5.</span> <span class="toc-text">在哪里设置断点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何运行设置断点后的程序："><span class="toc-number">9.6.</span> <span class="toc-text">如何运行设置断点后的程序：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#看哪些地方？"><span class="toc-number">9.7.</span> <span class="toc-text">看哪些地方？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何去断点："><span class="toc-number">9.8.</span> <span class="toc-text">如何去断点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用高级特性："><span class="toc-number">10.</span> <span class="toc-text">常用高级特性：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导包（2015-11-17新增）："><span class="toc-number">10.1.</span> <span class="toc-text">导包（2015-11-17新增）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eclipse控制台输出-输入）重定向到文件（2015-11-28新增）"><span class="toc-number">10.2.</span> <span class="toc-text">eclipse控制台输出(输入）重定向到文件（2015-11-28新增）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">11.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">129</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">181</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">Eclipse五分钟快速入门，你值得拥有！</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2015-10-30</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/工具/">工具</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">2,154</span><span class="post-meta__separator">|</span><span>Reading time: 7 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><p><img src="http://7xiuu0.com1.z0.glb.clouddn.com/工具_Eclipse_入门.png" alt=""></p>
-<h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><p>自动补全的设置（2015-11-16 新增）<br>导包（2015-11-17新增）<br>eclipse控制台输出(输入）重定向到文件（2015-11-28新增）</p>
-<h2 id="Eclipse的安装（略）"><a href="#Eclipse的安装（略）" class="headerlink" title="Eclipse的安装（略）"></a>Eclipse的安装（略）</h2><h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><p>用Eclipse写一个HelloWorld案例，最终在控制台输出你的名字<br>A:创建项目<br>B:在src目录下创建包。cn.itcast<br>C:在cn.itcast包下创建类。HelloWorld<br>D:在HelloWorld下有一个方法。public static void main(String[] args) {}<br>E:在main方法中有一个输出语句。System.out.println(“你的名字”);<a id="more"></a></p>
-<h2 id="Eclipse空间的基本配置"><a href="#Eclipse空间的基本配置" class="headerlink" title="Eclipse空间的基本配置"></a>Eclipse空间的基本配置</h2><h3 id="程序的编译和运行的环境配置-一般不改"><a href="#程序的编译和运行的环境配置-一般不改" class="headerlink" title="程序的编译和运行的环境配置(一般不改)"></a>程序的编译和运行的环境配置(一般不改)</h3><p><code>Eclipse-- Preferences -- Java</code><br>编译环境：Compiler    默认选中的就是最高版本。<br>运行环境：Installed JREs    默认会找你安装的那个JDK。建议配置了Java的环境变量。</p>
-<p>低编译，高运行。可以。<br>高编译，低运行。不可以。<br><strong>建议</strong>，<strong>编译和运行的版本一致。</strong></p>
-<h3 id="如何去掉默认注释"><a href="#如何去掉默认注释" class="headerlink" title="如何去掉默认注释?"></a>如何去掉默认注释?</h3><p>window – Preferences – Java – Code Style – Code Templates<br>选择你不想要的内容，通过右边Edit编辑。<br>注意：请只删除注释部分，不是注释部分的不要删除。</p>
-<h3 id="行号的显示和隐藏"><a href="#行号的显示和隐藏" class="headerlink" title="行号的显示和隐藏"></a>行号的显示和隐藏</h3><p>显示：在代码区域的最左边的空白区域，右键 – Show Line Numbers即可。<br>隐藏：把上面的动作再做一次。</p>
-<h3 id="字体大小及颜色"><a href="#字体大小及颜色" class="headerlink" title="字体大小及颜色"></a>字体大小及颜色</h3><p>a:Java代码区域的字体大小和颜色：<br>Eclipse – Preferences – General – Appearance – Colors And Fonts – Java修改 – Java Edit Text Font<br>b:控制台<br>Eclipse – Preferences – General – Appearance – Colors And Fonts – Debug – Console font<br>c:其他文件<br>Eclipse – Preferences – General – Appearance – Colors And Fonts – Basic – Text Font</p>
-<h3 id="窗体给弄乱了，怎么办"><a href="#窗体给弄乱了，怎么办" class="headerlink" title="窗体给弄乱了，怎么办?"></a>窗体给弄乱了，怎么办?</h3><p>window – Reset Perspective</p>
-<h3 id="控制台找不到了，怎么办"><a href="#控制台找不到了，怎么办" class="headerlink" title="控制台找不到了，怎么办?"></a>控制台找不到了，怎么办?</h3><p>Window–Show View—Console</p>
-<h2 id="常用快捷键（重点）"><a href="#常用快捷键（重点）" class="headerlink" title="常用快捷键（重点）"></a>常用快捷键（重点）</h2><p>Command + O：显示大纲<br>Command + 1：快速修复<br>Command + D：删除当前行<br>Command + Option + ↓：复制当前行到下一行<br>Command + Option + ↑：复制当前行到上一行<br>Option + ↓：当前行和下面一行交互位置<br>Option + ↑：当前行和上面一行交互位置<br>Option + ←：前一个编辑的页面<br>Option + →：下一个编辑的页面<br>Option + Return：显示当前选择资源的属性<br>Shift + Return：在当前行的下一行插入空行<br>Shift + Control + Return：在当前行插入空行<br>Control + Q：定位到最后编辑的地方<br>Control + M：最大化当前的Edit或View（再按则最小化）<br>Control + /：注释当前行，再按则取消注释<br>Command + T：快速显示当前类的继承结构<br>Command + W：关闭当前Editer<br>Command + K：参照当前选中的Word快速定位到下一个<br>Command + E：快速显示当前Editer的下拉列表（如果当前页面没有显示的用黑体表示）<br>Option + /：代码助手完成一些代码的插入（俗称“智能提示”）<br>Command + Shift + E：显示管理当前打开的所有的View的管理器<br>Command + J：正向增量查找（按下Command + J后，你所输入的每个字母编辑器都提供快速匹配定位到某个单词，如果没有，则在Stutes Line中显示没有找到了）<br>Command + Shift + J：反向增量查找<br>Command + Shift + W：关闭所有打开的Editer<br>Command + Shift + X：把当前选中的文本全部变为大写<br>Command + Shift + Y：把当前选中的文本全部变为小写<br><strong>Command + Shift + F：格式化当前代码</strong><br>Command + Shift + P：定位到对于的匹配符（譬如{}）（从前面定位后面时，光标要在匹配符里面，后面到前面，则反之）</p>
-<p>Option + Command + R：重命名（尤其是变量和类的Rename效果比较明显）<br>Option + Shift + M：抽取方法（这是重构里面最常用的方法之一了，尤其是对一大堆泥团代码有用）<br>Option + Command + C：修改函数结构（有N个函数调用了这个方法，修改一次就搞定）<br>Option + Command + L：抽取本地变量（可以直接把一些魔法数字和字符串抽取成一个变量，尤其是多处调用的时候）<br>Option + Shift + F：把Class中的Local变量变为Field变量（比较实用的功能）</p>
+} </script><link rel="icon" href="/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">更新记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Eclipse的安装（略）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">第一个程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">Eclipse空间的基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">程序的编译和运行的环境配置(一般不改)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.</span> <span class="toc-text">如何去掉默认注释?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.3.</span> <span class="toc-text">行号的显示和隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.4.</span> <span class="toc-text">字体大小及颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.5.</span> <span class="toc-text">窗体给弄乱了，怎么办?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.6.</span> <span class="toc-text">控制台找不到了，怎么办?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">常用快捷键（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">如何提高开发效率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.1.</span> <span class="toc-text">自动生成构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.2.</span> <span class="toc-text">自动生成getXxx()/setXxx()方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.3.</span> <span class="toc-text">如何继承抽象类和实现接口。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.4.</span> <span class="toc-text">Override的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.5.</span> <span class="toc-text">自动补全的设置（2015-11-16 新增）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">删除项目和导入项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">要注意的几个小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.1.</span> <span class="toc-text">导入项目要注意的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.2.</span> <span class="toc-text">修改项目问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.3.</span> <span class="toc-text">接收文件的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">Eclipse中代码的高级(Debug)调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.1.</span> <span class="toc-text">作用：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.2.</span> <span class="toc-text">如何查看程序执行流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.3.</span> <span class="toc-text">什么是断点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.4.</span> <span class="toc-text">如何设置断点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.5.</span> <span class="toc-text">在哪里设置断点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.6.</span> <span class="toc-text">如何运行设置断点后的程序：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.7.</span> <span class="toc-text">看哪些地方？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.8.</span> <span class="toc-text">如何去断点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">10.</span> <span class="toc-text">常用高级特性：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">10.1.</span> <span class="toc-text">导包（2015-11-17新增）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">10.2.</span> <span class="toc-text">eclipse控制台输出(输入）重定向到文件（2015-11-28新增）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">11.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">129</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">180</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">18</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">Eclipse五分钟快速入门，你值得拥有！</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2015-10-30</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/工具/">工具</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">2,152</span><span class="post-meta__separator">|</span><span>Reading time: 7 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><p><img src="http://7xiuu0.com1.z0.glb.clouddn.com/%E5%B7%A5%E5%85%B7_Eclipse_%E5%85%A5%E9%97%A8.png" alt=""></p>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><h2>更新记录</h2>
+<p>自动补全的设置（2015-11-16 新增）
+导包（2015-11-17新增）
+eclipse控制台输出(输入）重定向到文件（2015-11-28新增）</p>
+<h2>Eclipse的安装（略）</h2>
+<h2>第一个程序</h2>
+<p>用Eclipse写一个HelloWorld案例，最终在控制台输出你的名字
+A:创建项目
+B:在src目录下创建包。cn.itcast
+C:在cn.itcast包下创建类。HelloWorld
+D:在HelloWorld下有一个方法。public static void main(String[] args) {}
+E:在main方法中有一个输出语句。System.out.println(&quot;你的名字&quot;);&lt;!-- more --&gt;</p>
+<h2>Eclipse空间的基本配置</h2>
+<h3>程序的编译和运行的环境配置(一般不改)</h3>
+<p><code>Eclipse-- Preferences -- Java</code>
+编译环境：Compiler    默认选中的就是最高版本。
+运行环境：Installed JREs    默认会找你安装的那个JDK。建议配置了Java的环境变量。</p>
+<p>低编译，高运行。可以。
+高编译，低运行。不可以。
+<strong>建议</strong>，<strong>编译和运行的版本一致。</strong></p>
+<h3>如何去掉默认注释?</h3>
+<p>window -- Preferences -- Java -- Code Style -- Code Templates
+选择你不想要的内容，通过右边Edit编辑。
+注意：请只删除注释部分，不是注释部分的不要删除。</p>
+<h3>行号的显示和隐藏</h3>
+<p>显示：在代码区域的最左边的空白区域，右键 -- Show Line Numbers即可。
+隐藏：把上面的动作再做一次。</p>
+<h3>字体大小及颜色</h3>
+<p>a:Java代码区域的字体大小和颜色：
+Eclipse -- Preferences -- General -- Appearance -- Colors And Fonts -- Java修改 -- Java Edit Text Font
+b:控制台
+Eclipse -- Preferences -- General -- Appearance -- Colors And Fonts -- Debug -- Console font
+c:其他文件
+Eclipse -- Preferences -- General -- Appearance -- Colors And Fonts -- Basic -- Text Font</p>
+<h3>窗体给弄乱了，怎么办?</h3>
+<p>window -- Reset Perspective</p>
+<h3>控制台找不到了，怎么办?</h3>
+<p>Window--Show View—Console</p>
+<h2>常用快捷键（重点）</h2>
+<p>Command + O：显示大纲
+Command + 1：快速修复
+Command + D：删除当前行
+Command + Option + ↓：复制当前行到下一行
+Command + Option + ↑：复制当前行到上一行
+Option + ↓：当前行和下面一行交互位置
+Option + ↑：当前行和上面一行交互位置
+Option + ←：前一个编辑的页面
+Option + →：下一个编辑的页面
+Option + Return：显示当前选择资源的属性
+Shift + Return：在当前行的下一行插入空行
+Shift + Control + Return：在当前行插入空行
+Control + Q：定位到最后编辑的地方
+Control + M：最大化当前的Edit或View（再按则最小化）
+Control + /：注释当前行，再按则取消注释
+Command + T：快速显示当前类的继承结构
+Command + W：关闭当前Editer
+Command + K：参照当前选中的Word快速定位到下一个
+Command + E：快速显示当前Editer的下拉列表（如果当前页面没有显示的用黑体表示）
+Option + /：代码助手完成一些代码的插入（俗称“智能提示”）
+Command + Shift + E：显示管理当前打开的所有的View的管理器
+Command + J：正向增量查找（按下Command + J后，你所输入的每个字母编辑器都提供快速匹配定位到某个单词，如果没有，则在Stutes Line中显示没有找到了）
+Command + Shift + J：反向增量查找
+Command + Shift + W：关闭所有打开的Editer
+Command + Shift + X：把当前选中的文本全部变为大写
+Command + Shift + Y：把当前选中的文本全部变为小写
+<strong>Command + Shift + F：格式化当前代码</strong>
+Command + Shift + P：定位到对于的匹配符（譬如{}）（从前面定位后面时，光标要在匹配符里面，后面到前面，则反之）</p>
+<p>Option + Command + R：重命名（尤其是变量和类的Rename效果比较明显）
+Option + Shift + M：抽取方法（这是重构里面最常用的方法之一了，尤其是对一大堆泥团代码有用）
+Option + Command + C：修改函数结构（有N个函数调用了这个方法，修改一次就搞定）
+Option + Command + L：抽取本地变量（可以直接把一些魔法数字和字符串抽取成一个变量，尤其是多处调用的时候）
+Option + Shift + F：把Class中的Local变量变为Field变量（比较实用的功能）</p>
 <p>Option + Command + Z：重构的后悔药（Undo）</p>
-<h2 id="如何提高开发效率"><a href="#如何提高开发效率" class="headerlink" title="如何提高开发效率"></a>如何提高开发效率</h2><h3 id="自动生成构造方法"><a href="#自动生成构造方法" class="headerlink" title="自动生成构造方法"></a>自动生成构造方法</h3><p>a:无参构造方法 在代码区域<code>右键--source--Generate Constructors from Superclass</code><br>b:带参构造方法 在代码区域<code>右键--source--Generate Constructors using fields.. -- finish</code></p>
-<h3 id="自动生成getXxx-setXxx-方法"><a href="#自动生成getXxx-setXxx-方法" class="headerlink" title="自动生成getXxx()/setXxx()方法"></a>自动生成getXxx()/setXxx()方法</h3><p>在代码区域<code>右键--source--Generate Getters and Setters...</code></p>
-<p>提供了对应的快捷键操作。<br><code>alt+shift+s</code><br>按下带有下划线的那个字母即可。</p>
-<h3 id="如何继承抽象类和实现接口。"><a href="#如何继承抽象类和实现接口。" class="headerlink" title="如何继承抽象类和实现接口。"></a>如何继承抽象类和实现接口。</h3><h3 id="Override的作用"><a href="#Override的作用" class="headerlink" title="Override的作用"></a>Override的作用</h3><p>表示该方法是重写父类的。如果方法声明和父类不匹配，就会报错。</p>
-<h3 id="自动补全的设置（2015-11-16-新增）"><a href="#自动补全的设置（2015-11-16-新增）" class="headerlink" title="自动补全的设置（2015-11-16 新增）"></a>自动补全的设置（2015-11-16 新增）</h3><p>最简单的修改方式是：<code>Windows——&gt;Preferences——&gt;Java--&gt;Editor--&gt;Content Asist，在Auto activation triggers for Java</code>后面的文本框里只有一个“<code>.</code>”。现在你将其改为“.<code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</code>”即可。然后你再试试，会发现，现在的补全功能跟VS差不多了。你还可以在Advanced和Favorite里进行高级的设置。</p>
-<h2 id="删除项目和导入项目"><a href="#删除项目和导入项目" class="headerlink" title="删除项目和导入项目"></a>删除项目和导入项目</h2><p>删除项目<br>选中项目 <code>– 右键 – 删除</code><br>            从项目区域中删除<br>            从硬盘上删除</p>
-<p>导入项目<br>在项目区域右键找到<code>import</code><br>找到<code>General</code>，展开，并找到<br><code>Existing Projects into Workspace</code><br>点击<code>next</code>,然后选择你要导入的项目<br><strong>注意：</strong> 这里选择的是项目名称</p>
-<h2 id="要注意的几个小问题"><a href="#要注意的几个小问题" class="headerlink" title="要注意的几个小问题"></a>要注意的几个小问题</h2><p>如何查看项目所在路径<br><code>选中 -- 右键 -- Properties -- Resource -- Location</code></p>
-<h3 id="导入项目要注意的问题"><a href="#导入项目要注意的问题" class="headerlink" title="导入项目要注意的问题"></a>导入项目要注意的问题</h3><ul>
+<h2>如何提高开发效率</h2>
+<h3>自动生成构造方法</h3>
+<p>a:无参构造方法 在代码区域<code>右键--source--Generate Constructors from Superclass</code>
+b:带参构造方法 在代码区域<code>右键--source--Generate Constructors using fields.. -- finish</code></p>
+<h3>自动生成getXxx()/setXxx()方法</h3>
+<p>在代码区域<code>右键--source--Generate Getters and Setters...</code></p>
+<p>提供了对应的快捷键操作。
+<code>alt+shift+s</code>
+按下带有下划线的那个字母即可。</p>
+<h3>如何继承抽象类和实现接口。</h3>
+<h3>Override的作用</h3>
+<p>表示该方法是重写父类的。如果方法声明和父类不匹配，就会报错。</p>
+<h3>自动补全的设置（2015-11-16 新增）</h3>
+<p>最简单的修改方式是：<code>Windows——&gt;Preferences——&gt;Java--&gt;Editor--&gt;Content Asist，在Auto activation triggers for Java</code>后面的文本框里只有一个“<code>.</code>”。现在你将其改为“.<code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</code>”即可。然后你再试试，会发现，现在的补全功能跟VS差不多了。你还可以在Advanced和Favorite里进行高级的设置。</p>
+<h2>删除项目和导入项目</h2>
+<p>删除项目
+选中项目 <code>– 右键 – 删除</code>
+从项目区域中删除
+从硬盘上删除</p>
+<p>导入项目
+在项目区域右键找到<code>import</code>
+找到<code>General</code>，展开，并找到
+<code>Existing Projects into Workspace</code>
+点击<code>next</code>,然后选择你要导入的项目
+<strong>注意：</strong> 这里选择的是项目名称</p>
+<h2>要注意的几个小问题</h2>
+<p>如何查看项目所在路径
+<code>选中 -- 右键 -- Properties -- Resource -- Location</code></p>
+<h3>导入项目要注意的问题</h3>
+<ul>
 <li>项目区域中不可能出现同名的项目(新建或者导入)</li>
 <li>自己随意建立的文件夹是不能作为项目导入的</li>
 </ul>
-<h3 id="修改项目问题"><a href="#修改项目问题" class="headerlink" title="修改项目问题"></a>修改项目问题</h3><ul>
+<h3>修改项目问题</h3>
+<ul>
 <li>不要随意修改项目名称</li>
 <li>如果真要修改，不要忘记了配置文件<code>.project</code>中的<code>&lt;name&gt;</code>把这里改为你改后的名称<code>&lt;/name&gt;</code></li>
 </ul>
-<h3 id="接收文件的注意事项"><a href="#接收文件的注意事项" class="headerlink" title="接收文件的注意事项"></a>接收文件的注意事项</h3><p>A:专门建立一个文件夹用于接收项目，不要随意放置。<br>B:同一个项目再次接收的时候，先去存放目录把原始项目删除，然后重新存储，最后刷新项目即可。<br>C:每天对照我写的项目，自己也创建一个练习项目<br>举例：我的项目名称 <code>day11_eclipse</code><br>你就创建一个项目名称 <code>day11_eclipse_test</code></p>
-<h2 id="Eclipse中代码的高级-Debug-调试"><a href="#Eclipse中代码的高级-Debug-调试" class="headerlink" title="Eclipse中代码的高级(Debug)调试"></a>Eclipse中代码的高级(Debug)调试</h2><h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
+<h3>接收文件的注意事项</h3>
+<p>A:专门建立一个文件夹用于接收项目，不要随意放置。
+B:同一个项目再次接收的时候，先去存放目录把原始项目删除，然后重新存储，最后刷新项目即可。
+C:每天对照我写的项目，自己也创建一个练习项目
+举例：我的项目名称 <code>day11_eclipse</code>
+你就创建一个项目名称 <code>day11_eclipse_test</code></p>
+<h2>Eclipse中代码的高级(Debug)调试</h2>
+<h3>作用：</h3>
+<ul>
 <li>调试程序</li>
 <li>查看程序执行流程</li>
 </ul>
-<h3 id="如何查看程序执行流程？"><a href="#如何查看程序执行流程？" class="headerlink" title="如何查看程序执行流程？"></a>如何查看程序执行流程？</h3><p>想看程序流程，就必须设置断点。</p>
-<h3 id="什么是断点？"><a href="#什么是断点？" class="headerlink" title="什么是断点？"></a>什么是断点？</h3><p>就是一个标记，从哪里开始。</p>
-<h3 id="如何设置断点："><a href="#如何设置断点：" class="headerlink" title="如何设置断点："></a>如何设置断点：</h3><p>你想看哪里的程序，你就在那个有效程序的左边双击即可。</p>
-<h3 id="在哪里设置断点："><a href="#在哪里设置断点：" class="headerlink" title="在哪里设置断点："></a>在哪里设置断点：</h3><p>哪里不会点哪里。<br>目前：我们就在每个方法的第一条有效语句上都加。</p>
-<h3 id="如何运行设置断点后的程序："><a href="#如何运行设置断点后的程序：" class="headerlink" title="如何运行设置断点后的程序："></a>如何运行设置断点后的程序：</h3><p><code>右键 -- Debug as -- Java Application</code></p>
-<h3 id="看哪些地方？"><a href="#看哪些地方？" class="headerlink" title="看哪些地方？"></a>看哪些地方？</h3><p><code>Debug：</code>断点测试的地方<br>                在这个地方，记住F6，或者点击也可以。一次看一行的执行过程。<br><code>Variables：</code>查看程序的变量变化<br><code>ForDemo：</code>被查看的源文件<br><code>Console：</code>控制台</p>
-<h3 id="如何去断点："><a href="#如何去断点：" class="headerlink" title="如何去断点："></a>如何去断点：</h3><p>a:再次双击即可<br>b:找到Debug视图，Variables界面，找到Breakpoints，并点击，然后看到所有的断点，最后点击那个双叉。</p>
-<h2 id="常用高级特性："><a href="#常用高级特性：" class="headerlink" title="常用高级特性："></a>常用高级特性：</h2><h3 id="导包（2015-11-17新增）："><a href="#导包（2015-11-17新增）：" class="headerlink" title="导包（2015-11-17新增）："></a>导包（2015-11-17新增）：</h3><p>有两种常用的方法：</p>
+<h3>如何查看程序执行流程？</h3>
+<p>想看程序流程，就必须设置断点。</p>
+<h3>什么是断点？</h3>
+<p>就是一个标记，从哪里开始。</p>
+<h3>如何设置断点：</h3>
+<p>你想看哪里的程序，你就在那个有效程序的左边双击即可。</p>
+<h3>在哪里设置断点：</h3>
+<p>哪里不会点哪里。
+目前：我们就在每个方法的第一条有效语句上都加。</p>
+<h3>如何运行设置断点后的程序：</h3>
+<p><code>右键 -- Debug as -- Java Application</code></p>
+<h3>看哪些地方？</h3>
+<p><code>Debug：</code>断点测试的地方
+在这个地方，记住F6，或者点击也可以。一次看一行的执行过程。
+<code>Variables：</code>查看程序的变量变化
+<code>ForDemo：</code>被查看的源文件
+<code>Console：</code>控制台</p>
+<h3>如何去断点：</h3>
+<p>a:再次双击即可
+b:找到Debug视图，Variables界面，找到Breakpoints，并点击，然后看到所有的断点，最后点击那个双叉。</p>
+<h2>常用高级特性：</h2>
+<h3>导包（2015-11-17新增）：</h3>
+<p>有两种常用的方法：</p>
 <ol>
-<li>以外部包（External Archives）的形式导入。<br>在默认位于 Eclipse 窗口左侧的 <code>Package Explorer</code>中，右键项目名，点击<code>Build Path</code> 项下的 <code>Add External Archives</code>。 然后在弹出的文件选择窗口中选中<code>acm.jar</code> 即可。这种方法适用于导入单个的 jar 包。</li>
-<li>以 User Library 的形式导入。<br>User Library 即用户类库，用来组织多个 jar 包。在默认位于 Eclipse 窗口左侧的 <code>Package Explorer</code>中，右键项目名，点击<code>Build Path</code>项下的<code>Add Libraries</code>。 在弹出的窗口中选中 <code>User Library</code>并点击下一步。在新出现的窗口（窗口一）中，点击位于右侧的<code>User Libraries...</code>按钮进入 U<code>ser Library Preferences</code>窗口。接着，点击<code>New</code> 按钮，输入用户类库名称，例如 <code>『ACM』</code>，点击 <code>OK</code>。然后单击选中新创建的用户类库，点击右侧的<code>Add JARs</code>按钮，选中一个或多个 jar 文件，点 <code>OK。</code>接下来，返回窗口一中选中刚刚新创建的用户类库，点击<code>OK</code>即可。这种方法适用于多个 jar 包的导入。</li>
+<li>以外部包（External Archives）的形式导入。
+在默认位于 Eclipse 窗口左侧的 <code>Package Explorer</code>中，右键项目名，点击<code>Build Path</code> 项下的 <code>Add External Archives</code>。 然后在弹出的文件选择窗口中选中<code>acm.jar</code> 即可。这种方法适用于导入单个的 jar 包。</li>
+<li>以 User Library 的形式导入。
+User Library 即用户类库，用来组织多个 jar 包。在默认位于 Eclipse 窗口左侧的 <code>Package Explorer</code>中，右键项目名，点击<code>Build Path</code>项下的<code>Add Libraries</code>。 在弹出的窗口中选中 <code>User Library</code>并点击下一步。在新出现的窗口（窗口一）中，点击位于右侧的<code>User Libraries...</code>按钮进入 U<code>ser Library Preferences</code>窗口。接着，点击<code>New</code> 按钮，输入用户类库名称，例如 <code>『ACM』</code>，点击 <code>OK</code>。然后单击选中新创建的用户类库，点击右侧的<code>Add JARs</code>按钮，选中一个或多个 jar 文件，点 <code>OK。</code>接下来，返回窗口一中选中刚刚新创建的用户类库，点击<code>OK</code>即可。这种方法适用于多个 jar 包的导入。</li>
 </ol>
-<h3 id="eclipse控制台输出-输入）重定向到文件（2015-11-28新增）"><a href="#eclipse控制台输出-输入）重定向到文件（2015-11-28新增）" class="headerlink" title="eclipse控制台输出(输入）重定向到文件（2015-11-28新增）"></a>eclipse控制台输出(输入）重定向到文件（2015-11-28新增）</h3><p><code>Run-&gt;Run Configurations-&gt;Common-&gt;Standard Input and Output</code></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.zhihu.com/question/20311561/answer/14713365" target="_blank" rel="noopener">导包（2015-11-17新增）来自 知乎：彭晟杰 链接：</a></p>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2015/10/工具/工具-Eclipse的使用/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Eclipse/">Eclipse</a><a class="post-meta__tags" href="/tags/配置/">配置</a><a class="post-meta__tags" href="/tags/快捷键/">快捷键</a><a class="post-meta__tags" href="/tags/使用/">使用</a><a class="post-meta__tags" href="/tags/技巧/">技巧</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2015/11/coding/Java-问题-for的问题/"><i class="fa fa-chevron-left">  </i><span>java 中for (int i = 0; i&lt; n; i++) 与 int i ; for ( i = 0; i &lt; n; i ++)的区别</span></a></div><div class="next-post pull-right"><a href="/2015/10/coding/Java-总结-抽象类和接口/"><span>Java中抽象类和接口的异同</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script></body></html>
+<h3>eclipse控制台输出(输入）重定向到文件（2015-11-28新增）</h3>
+<p><code>Run-&gt;Run Configurations-&gt;Common-&gt;Standard Input and Output</code></p>
+<h2>参考</h2>
+<p><a href="http://www.zhihu.com/question/20311561/answer/14713365" target="_blank" rel="noopener">导包（2015-11-17新增）来自 知乎：彭晟杰 链接：</a></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2015/10/工具/工具-Eclipse的使用/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Eclipse/">Eclipse</a><a class="post-meta__tags" href="/tags/配置/">配置</a><a class="post-meta__tags" href="/tags/快捷键/">快捷键</a><a class="post-meta__tags" href="/tags/使用/">使用</a><a class="post-meta__tags" href="/tags/技巧/">技巧</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2015/11/coding/Java-问题-for的问题/"><i class="fa fa-chevron-left">  </i><span>java 中for (int i = 0; i&lt; n; i++) 与 int i ; for ( i = 0; i &lt; n; i ++)的区别</span></a></div><div class="next-post pull-right"><a href="/2015/10/coding/Java-总结-抽象类和接口/"><span>Java中抽象类和接口的异同</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
