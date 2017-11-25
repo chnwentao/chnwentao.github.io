@@ -3,6 +3,137 @@
   
     
     <entry>
+      <title><![CDATA[CNN在自然语言处理中的使用]]></title>
+      <url>/2017/11/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN%20%E5%9C%A8%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>CNN 在自然语言中的使用
+施工中 ing</p>
+<p>&lt;!-- more --&gt;</p>
+<h2>参考</h2>
+<ul>
+<li><a href="http://blog.csdn.net/liuchonge/article/details/67638232" target="_blank" rel="noopener">CNN与句子分类之动态池化方法DCNN--模型介绍篇 - CSDN博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/30268946" target="_blank" rel="noopener">从CNN视角看在自然语言处理上的应用</a></li>
+<li><a href="http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html" target="_blank" rel="noopener">卷积神经网络(CNN)在句子建模上的应用 | Jey Zhang</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 深度学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> NLP </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[深度学习读书笔记-CNN基础]]></title>
+      <url>/2017/11/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_CNN/</url>
+      <content type="html"><![CDATA[<p>个人对基础的 CNN 的知识点的理解很梳理，梳理脉络是依据 Bengio 的 深度学习的第九章。</p>
+<p>施工中 ing</p>
+<p>&lt;!-- more --&gt;</p>
+<h2>卷积</h2>
+<h3>基本原理：</h3>
+<p><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-25/57838136.jpg" alt="经典卷积动图"></p>
+<p>卷积的本质：是加权叠加/积分</p>
+<h3>动机/ 特点</h3>
+<h4>稀疏交互</h4>
+<p>传统神经网络:使用 矩阵乘法建立 输入输出的连接关系 --&gt; 参数矩阵 w 中每个参数 == 一个input 与一个 output 的 互交</p>
+<p>卷积网络 : 通过卷积 --&gt; 参数更少（稀疏 权重） --&gt; 更少的计算代价</p>
+<p>我们可以理解为：CNN 可以看作是 DNN 的一种简化形式.</p>
+<p>这种情况带来以下的特点：</p>
+<ul>
+<li>
+<p>卷积网络 相邻的两层，一个输入只能影响(连接)少量的输出（如图:CNN_1）：
+<img src="./%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_CNN/CNN_01.png" alt="CNN_1"></p>
+</li>
+<li>
+<p>但是通过多层，深层的单元可以间接的连接到全部或大部分的输入（如图:CNN_2）：
+<img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_CNN/CNN_02.png" alt="CNN_2"></p>
+</li>
+</ul>
+<h4>参数共享(parameter sharing)</h4>
+<p>一个 Convolution Kernel 在与 Input 不同区域做卷积时，它的参数是固定不变的。
+这是它具有以下两个性质：</p>
+<ul>
+<li>
+<p>参数共享 --&gt; 卷积在存储需求和统计效率方面极大地优于稠密矩阵的乘法运算。</p>
+</li>
+<li>
+<p>其实 每一个 Convolution Kernel 卷积后得到的会是原图的某些特征（如边缘信息），所以在 CNN 中，Convolution Kernel 卷积得到的 Layer 称作 Feature Map</p>
+</li>
+</ul>
+<h4>等变表示</h4>
+<p>参数共享 --&gt; 使得神经网络层具有对平移 等变(equivariance) 的性质:
+- 对时间序列：如果我们把输入中的一个事件向后延时，在输出中仍然 会有完全相同的表示，只是时间延后了。
+- 对图像：可以识别图像中的某种特定曲线(特征)，</p>
+<p>卷积对其他的一些变换并不是天然等变的，例如对于图像的放缩或者旋转变换， 需要其他的一些机制来处理这些变换。（比如使用另外几个核 在上下的方向上滑动，然后通过 pooling 筛选）</p>
+<h2>池化（pooling）</h2>
+<p>注意池化与卷积的区别：
+<img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-25/64190326.jpg" alt=""></p>
+<p>Pooling 的本质，其实是采样。</p>
+<p>池化的意义：</p>
+<ul>
+<li>
+<p>显而易见，就是减少参数。通过对 Feature Map 降维，有效减少后续层需要的参数</p>
+</li>
+<li>
+<p>当输入做出少量平移的时候，池化可以帮助输入的表示近似不变形。（局部平移不变性）
+-池化的局部平移不变性 带来的好处: 非常适合 我们关心某个特征是否出现而不关系出现位置的时候 -- 人脸识别</p>
+</li>
+<li>
+<p>对处理不同大小的输入具有重要的意义：-可以通过调整池化区域的偏置，使分类层具有具有固定大小的输入</p>
+<ul>
+<li>论文见：ECCV2014  <a href="https://arxiv.org/abs/1406.4729" target="_blank" rel="noopener">[1406.4729] Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</a></li>
+</ul>
+</li>
+</ul>
+<p>池化相当于增加的一个很强的先验： 的每一个单元都具有对少量的平移的不变性，</p>
+<p>这带了以下的问题，也就是使用池化要注意的地方：</p>
+<ul>
+<li>
+<p>卷积和池化可能导致欠拟合</p>
+</li>
+<li>
+<p>不适合依赖精确的空间信息的任务，这种任务使用池化会增大训练误差。</p>
+</li>
+<li>
+<p>如何任务要对输入中相隔很远的信息进行合并的时候，卷积就无能为力了。</p>
+</li>
+</ul>
+<h2>基本卷积函数的变种</h2>
+<h2>参考</h2>
+<ul>
+<li><a href="https://www.zhihu.com/question/49376084" target="_blank" rel="noopener">(82 条消息)如何理解卷积神经网络（CNN）中的卷积和池化？ - 知乎</a></li>
+<li><a href="http://www.hackcv.com/index.php/archives/104/?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">[翻译] 神经网络的直观解释 博客 | HackCV</a></li>
+<li><a href="http://dataunion.org/11692.html" target="_blank" rel="noopener">技术向：一文读懂卷积神经网络CNN | 数盟社区</a></li>
+<li><a href="http://blog.csdn.net/zhangjunhit/article/details/53909548" target="_blank" rel="noopener">SPP-Net 是怎么让 CNN 实现输入任意尺寸图像的？ - CSDN博客</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 深度学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[数据预处理_数据归一_标准化]]></title>
       <url>/2017/11/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/DM-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86_%E6%95%B0%E6%8D%AE%E5%BD%92%E4%B8%80_%E6%A0%87%E5%87%86%E5%8C%96/</url>
       <content type="html"><![CDATA[<p>数据标准化主要功能之一，就是消除变量间的量纲关系，从而使数据具有可比性。</p>
@@ -468,11 +599,11 @@
         
         <tags>
             
+            <tag> 聊天机器人 </tag>
+            
             <tag> NLP </tag>
             
             <tag> Python </tag>
-            
-            <tag> 聊天机器人 </tag>
             
         </tags>
         
@@ -711,11 +842,11 @@ read_file:
         
         <tags>
             
-            <tag> DM </tag>
-            
             <tag> NLP </tag>
             
             <tag> Python </tag>
+            
+            <tag> DM </tag>
             
         </tags>
         
@@ -936,7 +1067,7 @@ O(nlogn) 是不稳定的排序方法。</p>
     
     <entry>
       <title><![CDATA[机器学习中常见的评估方法]]></title>
-      <url>/2016/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95/</url>
+      <url>/2016/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<p>评价指标是机器学习任务中非常重要的一环。不同的机器学习任务有着不同的评价指标，同时同一种机器学习任务也有着不同的评价指标，每个指标的着重点不一样。如分类（classification）、回归（regression）、排序（ranking）、聚类（clustering）、热门主题模型（topic modeling）、推荐（recommendation）等。并且很多指标可以对多种不同的机器学习模型进行评价，
 &lt;!-- more --&gt;</p>
 <p>本文是我总结的的几种常见的评估方法,不断更新Ing</p>
@@ -1011,62 +1142,6 @@ O(nlogn) 是不稳定的排序方法。</p>
     </entry>
     
     <entry>
-      <title><![CDATA[时间序列预测（ARIMA）原理]]></title>
-      <url>/2016/09/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/DM-%E6%80%BB%E7%BB%93-ARIMA%E6%A8%A1%E5%9E%8B/</url>
-      <content type="html"><![CDATA[<p>短期预测是时间序列分析的主要目的。时间序列分析的理论基础很简单：设若时间序列（或随机过程）的任一元素yt与其前期元素（yt-1、yt-2等）之间存在着某种关联，则我们可以根据该时间序列的既往观测值来预测其在未来的取值。</p>
-<p>&lt;!-- more --&gt;</p>
-<h2>几个概念</h2>
-<h3>AR模型</h3>
-<p>自回归模型（英语：Autoregressive model，简称AR模型），是统计上一种处理时间序列的方法，用同一变数例如x的之前各期，亦即 X1至 X(t-1)来预测本期Xt的表现，并假设它们为一线性关系。因为这是从回归分析中的线性回归发展而来，只是不用  x预测 {\displaystyle y} y，而是用 x预测x（自己）；所以叫做自回归。</p>
-<h3>特点</h3>
-<ul>
-<li>自回归方法的优点是所需资料不多，可用自身变数数列来进行预测。但是这种方法受到一定的限制。</li>
-<li>必须具有自相关，自相关系数是关键。如果自相关系数(R)小于0.5，则不宜采用，否则预测结果极不准确。</li>
-<li>自回归只能适用于预测与自身前期相关的经济现象，即受自身历史因素影响较大的经济现象，如矿的开采量，各种自然资源产量等；对于受社会因素影响较大的经济现象，不宜采用自回归，而应改采可纳入其他变数的向量自回归模型。</li>
-</ul>
-<h3>MA 模型</h3>
-<p>滑动平均模型（简称MA模型）,滑动平均模型描述的是自回归部分的误差累计。
-为简化估计参数的工作量，我们当然希望模型当中的参数尽可能地少。于是便有了引进移动平均过程MA（q）的必要。</p>
-<h3>ARMA模型</h3>
-<p>ARMA模型的全称是自回归移动平均(auto regression moving average)模型，它是目前最常用的拟合平稳序列的模型，由自回归模型（简称AR模型）与滑动平均模型（简称MA模型）为基础“混合”构成。</p>
-<h3>ARIMA模型</h3>
-<p>差分整合移动平均自回归模型，又称整合移动平均自回归模型（移动也可称作滑动）(Autoregressive Integrated Moving Average Model,简记ARIMA)
-ARIMA（p，d，q）中，AR是&quot;自回归&quot;，p为自回归项数；MA为&quot;滑动平均&quot;，q为滑动平均项数，d为使之成为平稳序列所做的差分次数（阶数）。“差分”一词虽未出现在ARIMA的英文名称中，却是关键步骤。</p>
-<p>当时间序列本身不是平稳的时候，如果它的增量，即的一次差分，稳定在零点附近，可以将看成是平稳序列。在实际的问题中，所遇到的多数非平稳序列可以通过一次或多次差分后成为平稳时间序列，则可以建立模型.</p>
-<p>这说明任何非平稳序列只要通过适当阶数的差分运算实现差分后平稳，就可以对差分后序列进行ARIMA模型拟合了。</p>
-<h2>预备知识</h2>
-<p>差分:
-自回归
-移动平均</p>
-<h2>ARIMA模型运用的流程</h2>
-<ol>
-<li>根据时间序列的散点图、自相关函数和偏自相关函数图识别其平稳性。</li>
-<li>对非平稳的时间序列数据进行平稳化处理。直到处理后的自相关函数和偏自相关函数的数值非显著非零。</li>
-<li>根据所识别出来的特征建立相应的时间序列模型。平稳化处理后，若偏自相关函数是截尾的，而自相关函数是拖尾的，则建立AR模型；若偏自相关函数是拖尾的，而自相关函数是截尾的，则建立MA模型；若偏自相关函数和自相关函数均是拖尾的，则序列适合ARMA模型。</li>
-<li>参数估计，检验是否具有统计意义。</li>
-<li>假设检验，判断（诊断）残差序列是否为白噪声序列。</li>
-<li>利用已通过检验的模型进行预测。</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 数据挖掘 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ARIMA </tag>
-            
-            <tag> 时间序列预测 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[xgboost 训练数据格式总结]]></title>
       <url>/2016/09/%E5%BE%85%E6%95%B4%E7%90%86/DM-xgboost-%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<h3>xgboost 支持的数据格式</h3>
@@ -1131,8 +1206,64 @@ ARIMA（p，d，q）中，AR是&quot;自回归&quot;，p为自回归项数；MA�
     </entry>
     
     <entry>
+      <title><![CDATA[时间序列预测（ARIMA）原理]]></title>
+      <url>/2016/09/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/DM-%E6%80%BB%E7%BB%93-ARIMA%E6%A8%A1%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<p>短期预测是时间序列分析的主要目的。时间序列分析的理论基础很简单：设若时间序列（或随机过程）的任一元素yt与其前期元素（yt-1、yt-2等）之间存在着某种关联，则我们可以根据该时间序列的既往观测值来预测其在未来的取值。</p>
+<p>&lt;!-- more --&gt;</p>
+<h2>几个概念</h2>
+<h3>AR模型</h3>
+<p>自回归模型（英语：Autoregressive model，简称AR模型），是统计上一种处理时间序列的方法，用同一变数例如x的之前各期，亦即 X1至 X(t-1)来预测本期Xt的表现，并假设它们为一线性关系。因为这是从回归分析中的线性回归发展而来，只是不用  x预测 {\displaystyle y} y，而是用 x预测x（自己）；所以叫做自回归。</p>
+<h3>特点</h3>
+<ul>
+<li>自回归方法的优点是所需资料不多，可用自身变数数列来进行预测。但是这种方法受到一定的限制。</li>
+<li>必须具有自相关，自相关系数是关键。如果自相关系数(R)小于0.5，则不宜采用，否则预测结果极不准确。</li>
+<li>自回归只能适用于预测与自身前期相关的经济现象，即受自身历史因素影响较大的经济现象，如矿的开采量，各种自然资源产量等；对于受社会因素影响较大的经济现象，不宜采用自回归，而应改采可纳入其他变数的向量自回归模型。</li>
+</ul>
+<h3>MA 模型</h3>
+<p>滑动平均模型（简称MA模型）,滑动平均模型描述的是自回归部分的误差累计。
+为简化估计参数的工作量，我们当然希望模型当中的参数尽可能地少。于是便有了引进移动平均过程MA（q）的必要。</p>
+<h3>ARMA模型</h3>
+<p>ARMA模型的全称是自回归移动平均(auto regression moving average)模型，它是目前最常用的拟合平稳序列的模型，由自回归模型（简称AR模型）与滑动平均模型（简称MA模型）为基础“混合”构成。</p>
+<h3>ARIMA模型</h3>
+<p>差分整合移动平均自回归模型，又称整合移动平均自回归模型（移动也可称作滑动）(Autoregressive Integrated Moving Average Model,简记ARIMA)
+ARIMA（p，d，q）中，AR是&quot;自回归&quot;，p为自回归项数；MA为&quot;滑动平均&quot;，q为滑动平均项数，d为使之成为平稳序列所做的差分次数（阶数）。“差分”一词虽未出现在ARIMA的英文名称中，却是关键步骤。</p>
+<p>当时间序列本身不是平稳的时候，如果它的增量，即的一次差分，稳定在零点附近，可以将看成是平稳序列。在实际的问题中，所遇到的多数非平稳序列可以通过一次或多次差分后成为平稳时间序列，则可以建立模型.</p>
+<p>这说明任何非平稳序列只要通过适当阶数的差分运算实现差分后平稳，就可以对差分后序列进行ARIMA模型拟合了。</p>
+<h2>预备知识</h2>
+<p>差分:
+自回归
+移动平均</p>
+<h2>ARIMA模型运用的流程</h2>
+<ol>
+<li>根据时间序列的散点图、自相关函数和偏自相关函数图识别其平稳性。</li>
+<li>对非平稳的时间序列数据进行平稳化处理。直到处理后的自相关函数和偏自相关函数的数值非显著非零。</li>
+<li>根据所识别出来的特征建立相应的时间序列模型。平稳化处理后，若偏自相关函数是截尾的，而自相关函数是拖尾的，则建立AR模型；若偏自相关函数是拖尾的，而自相关函数是截尾的，则建立MA模型；若偏自相关函数和自相关函数均是拖尾的，则序列适合ARMA模型。</li>
+<li>参数估计，检验是否具有统计意义。</li>
+<li>假设检验，判断（诊断）残差序列是否为白噪声序列。</li>
+<li>利用已通过检验的模型进行预测。</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据挖掘 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ARIMA </tag>
+            
+            <tag> 时间序列预测 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[TF-IDF介绍及python实例]]></title>
-      <url>/2016/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-TF-IDF%E7%AE%97%E6%B3%95/</url>
+      <url>/2016/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-TF-IDF%E7%AE%97%E6%B3%95/</url>
       <content type="html"><![CDATA[<h2>TF-IDF介绍</h2>
 <p>TF-IDF（Term Frequency–Inverse Document Frequency）是一种用于资讯检索与文本挖掘的常用加权技术。TF-IDF是一种统计方法，用以评估一个字词对于一个文件集或一个语料库中的其中一份文件的重要程度。字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降。TF-IDF加权的各种形式常被搜索引擎应用，作为文件与用户查询之间相关程度的度量或评级。&lt;!-- more --&gt;
 TF-IDF的主要思想是：如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。TF-IDF实际上是：<code>TF * IDF</code>。</p>
@@ -1176,7 +1307,7 @@ TF-IDF的主要思想是：如果某个词或短语在一篇文章中出现的�
     
     <entry>
       <title><![CDATA[用一个流程解决所有机器学习难题的学习]]></title>
-      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E7%94%A8%E4%B8%80%E4%B8%AA%E6%A1%86%E6%9E%B6%E8%A7%A3%E5%86%B3%E6%89%80%E6%9C%89%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%9A%BE%E9%A2%98%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
+      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E7%94%A8%E4%B8%80%E4%B8%AA%E6%A1%86%E6%9E%B6%E8%A7%A3%E5%86%B3%E6%89%80%E6%9C%89%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%9A%BE%E9%A2%98%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
       <content type="html"><![CDATA[<h2>参考</h2>
 <p><a href="http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-problem-abhishek-thakur/" target="_blank" rel="noopener">Approaching (Almost) Any Machine Learning Problem | Abhishek Thakur</a>
 &lt;!-- more --&gt;</p>
@@ -1286,7 +1417,7 @@ TF-IDF的主要思想是：如果某个词或短语在一篇文章中出现的�
     
     <entry>
       <title><![CDATA[基于决策树的组合算法之GBRT]]></title>
-      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-GBRT/</url>
+      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-GBRT/</url>
       <content type="html"><![CDATA[<h2>预备知识</h2>
 <h2>决策树</h2>
 <h2>回归树</h2>
@@ -1366,7 +1497,7 @@ joblib.dump方法在当前目录产生了多个文件，<code>*.npy</code>文件
     
     <entry>
       <title><![CDATA[十分钟理解交叉验证]]></title>
-      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81%E6%80%BB%E7%BB%93/</url>
+      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<p>交叉验证(Cross-validation)主要用于模型训练或建模应用中，如分类预测、PCR、PLS回归建模等。在给定的样本空间中，拿出大部分样本作为训练集来训练模型，剩余的小部分样本使用刚建立的模型进行预测，并求这小部分样本的预测误差或者预测精度，同时记录它们的加和平均值。这个过程迭代K次，即K折交叉。其中，把每个样本的预测误差平方加和，称为PRESS(predicted Error Sum of Squares)。&lt;!-- more --&gt;</p>
 <p>我们使用交叉验证方法的目的主要有3个：</p>
 <ul>
@@ -1450,7 +1581,7 @@ joblib.dump方法在当前目录产生了多个文件，<code>*.npy</code>文件
     
     <entry>
       <title><![CDATA[机器学习基本工作流程]]></title>
-      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
+      <url>/2016/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h2>抽象成数学问题</h2>
 <p>明确问题是进行机器学习的第一步。机器学习的训练过程通常都是一件非常耗时的事情，胡乱尝试时间成本是非常高的。</p>
 <p>这里的抽象成数学问题，指的我们明确我们可以获得什么样的数据，目标是一个分类还是回归或者是聚类的问题，如果都不是的话，如果划归为其中的某类问题。
@@ -1498,7 +1629,7 @@ joblib.dump方法在当前目录产生了多个文件，<code>*.npy</code>文件
     
     <entry>
       <title><![CDATA[kaggle比赛团队协作入门]]></title>
-      <url>/2016/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-MeetingRecord/</url>
+      <url>/2016/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-MeetingRecord/</url>
       <content type="html"><![CDATA[<p>本文根据陈驰大神在tigger kaggle小组中的关于kaggle比赛的微讲座整理的。</p>
 <blockquote>
 <p>陈驰，NYU CS硕士毕业，现在在纽约一间创业公司负责全栈开发和数据分析的工作，主要背景是概率图谱和自然处理以及深度学习。</p>
@@ -2081,9 +2212,9 @@ IPython notebook对数据科学家来说是个交互地呈现科学和理论工�
         
         <tags>
             
-            <tag> python </tag>
-            
             <tag> saprk </tag>
+            
+            <tag> python </tag>
             
             <tag> IPython notebook </tag>
             
@@ -2315,7 +2446,7 @@ sort函数是list列表中的函数，而sorted可以对list或者iterator进行
     
     <entry>
       <title><![CDATA[pandas DataFrame如何选取并修改指定行列的某个数值（value）]]></title>
-      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-pandas%E4%B8%ADDataFrame%E5%A6%82%E4%BD%95%E9%80%89%E5%8F%96%E5%B9%B6%E4%BF%AE%E6%94%B9%E6%8C%87%E5%AE%9A%E8%A1%8C%E5%88%97%E7%9A%84%E6%9F%90%E4%B8%AA%E6%95%B0%E5%80%BC/</url>
+      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-pandas%E4%B8%ADDataFrame%E5%A6%82%E4%BD%95%E9%80%89%E5%8F%96%E5%B9%B6%E4%BF%AE%E6%94%B9%E6%8C%87%E5%AE%9A%E8%A1%8C%E5%88%97%E7%9A%84%E6%9F%90%E4%B8%AA%E6%95%B0%E5%80%BC/</url>
       <content type="html"><![CDATA[<h3>我的问题</h3>
 <p>DataFrame的操作有好多的教程，但我好找了好久，大多是仿《用python 进行数据 分析》这本书的结构，大篇幅的将对行和列的操作，以至于我想找 <strong>如何选取单个数值的时候</strong>，死活没有人说怎么做，是我问的忒基础了，还是pandas不支持？
 同时还有第二个问题：<strong>如何更改某个值</strong>？DataFrame的选取操作返回的都是原数据的一个切片，当你选取以后进行了操作，发现原数据并没有改变。当然人有说你可以去覆盖，但是实践发现，当选取是的非整个行（列）时，问题又回到了原点。所以 <strong>先选取再修改是不对的思路</strong>，正确的是 <strong>定位+修改</strong>
@@ -2360,7 +2491,7 @@ sort函数是list列表中的函数，而sorted可以对list或者iterator进行
     
     <entry>
       <title><![CDATA[python花式读取数据]]></title>
-      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-python%E8%8A%B1%E5%BC%8F%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/</url>
+      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-python%E8%8A%B1%E5%BC%8F%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/</url>
       <content type="html"><![CDATA[<p>我总结的的几种常用的读取数据的方法，和技巧。
 不断更新Ing&lt;!-- more --&gt;</p>
 <h2>genfromtxt</h2>
@@ -2563,11 +2694,11 @@ F1-Score：precision和recall的调和平均数</p>
             
             <tag> 机器学习 </tag>
             
+            <tag> DM </tag>
+            
             <tag> ML </tag>
             
             <tag> 数据挖掘 </tag>
-            
-            <tag> DM </tag>
             
         </tags>
         
@@ -2575,7 +2706,7 @@ F1-Score：precision和recall的调和平均数</p>
     
     <entry>
       <title><![CDATA[几种常见的回归算法]]></title>
-      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95/</url>
+      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95/</url>
       <content type="html"><![CDATA[<p>重点总结了应该掌握的线性回归、逻辑回归、多项式回归、逐步回归、岭回归、套索回归、ElasticNet回归等七种最常用的回归技术及其关键要素，最后介绍了选择正确的回归模型的关键因素。&lt;!-- more --&gt;</p>
 <h2>什么是回归分析？</h2>
 <p>回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。回归分析通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回归。</p>
@@ -2672,7 +2803,7 @@ F1-Score：precision和recall的调和平均数</p>
     
     <entry>
       <title><![CDATA[机器学习中回归类算法的理解]]></title>
-      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      <url>/2016/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/</url>
       <content type="html"><![CDATA[<p>回归算法是后面若干强大算法的基石，如果不理解回归算法，无法学习那些强大的算法。这也就是为什么在大部分机器学习课程中，回归算法都是介绍的第一个算法。
 而回归又分为 线性回归和逻辑回归。&lt;!-- more --&gt;</p>
 <h2>线性回归：</h2>
@@ -2791,13 +2922,13 @@ SVM适用于：在维数通常很高的文本分类（很流行）。
             
             <tag> 机器学习 </tag>
             
-            <tag> ML </tag>
+            <tag> DM </tag>
             
-            <tag> 分数算法 </tag>
+            <tag> ML </tag>
             
             <tag> 数据挖掘 </tag>
             
-            <tag> DM </tag>
+            <tag> 分数算法 </tag>
             
         </tags>
         
@@ -2856,7 +2987,7 @@ python一般内部赋值变量的话，都是传个引用变量，和C语言的�
     
     <entry>
       <title><![CDATA[机器学习中常用计算的实现]]></title>
-      <url>/2016/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%B8%B8%E7%94%A8%E8%AE%A1%E7%AE%97%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
+      <url>/2016/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML-%E6%80%BB%E7%BB%93-%E5%B8%B8%E7%94%A8%E8%AE%A1%E7%AE%97%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
       <content type="html"><![CDATA[<p>摘要无&lt;!-- more --&gt;</p>
 <h2>更新记录</h2>
 <p>2016-04-08 统计出现次数&amp;文件的矩阵处理</p>
@@ -3959,7 +4090,7 @@ Git支持多种协议，包括https，但通过ssh支持的原生git协议速度
 忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；
 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。</p>
 <h3>别名配置</h3>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br><span class="line"></span><br><span class="line">//co表示checkout，ci表示commit，br表示branch</span><br><span class="line">git config --global alias.co checkout</span><br><span class="line">git config --global alias.ci commit</span><br><span class="line">git config --global alias.br branch</span><br><span class="line"></span><br><span class="line">//配置一个git last，让其显示最后一次提交信息：</span><br><span class="line"><span class="meta">$</span> git config --global alias.last 'log -1'</span><br><span class="line"></span><br><span class="line">//lg</span><br><span class="line">git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br><span class="line"></span><br><span class="line">//co表示checkout，ci表示commit，br表示branch</span><br><span class="line">git config --global alias.co checkout</span><br><span class="line">git config --global alias.ci commit</span><br><span class="line">git config --global alias.br branch</span><br><span class="line"></span><br><span class="line">//配置一个git last，让其显示最后一次提交信息：</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global alias.last <span class="string">'log -1'</span></span></span><br><span class="line"></span><br><span class="line">//lg</span><br><span class="line">git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span><br></pre></td></tr></table></figure></p>
 <h3>搭建Git服务器</h3>
 ]]></content>
       
@@ -4232,11 +4363,11 @@ java -version</p>
             
             <tag> hadoop </tag>
             
-            <tag> 单机 </tag>
-            
             <tag> linux </tag>
             
             <tag> 安装 </tag>
+            
+            <tag> 单机 </tag>
             
         </tags>
         
@@ -4828,7 +4959,7 @@ FHS标准建议：</p>
 <li><code>rmdir</code>：删除一个<strong>空的</strong>目录(remove directory)
 注意是空的，有u文件的不能用这个命令了，这样设计比较安全，对吧。</li>
 </ol>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@study ~]# rmdir [-p]目录名称</span><br><span class="line">选项与参数：</span><br><span class="line">-p ：连同『上层』『空的』目录也一起删除</span><br><span class="line"></span><br><span class="line">范例：将于mkdir范例中建立的目录(/tmp底下)删除掉！</span><br><span class="line">[root@study tmp]# ls -ld test*    &lt;==看看有多少目录存在？</span><br><span class="line">drwxr-XR-X。2根根部6 6月4日19:03测试</span><br><span class="line">drwxr-XR-X。3根根6月18日19:04 4个TEST1</span><br><span class="line">Drwx  -  X  -  X。2根根部6 6月4日19:05测试2</span><br><span class="line">[root@study tmp]# rmdir test   &lt;==可直接删除掉，没问题 </span><br><span class="line">[root@study tmp]# rmdir test1   &lt;==因为尚有内容，所以无法删除！</span><br><span class="line">命令rmdir：无法删除“测试1”：目录非空</span><br><span class="line">[root@study tmp]# rmdir -p test1/test2/test3/test4 </span><br><span class="line">[root@study tmp]# ls -ld test*     &lt;==您看看，底下的输出中test与test1不见了！</span><br><span class="line">Drwx  -  X  -  X。2根根部6 6月4日19:05测试2</span><br><span class="line"><span class="meta">#</span> 瞧！利用-p 这个选项，立刻就可以将test1/test2/test3/test4 一次删除～</span><br><span class="line"><span class="meta">#</span> 不过要注意的是，这个rmdir 仅能『删除空的目录』喔！</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@study ~]# rmdir [-p]目录名称</span><br><span class="line">选项与参数：</span><br><span class="line">-p ：连同『上层』『空的』目录也一起删除</span><br><span class="line"></span><br><span class="line">范例：将于mkdir范例中建立的目录(/tmp底下)删除掉！</span><br><span class="line">[root@study tmp]# ls -ld test*    &lt;==看看有多少目录存在？</span><br><span class="line">drwxr-XR-X。2根根部6 6月4日19:03测试</span><br><span class="line">drwxr-XR-X。3根根6月18日19:04 4个TEST1</span><br><span class="line">Drwx  -  X  -  X。2根根部6 6月4日19:05测试2</span><br><span class="line">[root@study tmp]# rmdir test   &lt;==可直接删除掉，没问题 </span><br><span class="line">[root@study tmp]# rmdir test1   &lt;==因为尚有内容，所以无法删除！</span><br><span class="line">命令rmdir：无法删除“测试1”：目录非空</span><br><span class="line">[root@study tmp]# rmdir -p test1/test2/test3/test4 </span><br><span class="line">[root@study tmp]# ls -ld test*     &lt;==您看看，底下的输出中test与test1不见了！</span><br><span class="line">Drwx  -  X  -  X。2根根部6 6月4日19:05测试2</span><br><span class="line"><span class="meta">#</span><span class="bash"> 瞧！利用-p 这个选项，立刻就可以将test1/test2/test3/test4 一次删除～</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 不过要注意的是，这个rmdir 仅能『删除空的目录』喔！</span></span><br></pre></td></tr></table></figure></p>
 <h3><code>$PATH</code></h3>
 <blockquote>
 <p>当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到path中指定的路径去找。用户通过设置环境变量，来更好的运行进程。</p>
@@ -4856,7 +4987,7 @@ FHS标准建议：</p>
 <p>最常用的功能 就是<code>ls -l</code>，简写<code>ll</code>.</p>
 <h3>cp/rm/mv操作</h3>
 <p>cp- copy
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">root@study ~]# cp [-adfilprsu]来源档(source)目标档(destination) </span><br><span class="line">[root@study ~]# cp [options] source1 source2 source3 .... directory </span><br><span class="line">选项与参数：</span><br><span class="line"> -a ：相当于-dr --preserve=all的意思，至于dr请参考下列说明；(常用)</span><br><span class="line">-d ：若来源档为连结档的属性(link file)，则复制连结档属性而非档案本身；</span><br><span class="line">-f ：为强制(force)的意思，若目标档案已经存在且无法开启，则移除后再尝试一次；</span><br><span class="line">-i ：若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用)</span><br><span class="line">-l ：进行硬式连结(hard link)的连结档建立，而非复制档案本身；</span><br><span class="line">-p ：连同档案的属性(权限、用户、时间)一起复制过去，而非使用预设属性(备份常用)；</span><br><span class="line">-r ：递回持续复制，用于目录的复制行为；(常用)</span><br><span class="line">-s ：复制成为符号连结档(symbolic link)，亦即『捷径』档案；</span><br><span class="line">-u ：destination 比source 旧才更新destination，或destination 不存在的情况下才复制。</span><br><span class="line">--preserve=all ：除了-p 的权限相关参数外，还加入SELinux 的属性, links, xattr 等也复制了。</span><br><span class="line">最后需要注意的，如果来源档有两个以上，则最后一个目的档一定要是『目录』才行！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">examples：变换目录到/tmp，并将/var/log/wtmp复制到/tmp且观察属性： </span><br><span class="line">[root@study ~]# cd /tmp </span><br><span class="line">[root@study tmp]# cp /var/log/wtmp .  &lt;==想要复制到目前的目录，最后的.不要忘 </span><br><span class="line">[root@study tmp]# ls -l /var/log/wtmp wtmp </span><br><span class="line">-rw-rw-r-- . 1 root utmp 28416 Jun 11 18: 56 /var/log/wtmp</span><br><span class="line"> -rw-r--r-- . 1 root root 28416 Jun 11 19:01 wtmp</span><br><span class="line"><span class="meta"> #</span>注意上面的特殊字体，在不加任何选项的情况下，档案的某些属性/权限会改变；</span><br><span class="line"><span class="meta">#</span> 这是个很重要的特性！要注意喔！还有，连档案建立的时间也不一样了！</span><br><span class="line"><span class="meta">#</span> 那如果你想要将档案的所有特性都一起复制过来该怎办？可以加上-a 喔！如下所示：</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">root@study ~]# cp [-adfilprsu]来源档(source)目标档(destination) </span><br><span class="line">[root@study ~]# cp [options] source1 source2 source3 .... directory </span><br><span class="line">选项与参数：</span><br><span class="line"> -a ：相当于-dr --preserve=all的意思，至于dr请参考下列说明；(常用)</span><br><span class="line">-d ：若来源档为连结档的属性(link file)，则复制连结档属性而非档案本身；</span><br><span class="line">-f ：为强制(force)的意思，若目标档案已经存在且无法开启，则移除后再尝试一次；</span><br><span class="line">-i ：若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用)</span><br><span class="line">-l ：进行硬式连结(hard link)的连结档建立，而非复制档案本身；</span><br><span class="line">-p ：连同档案的属性(权限、用户、时间)一起复制过去，而非使用预设属性(备份常用)；</span><br><span class="line">-r ：递回持续复制，用于目录的复制行为；(常用)</span><br><span class="line">-s ：复制成为符号连结档(symbolic link)，亦即『捷径』档案；</span><br><span class="line">-u ：destination 比source 旧才更新destination，或destination 不存在的情况下才复制。</span><br><span class="line">--preserve=all ：除了-p 的权限相关参数外，还加入SELinux 的属性, links, xattr 等也复制了。</span><br><span class="line">最后需要注意的，如果来源档有两个以上，则最后一个目的档一定要是『目录』才行！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">examples：变换目录到/tmp，并将/var/log/wtmp复制到/tmp且观察属性： </span><br><span class="line">[root@study ~]# cd /tmp </span><br><span class="line">[root@study tmp]# cp /var/log/wtmp .  &lt;==想要复制到目前的目录，最后的.不要忘 </span><br><span class="line">[root@study tmp]# ls -l /var/log/wtmp wtmp </span><br><span class="line">-rw-rw-r-- . 1 root utmp 28416 Jun 11 18: 56 /var/log/wtmp</span><br><span class="line"> -rw-r--r-- . 1 root root 28416 Jun 11 19:01 wtmp</span><br><span class="line"><span class="meta"> #</span><span class="bash">注意上面的特殊字体，在不加任何选项的情况下，档案的某些属性/权限会改变；</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这是个很重要的特性！要注意喔！还有，连档案建立的时间也不一样了！</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 那如果你想要将档案的所有特性都一起复制过来该怎办？可以加上-a 喔！如下所示：</span></span><br></pre></td></tr></table></figure></p>
 <p>在预设的条件中， cp的来源文件与目的文件的权限是不同的，目的文件的拥有者通常会是指令操作者本身。
 由于具有这个特性，因此当我们在进行备份的时候，某些需要特别注意的特殊权限文件， 例如密码文件(/etc/shadow) 以及一些设定档，就不能直接以cp 来复制，<strong>而必须要加上-a 或者是-p 等等可以完整复制档案权限的选项才行！</strong></p>
 <p>rm - remove</p>
@@ -5040,13 +5171,13 @@ locate：依据<code>/var/lib/mlocate</code> 内的资料库记载，找出使�
             
             <tag> Linux </tag>
             
+            <tag> 管理 </tag>
+            
             <tag> 文件 </tag>
             
             <tag> 目录 </tag>
             
             <tag> 权限 </tag>
-            
-            <tag> 管理 </tag>
             
         </tags>
         
@@ -5407,9 +5538,9 @@ No Pl​​an.：调查<code>~vbird1/.plan</code> 文件，并将该文件取出
             
             <tag> Linux </tag>
             
-            <tag> 管理 </tag>
-            
             <tag> 帐户 </tag>
+            
+            <tag> 管理 </tag>
             
         </tags>
         
@@ -13902,6 +14033,81 @@ Andrew R. Koenig, C Traps and Pitfalls, Addison-Wesley, 1989. ISBN 0-201-17928-8
     </entry>
     
     <entry>
+      <title><![CDATA[我的考研经验及给后人的建议（02）——数学篇]]></title>
+      <url>/2015/04/%E9%9A%8F%E7%AC%94/%E7%94%9F%E6%B4%BB-%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E6%95%B0%E5%AD%A6%E7%AF%87/</url>
+      <content type="html"><![CDATA[<p>===================（接上篇）===================</p>
+<h3>摘要（Abstract）</h3>
+<p>这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就只能给你们下届的看了：）
+&lt;!--more--&gt;</p>
+<h3>更新记录</h3>
+<p>2015-05-01 添加注意点及共性问题答疑
+2015-05-01 相关文章链接[^2015-05-01]
+2015-05-01 添加用书选择
+2015-05-01 添加<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频链接</a></p>
+<h3>用书选择</h3>
+<p>我的第一篇文章写过的，<a href="http://chnwentao.com/2015/04/26/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E5%BC%80%E9%A2%98/">网址</a></p>
+<h3>预备知识（5月——6月中）</h3>
+<p>打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式，不然以后看全书就像看天书一样……
+但是基础不好的同学直接一般抓不住重点，走马观花，这个是就浪费时间了，我当时的就是选择听<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频（链接）</a> ，1.5倍速听，省下的时候用来做一题，嘿嘿。不做题的结果就听过就忘，一点印象也没：（
++++++++<strong>强调，数学，做题就是王道，没有其他，要高分就是多做题，这可是血 的教训！！</strong>++++++<br>
+线代的复习呢，我也是听汤的基础班，虽说他的线代不出名，但是真的不错，他思路的整理分析的特别好。<strong>墙裂推荐</strong> ！再说了，你都熟悉了他的思路，听起来也接受的快。 这里不推荐李永乐的视频：太难，不适合入门。</p>
+<h3>基础阶段（6月中到暑假末）</h3>
+<p>这个是复习的黄金阶段，大把的时间给数学吧，争取全书和讲义都刷 <strong>两遍</strong>。<br>
+注意点：
+1 刷题是做，不是看！，不管会不会，都是自己动手做一遍！<strong>我们的经验就是 看题目》自己做》对答案》不正确的话，把标准步骤默写一遍，写整齐点，以后用的到，》整理一下人家的思路，你的思路，写到题的旁边</strong>。<br>
+2 注意<strong>步骤</strong>，考研数学100+的人丢分一般都是步骤和计算，步骤规范，题没算出来 都可以拿不少分的，我的120就是这么来的。<br>
+3 注意计算，你复习到9——10月的时候会发现，你所以的题都会，可以就是算不对，到时候你会崩溃的。<br>
+4 时间的把握，一般的人，一天6小时，高数一遍是25天，线代一遍15到20天，<strong>不要拖，时间永远是不够的</strong>.</p>
+<h3>强化时间（要求10月20号前完成）</h3>
+<p>任务: 1 全书第三遍（主要是整理错题和常见题的技巧和思路）； 2 600题：两遍 ； 3 400两遍（如果有时间的话——这个时间你可能大半的时间要给专业课了，）；<br>
+注意点：<br>
+1 不要怕不会，好多人一看600题 ，发现一个都不会，然后就崩溃了。我想说的是大家都是一个样子，你不会，他也不会，你只要坚持认认真真的做下来，你会有收获的。还是上面说的，<strong>坚持就是胜利！</strong><br>
+2 这个时间要多注意<strong>对知识系统的理解</strong>，这时间的题一般都涉及好几章的知识，还有就是对 <strong>题目已知条件的蕴含</strong>的总结（ 我的个人经验！）。</p>
+<h3>刷真题时间（10月底到考前五分钟）</h3>
+<p>记住是 <strong>真题</strong>！！千万不要碰模拟题！！！不要问为什么！！！<br>
+能刷几遍就是刷几遍（每个题至少3遍），越多越好的，顺着做，倒着做，做到吐。<br>
+先一套一套的做，做的时候掐时间，不看答案。<br>
+第二遍，一种题型一种题型的做，做到看到题型就知道步骤，知道陷阱……<br>
+第三遍，就是模拟考场环境，一套一套的做<br>
+第四遍（你确定你还有时间??）,  那你专功错的比较多题型，你说什么？不会的？这个时间怎么可能还有不会！！只有算不对的，没有不会的！</p>
+<h3>注意点及共性问题答疑</h3>
+<p>欢迎留言提出问题及建议，共同努力，帮助更多的人！！
+留言请点击<a href="http://chnwentao.com">我的博客</a>，方便我尽快回复</p>
+<h3>相关文章链接[^2015-05-01]</h3>
+<p><a href="http://chnwentao.com/2015/04/26/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E6%95%B0%E5%AD%A6%E7%AF%87/">英语的备考</a>
+<a href="http://chnwentao.com/2015/04/26/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E5%BC%80%E9%A2%98/">总的建议</a>
+<a href="http://chnwentao.com/2015/05/01/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%EF%BC%8803%EF%BC%89%E2%80%94%E2%80%94%E8%8B%B1%E8%AF%AD%E7%AF%87/">英语的备考</a></p>
+<h3>下集预告</h3>
+<p><a href="http://chnwentao.com/2015/05/01/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%EF%BC%8803%EF%BC%89%E2%80%94%E2%80%94%E8%8B%B1%E8%AF%AD%E7%AF%87/">英语的备考</a>
+政治的备考
+专业课的备考；
+可能你也会遇到的问题：</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 生活 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 考试 </tag>
+            
+            <tag> 考研 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[SublimeText3入门教程-安装及配置]]></title>
       <url>/2015/04/%E5%B7%A5%E5%85%B7/%E5%B7%A5%E5%85%B7-SublimeText%203-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2>摘要（Abstract）</h2>
@@ -14018,81 +14224,6 @@ F11 全屏模式</p>
             <tag> 教程 </tag>
             
             <tag> SublimeText </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[我的考研经验及给后人的建议（02）——数学篇]]></title>
-      <url>/2015/04/%E9%9A%8F%E7%AC%94/%E7%94%9F%E6%B4%BB-%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E6%95%B0%E5%AD%A6%E7%AF%87/</url>
-      <content type="html"><![CDATA[<p>===================（接上篇）===================</p>
-<h3>摘要（Abstract）</h3>
-<p>这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就只能给你们下届的看了：）
-&lt;!--more--&gt;</p>
-<h3>更新记录</h3>
-<p>2015-05-01 添加注意点及共性问题答疑
-2015-05-01 相关文章链接[^2015-05-01]
-2015-05-01 添加用书选择
-2015-05-01 添加<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频链接</a></p>
-<h3>用书选择</h3>
-<p>我的第一篇文章写过的，<a href="http://chnwentao.com/2015/04/26/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E5%BC%80%E9%A2%98/">网址</a></p>
-<h3>预备知识（5月——6月中）</h3>
-<p>打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式，不然以后看全书就像看天书一样……
-但是基础不好的同学直接一般抓不住重点，走马观花，这个是就浪费时间了，我当时的就是选择听<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频（链接）</a> ，1.5倍速听，省下的时候用来做一题，嘿嘿。不做题的结果就听过就忘，一点印象也没：（
-+++++++<strong>强调，数学，做题就是王道，没有其他，要高分就是多做题，这可是血 的教训！！</strong>++++++<br>
-线代的复习呢，我也是听汤的基础班，虽说他的线代不出名，但是真的不错，他思路的整理分析的特别好。<strong>墙裂推荐</strong> ！再说了，你都熟悉了他的思路，听起来也接受的快。 这里不推荐李永乐的视频：太难，不适合入门。</p>
-<h3>基础阶段（6月中到暑假末）</h3>
-<p>这个是复习的黄金阶段，大把的时间给数学吧，争取全书和讲义都刷 <strong>两遍</strong>。<br>
-注意点：
-1 刷题是做，不是看！，不管会不会，都是自己动手做一遍！<strong>我们的经验就是 看题目》自己做》对答案》不正确的话，把标准步骤默写一遍，写整齐点，以后用的到，》整理一下人家的思路，你的思路，写到题的旁边</strong>。<br>
-2 注意<strong>步骤</strong>，考研数学100+的人丢分一般都是步骤和计算，步骤规范，题没算出来 都可以拿不少分的，我的120就是这么来的。<br>
-3 注意计算，你复习到9——10月的时候会发现，你所以的题都会，可以就是算不对，到时候你会崩溃的。<br>
-4 时间的把握，一般的人，一天6小时，高数一遍是25天，线代一遍15到20天，<strong>不要拖，时间永远是不够的</strong>.</p>
-<h3>强化时间（要求10月20号前完成）</h3>
-<p>任务: 1 全书第三遍（主要是整理错题和常见题的技巧和思路）； 2 600题：两遍 ； 3 400两遍（如果有时间的话——这个时间你可能大半的时间要给专业课了，）；<br>
-注意点：<br>
-1 不要怕不会，好多人一看600题 ，发现一个都不会，然后就崩溃了。我想说的是大家都是一个样子，你不会，他也不会，你只要坚持认认真真的做下来，你会有收获的。还是上面说的，<strong>坚持就是胜利！</strong><br>
-2 这个时间要多注意<strong>对知识系统的理解</strong>，这时间的题一般都涉及好几章的知识，还有就是对 <strong>题目已知条件的蕴含</strong>的总结（ 我的个人经验！）。</p>
-<h3>刷真题时间（10月底到考前五分钟）</h3>
-<p>记住是 <strong>真题</strong>！！千万不要碰模拟题！！！不要问为什么！！！<br>
-能刷几遍就是刷几遍（每个题至少3遍），越多越好的，顺着做，倒着做，做到吐。<br>
-先一套一套的做，做的时候掐时间，不看答案。<br>
-第二遍，一种题型一种题型的做，做到看到题型就知道步骤，知道陷阱……<br>
-第三遍，就是模拟考场环境，一套一套的做<br>
-第四遍（你确定你还有时间??）,  那你专功错的比较多题型，你说什么？不会的？这个时间怎么可能还有不会！！只有算不对的，没有不会的！</p>
-<h3>注意点及共性问题答疑</h3>
-<p>欢迎留言提出问题及建议，共同努力，帮助更多的人！！
-留言请点击<a href="http://chnwentao.com">我的博客</a>，方便我尽快回复</p>
-<h3>相关文章链接[^2015-05-01]</h3>
-<p><a href="http://chnwentao.com/2015/04/26/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E6%95%B0%E5%AD%A6%E7%AF%87/">英语的备考</a>
-<a href="http://chnwentao.com/2015/04/26/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E5%BC%80%E9%A2%98/">总的建议</a>
-<a href="http://chnwentao.com/2015/05/01/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%EF%BC%8803%EF%BC%89%E2%80%94%E2%80%94%E8%8B%B1%E8%AF%AD%E7%AF%87/">英语的备考</a></p>
-<h3>下集预告</h3>
-<p><a href="http://chnwentao.com/2015/05/01/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%EF%BC%8803%EF%BC%89%E2%80%94%E2%80%94%E8%8B%B1%E8%AF%AD%E7%AF%87/">英语的备考</a>
-政治的备考
-专业课的备考；
-可能你也会遇到的问题：</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 生活 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-            <tag> 经验 </tag>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 考试 </tag>
-            
-            <tag> 考研 </tag>
             
         </tags>
         

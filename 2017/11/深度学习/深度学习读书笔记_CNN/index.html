@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang=""><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>深度学习读书笔记-CNN基础 | CS Learning of CHNwentao</title><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.3"><script><!-- hexo-inject:begin --><!-- hexo-inject:end -->var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?js?c4c99183a6a02c53d4760ae1995c3b38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL = { 
+  root: '/',
+  algolia: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  localSearch: {"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}"},"path":"search.xml"}
+} </script><link rel="icon" href="/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">卷积</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">基本原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">动机/ 特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.1.</span> <span class="toc-text">稀疏交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.2.</span> <span class="toc-text">参数共享(parameter sharing)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.3.</span> <span class="toc-text">等变表示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">池化（pooling）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">基本卷积函数的变种</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">131</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">181</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">深度学习读书笔记-CNN基础</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-11-25</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/深度学习/">深度学习</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">916</span><span class="post-meta__separator">|</span><span>Reading time: 3 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><p>个人对基础的 CNN 的知识点的理解很梳理，梳理脉络是依据 Bengio 的 深度学习的第九章。</p>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><p>施工中 ing</p>
+<p>&lt;!-- more --&gt;</p>
+<h2>卷积</h2>
+<h3>基本原理：</h3>
+<p><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-25/57838136.jpg" alt="经典卷积动图"></p>
+<p>卷积的本质：是加权叠加/积分</p>
+<h3>动机/ 特点</h3>
+<h4>稀疏交互</h4>
+<p>传统神经网络:使用 矩阵乘法建立 输入输出的连接关系 --&gt; 参数矩阵 w 中每个参数 == 一个input 与一个 output 的 互交</p>
+<p>卷积网络 : 通过卷积 --&gt; 参数更少（稀疏 权重） --&gt; 更少的计算代价</p>
+<p>我们可以理解为：CNN 可以看作是 DNN 的一种简化形式.</p>
+<p>这种情况带来以下的特点：</p>
+<ul>
+<li>
+<p>卷积网络 相邻的两层，一个输入只能影响(连接)少量的输出（如图:CNN_1）：
+<img src="./%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_CNN/CNN_01.png" alt="CNN_1"></p>
+</li>
+<li>
+<p>但是通过多层，深层的单元可以间接的连接到全部或大部分的输入（如图:CNN_2）：
+<img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_CNN/CNN_02.png" alt="CNN_2"></p>
+</li>
+</ul>
+<h4>参数共享(parameter sharing)</h4>
+<p>一个 Convolution Kernel 在与 Input 不同区域做卷积时，它的参数是固定不变的。
+这是它具有以下两个性质：</p>
+<ul>
+<li>
+<p>参数共享 --&gt; 卷积在存储需求和统计效率方面极大地优于稠密矩阵的乘法运算。</p>
+</li>
+<li>
+<p>其实 每一个 Convolution Kernel 卷积后得到的会是原图的某些特征（如边缘信息），所以在 CNN 中，Convolution Kernel 卷积得到的 Layer 称作 Feature Map</p>
+</li>
+</ul>
+<h4>等变表示</h4>
+<p>参数共享 --&gt; 使得神经网络层具有对平移 等变(equivariance) 的性质:
+- 对时间序列：如果我们把输入中的一个事件向后延时，在输出中仍然 会有完全相同的表示，只是时间延后了。
+- 对图像：可以识别图像中的某种特定曲线(特征)，</p>
+<p>卷积对其他的一些变换并不是天然等变的，例如对于图像的放缩或者旋转变换， 需要其他的一些机制来处理这些变换。（比如使用另外几个核 在上下的方向上滑动，然后通过 pooling 筛选）</p>
+<h2>池化（pooling）</h2>
+<p>注意池化与卷积的区别：
+<img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-25/64190326.jpg" alt=""></p>
+<p>Pooling 的本质，其实是采样。</p>
+<p>池化的意义：</p>
+<ul>
+<li>
+<p>显而易见，就是减少参数。通过对 Feature Map 降维，有效减少后续层需要的参数</p>
+</li>
+<li>
+<p>当输入做出少量平移的时候，池化可以帮助输入的表示近似不变形。（局部平移不变性）
+-池化的局部平移不变性 带来的好处: 非常适合 我们关心某个特征是否出现而不关系出现位置的时候 -- 人脸识别</p>
+</li>
+<li>
+<p>对处理不同大小的输入具有重要的意义：-可以通过调整池化区域的偏置，使分类层具有具有固定大小的输入</p>
+<ul>
+<li>论文见：ECCV2014  <a href="https://arxiv.org/abs/1406.4729" target="_blank" rel="noopener">[1406.4729] Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</a></li>
+</ul>
+</li>
+</ul>
+<p>池化相当于增加的一个很强的先验： 的每一个单元都具有对少量的平移的不变性，</p>
+<p>这带了以下的问题，也就是使用池化要注意的地方：</p>
+<ul>
+<li>
+<p>卷积和池化可能导致欠拟合</p>
+</li>
+<li>
+<p>不适合依赖精确的空间信息的任务，这种任务使用池化会增大训练误差。</p>
+</li>
+<li>
+<p>如何任务要对输入中相隔很远的信息进行合并的时候，卷积就无能为力了。</p>
+</li>
+</ul>
+<h2>基本卷积函数的变种</h2>
+<h2>参考</h2>
+<ul>
+<li><a href="https://www.zhihu.com/question/49376084" target="_blank" rel="noopener">(82 条消息)如何理解卷积神经网络（CNN）中的卷积和池化？ - 知乎</a></li>
+<li><a href="http://www.hackcv.com/index.php/archives/104/?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">[翻译] 神经网络的直观解释 博客 | HackCV</a></li>
+<li><a href="http://dataunion.org/11692.html" target="_blank" rel="noopener">技术向：一文读懂卷积神经网络CNN | 数盟社区</a></li>
+<li><a href="http://blog.csdn.net/zhangjunhit/article/details/53909548" target="_blank" rel="noopener">SPP-Net 是怎么让 CNN 实现输入任意尺寸图像的？ - CSDN博客</a></li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2017/11/深度学习/深度学习读书笔记_CNN/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CNN/">CNN</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2017/11/深度学习/CNN 在自然语言中的使用/"><i class="fa fa-chevron-left">  </i><span>CNN在自然语言处理中的使用</span></a></div><div class="next-post pull-right"><a href="/2017/11/数据挖掘/DM-数据预处理_数据归一_标准化/"><span>数据预处理_数据归一_标准化</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body></html>
