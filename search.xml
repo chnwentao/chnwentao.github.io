@@ -1199,6 +1199,50 @@ read_file:
     </entry>
     
     <entry>
+      <title><![CDATA[时间序列预测（ARIMA）原理]]></title>
+      <url>/2016/09/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/DM-%E6%80%BB%E7%BB%93-ARIMA%E6%A8%A1%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<p>短期预测是时间序列分析的主要目的。时间序列分析的理论基础很简单：设若时间序列（或随机过程）的任一元素yt与其前期元素（yt-1、yt-2等）之间存在着某种关联，则我们可以根据该时间序列的既往观测值来预测其在未来的取值。</p>
+<a id="more"></a>
+<h2 id="几个概念"><a href="#几个概念" class="headerlink" title="几个概念"></a>几个概念</h2><h3 id="AR模型"><a href="#AR模型" class="headerlink" title="AR模型"></a>AR模型</h3><p>自回归模型（英语：Autoregressive model，简称AR模型），是统计上一种处理时间序列的方法，用同一变数例如x的之前各期，亦即 X1至 X(t-1)来预测本期Xt的表现，并假设它们为一线性关系。因为这是从回归分析中的线性回归发展而来，只是不用  x预测 {\displaystyle y} y，而是用 x预测x（自己）；所以叫做自回归。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>自回归方法的优点是所需资料不多，可用自身变数数列来进行预测。但是这种方法受到一定的限制。</li>
+<li>必须具有自相关，自相关系数是关键。如果自相关系数(R)小于0.5，则不宜采用，否则预测结果极不准确。</li>
+<li>自回归只能适用于预测与自身前期相关的经济现象，即受自身历史因素影响较大的经济现象，如矿的开采量，各种自然资源产量等；对于受社会因素影响较大的经济现象，不宜采用自回归，而应改采可纳入其他变数的向量自回归模型。</li>
+</ul>
+<h3 id="MA-模型"><a href="#MA-模型" class="headerlink" title="MA 模型"></a>MA 模型</h3><p>滑动平均模型（简称MA模型）,滑动平均模型描述的是自回归部分的误差累计。<br>为简化估计参数的工作量，我们当然希望模型当中的参数尽可能地少。于是便有了引进移动平均过程MA（q）的必要。</p>
+<h3 id="ARMA模型"><a href="#ARMA模型" class="headerlink" title="ARMA模型"></a>ARMA模型</h3><p>ARMA模型的全称是自回归移动平均(auto regression moving average)模型，它是目前最常用的拟合平稳序列的模型，由自回归模型（简称AR模型）与滑动平均模型（简称MA模型）为基础“混合”构成。</p>
+<h3 id="ARIMA模型"><a href="#ARIMA模型" class="headerlink" title="ARIMA模型"></a>ARIMA模型</h3><p>差分整合移动平均自回归模型，又称整合移动平均自回归模型（移动也可称作滑动）(Autoregressive Integrated Moving Average Model,简记ARIMA)<br>ARIMA（p，d，q）中，AR是”自回归”，p为自回归项数；MA为”滑动平均”，q为滑动平均项数，d为使之成为平稳序列所做的差分次数（阶数）。“差分”一词虽未出现在ARIMA的英文名称中，却是关键步骤。</p>
+<p>当时间序列本身不是平稳的时候，如果它的增量，即的一次差分，稳定在零点附近，可以将看成是平稳序列。在实际的问题中，所遇到的多数非平稳序列可以通过一次或多次差分后成为平稳时间序列，则可以建立模型.</p>
+<p>这说明任何非平稳序列只要通过适当阶数的差分运算实现差分后平稳，就可以对差分后序列进行ARIMA模型拟合了。</p>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>差分:<br>自回归<br>移动平均</p>
+<h2 id="ARIMA模型运用的流程"><a href="#ARIMA模型运用的流程" class="headerlink" title="ARIMA模型运用的流程"></a>ARIMA模型运用的流程</h2><ol>
+<li>根据时间序列的散点图、自相关函数和偏自相关函数图识别其平稳性。</li>
+<li>对非平稳的时间序列数据进行平稳化处理。直到处理后的自相关函数和偏自相关函数的数值非显著非零。</li>
+<li>根据所识别出来的特征建立相应的时间序列模型。平稳化处理后，若偏自相关函数是截尾的，而自相关函数是拖尾的，则建立AR模型；若偏自相关函数是拖尾的，而自相关函数是截尾的，则建立MA模型；若偏自相关函数和自相关函数均是拖尾的，则序列适合ARMA模型。</li>
+<li>参数估计，检验是否具有统计意义。</li>
+<li>假设检验，判断（诊断）残差序列是否为白噪声序列。</li>
+<li>利用已通过检验的模型进行预测。</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据挖掘 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ARIMA </tag>
+            
+            <tag> 时间序列预测 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[xgboost 训练数据格式总结]]></title>
       <url>/2016/09/%E5%BE%85%E6%95%B4%E7%90%86/DM-xgboost-%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<h3 id="xgboost-支持的数据格式"><a href="#xgboost-支持的数据格式" class="headerlink" title="xgboost 支持的数据格式"></a>xgboost 支持的数据格式</h3><p>xgboost 官方用的数据格式 DMatix 支持以下4种种数据格式导入或说转换：<br><a id="more"></a></p>
@@ -1243,50 +1287,6 @@ read_file:
             <tag> xgboost </tag>
             
             <tag> 训练数据 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[时间序列预测（ARIMA）原理]]></title>
-      <url>/2016/09/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/DM-%E6%80%BB%E7%BB%93-ARIMA%E6%A8%A1%E5%9E%8B/</url>
-      <content type="html"><![CDATA[<p>短期预测是时间序列分析的主要目的。时间序列分析的理论基础很简单：设若时间序列（或随机过程）的任一元素yt与其前期元素（yt-1、yt-2等）之间存在着某种关联，则我们可以根据该时间序列的既往观测值来预测其在未来的取值。</p>
-<a id="more"></a>
-<h2 id="几个概念"><a href="#几个概念" class="headerlink" title="几个概念"></a>几个概念</h2><h3 id="AR模型"><a href="#AR模型" class="headerlink" title="AR模型"></a>AR模型</h3><p>自回归模型（英语：Autoregressive model，简称AR模型），是统计上一种处理时间序列的方法，用同一变数例如x的之前各期，亦即 X1至 X(t-1)来预测本期Xt的表现，并假设它们为一线性关系。因为这是从回归分析中的线性回归发展而来，只是不用  x预测 {\displaystyle y} y，而是用 x预测x（自己）；所以叫做自回归。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>自回归方法的优点是所需资料不多，可用自身变数数列来进行预测。但是这种方法受到一定的限制。</li>
-<li>必须具有自相关，自相关系数是关键。如果自相关系数(R)小于0.5，则不宜采用，否则预测结果极不准确。</li>
-<li>自回归只能适用于预测与自身前期相关的经济现象，即受自身历史因素影响较大的经济现象，如矿的开采量，各种自然资源产量等；对于受社会因素影响较大的经济现象，不宜采用自回归，而应改采可纳入其他变数的向量自回归模型。</li>
-</ul>
-<h3 id="MA-模型"><a href="#MA-模型" class="headerlink" title="MA 模型"></a>MA 模型</h3><p>滑动平均模型（简称MA模型）,滑动平均模型描述的是自回归部分的误差累计。<br>为简化估计参数的工作量，我们当然希望模型当中的参数尽可能地少。于是便有了引进移动平均过程MA（q）的必要。</p>
-<h3 id="ARMA模型"><a href="#ARMA模型" class="headerlink" title="ARMA模型"></a>ARMA模型</h3><p>ARMA模型的全称是自回归移动平均(auto regression moving average)模型，它是目前最常用的拟合平稳序列的模型，由自回归模型（简称AR模型）与滑动平均模型（简称MA模型）为基础“混合”构成。</p>
-<h3 id="ARIMA模型"><a href="#ARIMA模型" class="headerlink" title="ARIMA模型"></a>ARIMA模型</h3><p>差分整合移动平均自回归模型，又称整合移动平均自回归模型（移动也可称作滑动）(Autoregressive Integrated Moving Average Model,简记ARIMA)<br>ARIMA（p，d，q）中，AR是”自回归”，p为自回归项数；MA为”滑动平均”，q为滑动平均项数，d为使之成为平稳序列所做的差分次数（阶数）。“差分”一词虽未出现在ARIMA的英文名称中，却是关键步骤。</p>
-<p>当时间序列本身不是平稳的时候，如果它的增量，即的一次差分，稳定在零点附近，可以将看成是平稳序列。在实际的问题中，所遇到的多数非平稳序列可以通过一次或多次差分后成为平稳时间序列，则可以建立模型.</p>
-<p>这说明任何非平稳序列只要通过适当阶数的差分运算实现差分后平稳，就可以对差分后序列进行ARIMA模型拟合了。</p>
-<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>差分:<br>自回归<br>移动平均</p>
-<h2 id="ARIMA模型运用的流程"><a href="#ARIMA模型运用的流程" class="headerlink" title="ARIMA模型运用的流程"></a>ARIMA模型运用的流程</h2><ol>
-<li>根据时间序列的散点图、自相关函数和偏自相关函数图识别其平稳性。</li>
-<li>对非平稳的时间序列数据进行平稳化处理。直到处理后的自相关函数和偏自相关函数的数值非显著非零。</li>
-<li>根据所识别出来的特征建立相应的时间序列模型。平稳化处理后，若偏自相关函数是截尾的，而自相关函数是拖尾的，则建立AR模型；若偏自相关函数是拖尾的，而自相关函数是截尾的，则建立MA模型；若偏自相关函数和自相关函数均是拖尾的，则序列适合ARMA模型。</li>
-<li>参数估计，检验是否具有统计意义。</li>
-<li>假设检验，判断（诊断）残差序列是否为白噪声序列。</li>
-<li>利用已通过检验的模型进行预测。</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 数据挖掘 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ARIMA </tag>
-            
-            <tag> 时间序列预测 </tag>
             
         </tags>
         
@@ -1454,9 +1454,9 @@ read_file:
             
             <tag> python </tag>
             
-            <tag> scikit-learn </tag>
-            
             <tag> ML </tag>
+            
+            <tag> scikit-learn </tag>
             
         </tags>
         
@@ -2368,13 +2368,13 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> python </tag>
             
-            <tag> 机器学习 </tag>
-            
-            <tag> ML </tag>
-            
             <tag> 数据挖掘 </tag>
             
             <tag> DM </tag>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> ML </tag>
             
         </tags>
         
@@ -2518,11 +2518,11 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> python </tag>
             
-            <tag> scrapy </tag>
-            
             <tag> 机器学习 </tag>
             
             <tag> 爬虫 </tag>
+            
+            <tag> scrapy </tag>
             
         </tags>
         
@@ -2549,15 +2549,15 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 算法 </tag>
             
+            <tag> 数据挖掘 </tag>
+            
+            <tag> DM </tag>
+            
             <tag> 机器学习 </tag>
             
             <tag> ML </tag>
             
             <tag> 分数算法 </tag>
-            
-            <tag> 数据挖掘 </tag>
-            
-            <tag> DM </tag>
             
         </tags>
         
@@ -2845,11 +2845,11 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> 转载 </tag>
-            
             <tag> hadoop </tag>
             
             <tag> HDFS </tag>
+            
+            <tag> 转载 </tag>
             
         </tags>
         
@@ -3341,64 +3341,6 @@ avg / total       0.95      0.93      0.93        60
     </entry>
     
     <entry>
-      <title><![CDATA[hadoop配置文件的参数设定]]></title>
-      <url>/2016/03/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%85%B7/Hadoop-%E6%80%BB%E7%BB%93-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%82%E6%95%B0%E8%AE%BE%E5%AE%9A/</url>
-      <content type="html"><![CDATA[<h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><ol>
-<li><code>fs.defaultFS</code><br>NameNode的URI 一般设定为：<code>hdfs://localhost:9000</code></li>
-</ol>
-<p>SequenceFile<a id="more"></a></p>
-<h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><ol>
-<li><code>dfs.namenode.secondary.http-address</code></li>
-</ol>
-<p>添加secondarynamenode的机器名  一般设定为：<code>{your_namenode_ip}:50070</code></p>
-<ol>
-<li><p><code>dfs.replication</code><br>首先 dfs.replication这个参数是个client参数，即node level参数。需要在每台datanode上设置。<br>其实默认为3个副本已经够用了，设置太多也没什么用。<br>一个文件，上传到hdfs上时指定的是几个副本就是几个。以后你修改了副本数，对已经上传了的文件也不会起作用。</p>
-</li>
-<li><p><code>dfs.namenode.name.dir</code><br>If this is a comma-delimited list of directories then the name table is replicated in all of the directories, for redundancy.<br>不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和 dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
-</li>
-<li><p><code>dfs.datanode.data.dir</code><br>同上</p>
-</li>
-</ol>
-<h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
-<li><p><code>mapreduce.framework.name</code><br>一般设定为：<code>yarn</code>     Execution framework set to Hadoop YARN.</p>
-</li>
-<li><p><code>mapreduce.jobhistory.addres</code>s<br>一般设定为：<code>WenteMBP:10020</code><br>MapReduce JobHistory Server host:port    Default port is 10020.</p>
-</li>
-<li><p><code>apreduce.jobhistory.webapp.address</code><br>一般设定为：<code>WenteMBP:19880</code><br>MapReduce JobHistory Server Web UI host:port    Default port is 19888.</p>
-</li>
-</ol>
-<h2 id="mapred-site-xml-1"><a href="#mapred-site-xml-1" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
-<li><p><code>yarn.resourcemanager.hostname</code><br>ResourceManager host.<br>host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components.</p>
-</li>
-<li><p><code>yarn.nodemanager.aux-services</code><br>一般设定为：<code>mapreduce_shuffle</code><br>NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>，才可运行MapReduce程序<br>默认值：“”</p>
-</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> hadoop </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 配置 </tag>
-            
-            <tag> 安装 </tag>
-            
-            <tag> hadoop </tag>
-            
-            <tag> 参数 </tag>
-            
-            <tag> 配置文件 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[hadoop伪分布安装配置]]></title>
       <url>/2016/03/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%85%B7/Hadoop-%E6%80%BB%E7%BB%93-%E5%8D%95%E6%9C%BA%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97/</url>
       <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="vim的安装"><a href="#vim的安装" class="headerlink" title="vim的安装"></a>vim的安装</h3><p>if ubuntu默认没有安装vim ：解决：<br>命令行输入：<code>sudo apt-get install vim</code>　　然后安装，出现确认的时候，输入y确认就行<a id="more"></a></p>
@@ -3506,6 +3448,64 @@ avg / total       0.95      0.93      0.93        60
             <tag> hadoop </tag>
             
             <tag> 单机 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hadoop配置文件的参数设定]]></title>
+      <url>/2016/03/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%85%B7/Hadoop-%E6%80%BB%E7%BB%93-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%82%E6%95%B0%E8%AE%BE%E5%AE%9A/</url>
+      <content type="html"><![CDATA[<h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><ol>
+<li><code>fs.defaultFS</code><br>NameNode的URI 一般设定为：<code>hdfs://localhost:9000</code></li>
+</ol>
+<p>SequenceFile<a id="more"></a></p>
+<h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><ol>
+<li><code>dfs.namenode.secondary.http-address</code></li>
+</ol>
+<p>添加secondarynamenode的机器名  一般设定为：<code>{your_namenode_ip}:50070</code></p>
+<ol>
+<li><p><code>dfs.replication</code><br>首先 dfs.replication这个参数是个client参数，即node level参数。需要在每台datanode上设置。<br>其实默认为3个副本已经够用了，设置太多也没什么用。<br>一个文件，上传到hdfs上时指定的是几个副本就是几个。以后你修改了副本数，对已经上传了的文件也不会起作用。</p>
+</li>
+<li><p><code>dfs.namenode.name.dir</code><br>If this is a comma-delimited list of directories then the name table is replicated in all of the directories, for redundancy.<br>不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和 dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
+</li>
+<li><p><code>dfs.datanode.data.dir</code><br>同上</p>
+</li>
+</ol>
+<h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
+<li><p><code>mapreduce.framework.name</code><br>一般设定为：<code>yarn</code>     Execution framework set to Hadoop YARN.</p>
+</li>
+<li><p><code>mapreduce.jobhistory.addres</code>s<br>一般设定为：<code>WenteMBP:10020</code><br>MapReduce JobHistory Server host:port    Default port is 10020.</p>
+</li>
+<li><p><code>apreduce.jobhistory.webapp.address</code><br>一般设定为：<code>WenteMBP:19880</code><br>MapReduce JobHistory Server Web UI host:port    Default port is 19888.</p>
+</li>
+</ol>
+<h2 id="mapred-site-xml-1"><a href="#mapred-site-xml-1" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
+<li><p><code>yarn.resourcemanager.hostname</code><br>ResourceManager host.<br>host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components.</p>
+</li>
+<li><p><code>yarn.nodemanager.aux-services</code><br>一般设定为：<code>mapreduce_shuffle</code><br>NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>，才可运行MapReduce程序<br>默认值：“”</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> hadoop </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 配置 </tag>
+            
+            <tag> 安装 </tag>
+            
+            <tag> hadoop </tag>
+            
+            <tag> 参数 </tag>
+            
+            <tag> 配置文件 </tag>
             
         </tags>
         
@@ -3626,6 +3626,8 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
+            <tag> 集群 </tag>
+            
             <tag> linux </tag>
             
             <tag> 配置 </tag>
@@ -3633,8 +3635,6 @@ avg / total       0.95      0.93      0.93        60
             <tag> 安装 </tag>
             
             <tag> hadoop </tag>
-            
-            <tag> 集群 </tag>
             
         </tags>
         
@@ -3818,13 +3818,13 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
             
-            <tag> 辨析 </tag>
+            <tag> Java </tag>
             
             <tag> 变量 </tag>
+            
+            <tag> 辨析 </tag>
             
         </tags>
         
@@ -4880,9 +4880,9 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 配置 </tag>
             
-            <tag> 优化 </tag>
-            
             <tag> vim </tag>
+            
+            <tag> 优化 </tag>
             
         </tags>
         
@@ -5428,11 +5428,11 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> 总结 </tag>
-            
             <tag> 数学 </tag>
             
             <tag> 归纳法 </tag>
+            
+            <tag> 总结 </tag>
             
         </tags>
         
@@ -5680,9 +5680,9 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> 总结 </tag>
-            
             <tag> 数学 </tag>
+            
+            <tag> 总结 </tag>
             
             <tag> 矩阵分析 </tag>
             
@@ -6588,9 +6588,9 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 辨析 </tag>
             
@@ -6669,9 +6669,9 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 辨析 </tag>
             
@@ -6703,13 +6703,13 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
             
-            <tag> 辨析 </tag>
-            
             <tag> 转载 </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> 辨析 </tag>
             
         </tags>
         
@@ -6779,9 +6779,9 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 辨析 </tag>
             
@@ -6839,9 +6839,9 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 英语 </tag>
             
@@ -6877,9 +6877,9 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 网络 </tag>
             
@@ -7046,9 +7046,9 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 问题 </tag>
             
@@ -7086,13 +7086,13 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
             
-            <tag> 辨析 </tag>
+            <tag> Java </tag>
             
             <tag> 变量 </tag>
+            
+            <tag> 辨析 </tag>
             
             <tag> 问题 </tag>
             
@@ -7206,9 +7206,9 @@ avg / total       0.95      0.93      0.93        60
         
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 接口 </tag>
             
@@ -7268,13 +7268,13 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
             
-            <tag> 辨析 </tag>
+            <tag> Java </tag>
             
             <tag> 变量 </tag>
+            
+            <tag> 辨析 </tag>
             
         </tags>
         
@@ -7319,9 +7319,9 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
         
@@ -7350,9 +7350,9 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 编程 </tag>
             
-            <tag> Java </tag>
-            
             <tag> 总结 </tag>
+            
+            <tag> Java </tag>
             
             <tag> 辨析 </tag>
             
@@ -8239,9 +8239,9 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 职业规划 </tag>
             
-            <tag> google </tag>
-            
             <tag> 指导 </tag>
+            
+            <tag> google </tag>
             
         </tags>
         
@@ -8326,7 +8326,7 @@ avg / total       0.95      0.93      0.93        60
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> /*toc*/</span><br><span class="line">.toc-article</span><br><span class="line">  background #ffffff</span><br><span class="line">  margin 2em 0 0 0.2em</span><br><span class="line">  padding 1em</span><br><span class="line">  border-radius 5px</span><br><span class="line">  .toc-title</span><br><span class="line">    font-size 120%</span><br><span class="line">  strong</span><br><span class="line">    padding 0.3em 1</span><br><span class="line">ol.toc</span><br><span class="line">  width 100%</span><br><span class="line">  margin 1em 2em 0 0</span><br><span class="line">#toc</span><br><span class="line">  line-height 1em</span><br><span class="line">  font-size 0.8em</span><br><span class="line">  float right</span><br><span class="line">  .toc</span><br><span class="line">    padding 0</span><br><span class="line">    li</span><br><span class="line">      list-style-type none</span><br><span class="line">  .toc-child</span><br><span class="line">    padding-left 0em</span><br><span class="line">#toc.toc-aside</span><br><span class="line">  display none</span><br><span class="line">  width 13%</span><br><span class="line">  position fixed</span><br><span class="line">  right 2%</span><br><span class="line">  top 320px</span><br><span class="line">  overflow hidden</span><br><span class="line">  line-height 1.5em</span><br><span class="line">  font-size 1em</span><br><span class="line">  color color-heading</span><br><span class="line">  opacity .6</span><br><span class="line">  transition opacity 1s ease-out</span><br><span class="line">  strong</span><br><span class="line">    padding 0.3em 0</span><br><span class="line">    color color-font</span><br><span class="line">  &amp;:hover</span><br><span class="line">    transition opacity .3s ease-out</span><br><span class="line">    opacity 1</span><br><span class="line">  a</span><br><span class="line">    transition color 1s ease-out</span><br><span class="line">    &amp;:hover</span><br><span class="line">      color color-theme</span><br><span class="line">      transition color .3s ease-out</span><br></pre></td></tr></table></figure>
 <h3 id="添加百度统计"><a href="#添加百度统计" class="headerlink" title="添加百度统计"></a>添加百度统计</h3><p>由于源码中google analytics因众所周知的原因失效，所以用百度统计代替。<br>以我自己用的主题icarus的为例(本博客采用icarus主题)</p>
 <p>1.新建 <code>themes/icarus/layout/_partial/baidu_analytics.ejs</code>添加如下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> _hmt = _hmt || [];</span></span><br><span class="line"><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> hm = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span></span><br><span class="line"><span class="javascript">  hm.src = <span class="string">"//hm.baidu.com/hm.js?c4c99183a6a02c53d4760ae1995c3b38"</span>; <span class="comment">//百度统计 ID，此 ID 是百度统计提供脚本中 hm.js? 后面那串字符，非百度统计帐号</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="undefined">  s.parentNode.insertBefore(hm, s);</span></span><br><span class="line"><span class="undefined">&#125;)();</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">var _hmt = _hmt || [];</span></span><br><span class="line"><span class="undefined">(function() &#123;</span></span><br><span class="line"><span class="undefined">  var hm = document.createElement("script");</span></span><br><span class="line"><span class="undefined">  hm.src = "//hm.baidu.com/hm.js?c4c99183a6a02c53d4760ae1995c3b38"; //百度统计 ID，此 ID 是百度统计提供脚本中 hm.js? 后面那串字符，非百度统计帐号</span></span><br><span class="line"><span class="undefined">  var s = document.getElementsByTagName("script")[0];</span></span><br><span class="line"><span class="undefined">  s.parentNode.insertBefore(hm, s);</span></span><br><span class="line"><span class="undefined">&#125;)();</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>2.编辑<code>themes/icarus/layout/_partial/head.ejs</code>在 <code>&lt;/head&gt;</code>前添加</p>
 <pre><code>&lt;%- partial(&apos;baidu-analytics&apos;) %&gt;
 </code></pre><h3 id="向搜索引擎提交网址"><a href="#向搜索引擎提交网址" class="headerlink" title="向搜索引擎提交网址"></a>向搜索引擎提交网址</h3><p>不提交搜索引擎找不到你的，不过<strong>天朝的百度</strong>你提交了不交钱还是找不到你的！！所以我就不想写了……<br><a href="http://www.sousuoyinqingtijiao.com/baidu/" target="_blank" rel="noopener">这是提交的入口</a></p>
@@ -8377,11 +8377,11 @@ avg / total       0.95      0.93      0.93        60
             
             <tag> 配置 </tag>
             
+            <tag> 优化 </tag>
+            
             <tag> Hexo </tag>
             
             <tag> 博客 </tag>
-            
-            <tag> 优化 </tag>
             
         </tags>
         
@@ -8935,45 +8935,6 @@ d = a + r;
     </entry>
     
     <entry>
-      <title><![CDATA[我的考研经验及给后人的建议（02）——数学篇]]></title>
-      <url>/2015/04/%E9%9A%8F%E7%AC%94/%E7%94%9F%E6%B4%BB-%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E6%95%B0%E5%AD%A6%E7%AF%87/</url>
-      <content type="html"><![CDATA[<p>===================（接上篇）===================</p>
-<h3 id="摘要（Abstract）"><a href="#摘要（Abstract）" class="headerlink" title="摘要（Abstract）"></a>摘要（Abstract）</h3><p>这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就只能给你们下届的看了：）<br><a id="more"></a></p>
-<h3 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h3><p>2015-05-01 添加注意点及共性问题答疑<br>2015-05-01 相关文章链接[^2015-05-01]<br>2015-05-01 添加用书选择<br>2015-05-01 添加<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频链接</a></p>
-<h3 id="用书选择"><a href="#用书选择" class="headerlink" title="用书选择"></a>用书选择</h3><p>我的第一篇文章写过的，<a href="http://chnwentao.com/2015/04/26/我的考研经验及给后人的建议——开题/">网址</a></p>
-<h3 id="预备知识（5月——6月中）"><a href="#预备知识（5月——6月中）" class="headerlink" title="预备知识（5月——6月中）"></a>预备知识（5月——6月中）</h3><p>打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式，不然以后看全书就像看天书一样……<br>但是基础不好的同学直接一般抓不住重点，走马观花，这个是就浪费时间了，我当时的就是选择听<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频（链接）</a> ，1.5倍速听，省下的时候用来做一题，嘿嘿。不做题的结果就听过就忘，一点印象也没：（<br>+++++++<strong>强调，数学，做题就是王道，没有其他，要高分就是多做题，这可是血 的教训！！</strong>++++++<br>线代的复习呢，我也是听汤的基础班，虽说他的线代不出名，但是真的不错，他思路的整理分析的特别好。<strong>墙裂推荐</strong> ！再说了，你都熟悉了他的思路，听起来也接受的快。 这里不推荐李永乐的视频：太难，不适合入门。  </p>
-<h3 id="基础阶段（6月中到暑假末）"><a href="#基础阶段（6月中到暑假末）" class="headerlink" title="基础阶段（6月中到暑假末）"></a>基础阶段（6月中到暑假末）</h3><p>这个是复习的黄金阶段，大把的时间给数学吧，争取全书和讲义都刷 <strong>两遍</strong>。<br>注意点：<br>1 刷题是做，不是看！，不管会不会，都是自己动手做一遍！<strong>我们的经验就是 看题目》自己做》对答案》不正确的话，把标准步骤默写一遍，写整齐点，以后用的到，》整理一下人家的思路，你的思路，写到题的旁边</strong>。<br>2 注意<strong>步骤</strong>，考研数学100+的人丢分一般都是步骤和计算，步骤规范，题没算出来 都可以拿不少分的，我的120就是这么来的。<br>3 注意计算，你复习到9——10月的时候会发现，你所以的题都会，可以就是算不对，到时候你会崩溃的。<br>4 时间的把握，一般的人，一天6小时，高数一遍是25天，线代一遍15到20天，<strong>不要拖，时间永远是不够的</strong>.  </p>
-<h3 id="强化时间（要求10月20号前完成）"><a href="#强化时间（要求10月20号前完成）" class="headerlink" title="强化时间（要求10月20号前完成）"></a>强化时间（要求10月20号前完成）</h3><p>任务: 1 全书第三遍（主要是整理错题和常见题的技巧和思路）； 2 600题：两遍 ； 3 400两遍（如果有时间的话——这个时间你可能大半的时间要给专业课了，）；<br>注意点：<br>1 不要怕不会，好多人一看600题 ，发现一个都不会，然后就崩溃了。我想说的是大家都是一个样子，你不会，他也不会，你只要坚持认认真真的做下来，你会有收获的。还是上面说的，<strong>坚持就是胜利！</strong><br>2 这个时间要多注意<strong>对知识系统的理解</strong>，这时间的题一般都涉及好几章的知识，还有就是对 <strong>题目已知条件的蕴含</strong>的总结（ 我的个人经验！）。  </p>
-<h3 id="刷真题时间（10月底到考前五分钟）"><a href="#刷真题时间（10月底到考前五分钟）" class="headerlink" title="刷真题时间（10月底到考前五分钟）"></a>刷真题时间（10月底到考前五分钟）</h3><p>记住是 <strong>真题</strong>！！千万不要碰模拟题！！！不要问为什么！！！<br>能刷几遍就是刷几遍（每个题至少3遍），越多越好的，顺着做，倒着做，做到吐。<br>先一套一套的做，做的时候掐时间，不看答案。<br>第二遍，一种题型一种题型的做，做到看到题型就知道步骤，知道陷阱……<br>第三遍，就是模拟考场环境，一套一套的做<br>第四遍（你确定你还有时间??）,  那你专功错的比较多题型，你说什么？不会的？这个时间怎么可能还有不会！！只有算不对的，没有不会的！  </p>
-<h3 id="注意点及共性问题答疑"><a href="#注意点及共性问题答疑" class="headerlink" title="注意点及共性问题答疑"></a>注意点及共性问题答疑</h3><p>欢迎留言提出问题及建议，共同努力，帮助更多的人！！<br>留言请点击<a href="http://chnwentao.com">我的博客</a>，方便我尽快回复</p>
-<h3 id="相关文章链接-2015-05-01"><a href="#相关文章链接-2015-05-01" class="headerlink" title="相关文章链接[^2015-05-01]"></a>相关文章链接[^2015-05-01]</h3><p><a href="http://chnwentao.com/2015/04/26/我的考研经验及给后人的建议——数学篇/">英语的备考</a><br><a href="http://chnwentao.com/2015/04/26/我的考研经验及给后人的建议——开题/">总的建议</a><br><a href="http://chnwentao.com/2015/05/01/我的考研经验及给后人的建议（03）——英语篇/">英语的备考</a></p>
-<h3 id="下集预告"><a href="#下集预告" class="headerlink" title="下集预告"></a>下集预告</h3><p><a href="http://chnwentao.com/2015/05/01/我的考研经验及给后人的建议（03）——英语篇/">英语的备考</a><br>政治的备考<br>专业课的备考；<br>可能你也会遇到的问题：</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 生活 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-            <tag> 经验 </tag>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 考试 </tag>
-            
-            <tag> 考研 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[SublimeText3入门教程-安装及配置]]></title>
       <url>/2015/04/%E5%B7%A5%E5%85%B7/%E5%B7%A5%E5%85%B7-SublimeText%203-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2 id="摘要（Abstract）"><a href="#摘要（Abstract）" class="headerlink" title="摘要（Abstract）"></a>摘要（Abstract）</h2><p>本文以自己的经历为主线介绍了Sublime Text，旨在成为最合适初学者的的Sublime Text入门教程。<br>注意：本文主要是针对MAC用户 <a id="more"></a></p>
@@ -9027,6 +8988,45 @@ d = a + r;
             <tag> 教程 </tag>
             
             <tag> SublimeText </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[我的考研经验及给后人的建议（02）——数学篇]]></title>
+      <url>/2015/04/%E9%9A%8F%E7%AC%94/%E7%94%9F%E6%B4%BB-%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%8F%8A%E7%BB%99%E5%90%8E%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE%E2%80%94%E2%80%94%E6%95%B0%E5%AD%A6%E7%AF%87/</url>
+      <content type="html"><![CDATA[<p>===================（接上篇）===================</p>
+<h3 id="摘要（Abstract）"><a href="#摘要（Abstract）" class="headerlink" title="摘要（Abstract）"></a>摘要（Abstract）</h3><p>这个最晚五一后就要准备了，知道我为啥要现在急着写了吧，再不写就只能给你们下届的看了：）<br><a id="more"></a></p>
+<h3 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h3><p>2015-05-01 添加注意点及共性问题答疑<br>2015-05-01 相关文章链接[^2015-05-01]<br>2015-05-01 添加用书选择<br>2015-05-01 添加<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频链接</a></p>
+<h3 id="用书选择"><a href="#用书选择" class="headerlink" title="用书选择"></a>用书选择</h3><p>我的第一篇文章写过的，<a href="http://chnwentao.com/2015/04/26/我的考研经验及给后人的建议——开题/">网址</a></p>
+<h3 id="预备知识（5月——6月中）"><a href="#预备知识（5月——6月中）" class="headerlink" title="预备知识（5月——6月中）"></a>预备知识（5月——6月中）</h3><p>打基础的阶段，在这个时间段要过一遍课本，选做一下课习题，目标：1 对知识有一个框架，2 全面的理解每一个概念和公式，不然以后看全书就像看天书一样……<br>但是基础不好的同学直接一般抓不住重点，走马观花，这个是就浪费时间了，我当时的就是选择听<a href="http://pan.baidu.com/s/1bn75ctx" target="_blank" rel="noopener">汤家凤的高数基础班视频（链接）</a> ，1.5倍速听，省下的时候用来做一题，嘿嘿。不做题的结果就听过就忘，一点印象也没：（<br>+++++++<strong>强调，数学，做题就是王道，没有其他，要高分就是多做题，这可是血 的教训！！</strong>++++++<br>线代的复习呢，我也是听汤的基础班，虽说他的线代不出名，但是真的不错，他思路的整理分析的特别好。<strong>墙裂推荐</strong> ！再说了，你都熟悉了他的思路，听起来也接受的快。 这里不推荐李永乐的视频：太难，不适合入门。  </p>
+<h3 id="基础阶段（6月中到暑假末）"><a href="#基础阶段（6月中到暑假末）" class="headerlink" title="基础阶段（6月中到暑假末）"></a>基础阶段（6月中到暑假末）</h3><p>这个是复习的黄金阶段，大把的时间给数学吧，争取全书和讲义都刷 <strong>两遍</strong>。<br>注意点：<br>1 刷题是做，不是看！，不管会不会，都是自己动手做一遍！<strong>我们的经验就是 看题目》自己做》对答案》不正确的话，把标准步骤默写一遍，写整齐点，以后用的到，》整理一下人家的思路，你的思路，写到题的旁边</strong>。<br>2 注意<strong>步骤</strong>，考研数学100+的人丢分一般都是步骤和计算，步骤规范，题没算出来 都可以拿不少分的，我的120就是这么来的。<br>3 注意计算，你复习到9——10月的时候会发现，你所以的题都会，可以就是算不对，到时候你会崩溃的。<br>4 时间的把握，一般的人，一天6小时，高数一遍是25天，线代一遍15到20天，<strong>不要拖，时间永远是不够的</strong>.  </p>
+<h3 id="强化时间（要求10月20号前完成）"><a href="#强化时间（要求10月20号前完成）" class="headerlink" title="强化时间（要求10月20号前完成）"></a>强化时间（要求10月20号前完成）</h3><p>任务: 1 全书第三遍（主要是整理错题和常见题的技巧和思路）； 2 600题：两遍 ； 3 400两遍（如果有时间的话——这个时间你可能大半的时间要给专业课了，）；<br>注意点：<br>1 不要怕不会，好多人一看600题 ，发现一个都不会，然后就崩溃了。我想说的是大家都是一个样子，你不会，他也不会，你只要坚持认认真真的做下来，你会有收获的。还是上面说的，<strong>坚持就是胜利！</strong><br>2 这个时间要多注意<strong>对知识系统的理解</strong>，这时间的题一般都涉及好几章的知识，还有就是对 <strong>题目已知条件的蕴含</strong>的总结（ 我的个人经验！）。  </p>
+<h3 id="刷真题时间（10月底到考前五分钟）"><a href="#刷真题时间（10月底到考前五分钟）" class="headerlink" title="刷真题时间（10月底到考前五分钟）"></a>刷真题时间（10月底到考前五分钟）</h3><p>记住是 <strong>真题</strong>！！千万不要碰模拟题！！！不要问为什么！！！<br>能刷几遍就是刷几遍（每个题至少3遍），越多越好的，顺着做，倒着做，做到吐。<br>先一套一套的做，做的时候掐时间，不看答案。<br>第二遍，一种题型一种题型的做，做到看到题型就知道步骤，知道陷阱……<br>第三遍，就是模拟考场环境，一套一套的做<br>第四遍（你确定你还有时间??）,  那你专功错的比较多题型，你说什么？不会的？这个时间怎么可能还有不会！！只有算不对的，没有不会的！  </p>
+<h3 id="注意点及共性问题答疑"><a href="#注意点及共性问题答疑" class="headerlink" title="注意点及共性问题答疑"></a>注意点及共性问题答疑</h3><p>欢迎留言提出问题及建议，共同努力，帮助更多的人！！<br>留言请点击<a href="http://chnwentao.com">我的博客</a>，方便我尽快回复</p>
+<h3 id="相关文章链接-2015-05-01"><a href="#相关文章链接-2015-05-01" class="headerlink" title="相关文章链接[^2015-05-01]"></a>相关文章链接[^2015-05-01]</h3><p><a href="http://chnwentao.com/2015/04/26/我的考研经验及给后人的建议——数学篇/">英语的备考</a><br><a href="http://chnwentao.com/2015/04/26/我的考研经验及给后人的建议——开题/">总的建议</a><br><a href="http://chnwentao.com/2015/05/01/我的考研经验及给后人的建议（03）——英语篇/">英语的备考</a></p>
+<h3 id="下集预告"><a href="#下集预告" class="headerlink" title="下集预告"></a>下集预告</h3><p><a href="http://chnwentao.com/2015/05/01/我的考研经验及给后人的建议（03）——英语篇/">英语的备考</a><br>政治的备考<br>专业课的备考；<br>可能你也会遇到的问题：</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 生活 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 考试 </tag>
+            
+            <tag> 考研 </tag>
             
         </tags>
         
