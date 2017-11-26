@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang=""><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>RNN  and encoder-decoder in NLP | CS Learning of CHNwentao</title><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.3"><script><!-- hexo-inject:begin --><!-- hexo-inject:end -->var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?js?c4c99183a6a02c53d4760ae1995c3b38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL = { 
+  root: '/',
+  algolia: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  localSearch: {"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}"},"path":"search.xml"}
+} </script><link rel="icon" href="/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Sequence to Sequence</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">RNN generation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">condition generation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.1.</span> <span class="toc-text">What kind of information can be encoded in the context c?</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">Sequence to Sequence  (Encoder-Decoder)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.1.</span> <span class="toc-text">常见的 conditioning context</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.</span> <span class="toc-text">问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">attention机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">Attention可以分成hard与soft两种模型:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">性能的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">134</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">184</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">RNN  and encoder-decoder in NLP</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-07-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/深度学习/">深度学习</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">923</span><span class="post-meta__separator">|</span><span>Reading time: 3 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><p>主要是依据 Yoav  17年的新书 NNM for NLP 的 16 章 的内容。</p>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><p>可以说是NNM for NLP 的读书笔记 ，不过自己会慢慢扩充</p>
+<p>&lt;!-- more --&gt;</p>
+<h2>基础</h2>
+<p>又叫做 Sequence to Sequence learning。</p>
+<p>所谓编码，就是将输入序列转化成一个固定长度的向量；解码，就是将之前生成的固定向量再转化成输出序列。</p>
+<h2>Sequence to Sequence</h2>
+<p>注意:</p>
+<ul>
+<li>sequence to sequence conditioned generation framework, also called the encoder-decoder framework</li>
+</ul>
+<h3>RNN generation</h3>
+<p><img src="./RNN_encoder_decoder/001.jpg" alt=""></p>
+<p>比较易于理解，只要端到端训练RNN（LSTM）网络就可以了，在每一个句子末尾打上一个end-of-sentence symbol， EOS符号，用输入句子来预测输出句子。</p>
+<p>相比 ngram language models, RNN 可以捕获 ：</p>
+<ul>
+<li>line lengths</li>
+<li>nested parenthesis balancing.</li>
+</ul>
+<h3>condition generation</h3>
+<p>直观的讲，相比 RNN generation  多了一个 conditioning context 的 向量 。</p>
+<h4>What kind of information can be encoded in the context c?</h4>
+<p>这个就依据任务而定了：</p>
+<ul>
+<li>新闻的话，可以是相关主题</li>
+<li>电影评论的话，可以是 电影评级，地区等等。</li>
+</ul>
+<h3>Sequence to Sequence  (Encoder-Decoder)</h3>
+<p>相比 Encoder-Decoder (condition generation) Models ， 他的
+conditioning context C  表示的是一个序列</p>
+<h4>常见的 conditioning context</h4>
+<ul>
+<li>条件生成方法非常灵活，编码器不需要是RNN。</li>
+<li>条件环境甚至不需要基于文本。</li>
+</ul>
+<h3>应用</h3>
+<ul>
+<li>Machine Translation</li>
+<li>Email Auto-response</li>
+<li>Morphological Inflection</li>
+</ul>
+<h3>问题</h3>
+<h2>attention机制</h2>
+<p>上面介绍的Sequence to Sequence 中编码器要将整个序列的信息压缩进一个固定长度的向量中去。但是这样做有两个弊端，一是语义向量无法完全表示整个序列的信息，还有就是先输入的内容携带的信息会被后输入的信息稀释掉，或者说，被覆盖了。输入序列越长，这个现象就越严重。</p>
+<p>针对 这个问题 有人借用了图像领域中的  Attention机制。 下图是经典图：
+<a href="./RNN_encoder_decoder/001.jpg"></a></p>
+<p>在我看到的文章中， Attention是一个权重vector（通常是softmax的输出），其维度等于context的长度。越大的权重代表对应位置的context越重要。</p>
+<p>一个有趣的事情是：我们可以可视化attention矩阵来告诉大家神经网络在进行任务时关注了哪些部分。</p>
+<h3>历史</h3>
+<p>199X ——2014  Attention机制最早是在视觉图像领域提出来的，应该是在九几年思想就提出来了，</p>
+<p>2014 ：google mind团队的《Recurrent Models of Visual Attention》，他们在RNN模型上使用了attention机制来进行图像分类。</p>
+<p>2014 Bahdanau et al. 《Neural Machine Translation by Jointly Learning to Align and Translate》 使用类似attention的机制在机器翻译任务上将翻译和对齐同时进行，他们的工作算是是第一个提出attention机制应用到NLP领域中。接着类似的基于attention机制的RNN模型扩展开始应用到各种NLP任务中。</p>
+<p>2015 《ABCNN: Attention-Based Convolutional Neural Network for Modeling Sentence Pairs》 这篇论文就提出了3中在CNN中使用attention的方法，是attention在CNN中较早的探索性工作。</p>
+<h3>Attention可以分成hard与soft两种模型:</h3>
+<p>hard: Attention每次移动到一个固定大小的区域</p>
+<p>soft: Attention每次是所有区域的一个加权和</p>
+<h3>性能的问题</h3>
+<p>他增加的模型的计算复杂度</p>
+<p>不使用 attention 机制的时候 ：
+- the encoding is performed in linear time in the input length (O(n))
+- the decoding is performed in linear time in the output length (O(m)).</p>
+<p>使用  attention 机制 ：
+- encoding 不变
+- the decoding is performed in linear time in the output length( O(m * n))</p>
+<h2>参考</h2>
+<ul>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/22081325" target="_blank" rel="noopener">RNN Encoder–Decoder的attention机制简介</a></p>
+</li>
+<li>
+<p><a href="https://www.zhihu.com/question/36591394/answer/69124544?utm_campaign=webshare&amp;utm_source=weibo&amp;utm_medium=zhihu" target="_blank" rel="noopener">Attention based model 是什么，它解决了什么问题？</a></p>
+</li>
+<li>
+<p><a href="http://blog.csdn.net/xbinworld/article/details/54605408" target="_blank" rel="noopener"> 深度学习方法（八）：自然语言处理中的Encoder-Decoder模型，基本Sequence to Sequence模型</a></p>
+</li>
+<li>
+<p><a href="http://www.cnblogs.com/robert-dlut/p/5952032.html" target="_blank" rel="noopener">注意力机制（Attention Mechanism）在自然语言处理中的应用</a></p>
+</li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2017/07/深度学习/读书笔记_RNN_encoder_decoder_inNLP/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/NLP/">NLP</a><a class="post-meta__tags" href="/tags/RNN/">RNN</a><a class="post-meta__tags" href="/tags/RecNN/">RecNN</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2017/07/深度学习/读书笔记_RecNN_vs_RNN_inNLP/"><i class="fa fa-chevron-left">  </i><span>RecNN vs RNN in NLP</span></a></div><div class="next-post pull-right"><a href="/2017/03/数据挖掘/DM-在分类中如何处理训练集中不平衡问题/"><span>在分类中如何处理训练集中不平衡问题</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body></html>
