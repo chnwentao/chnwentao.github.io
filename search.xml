@@ -426,8 +426,7 @@
       <title><![CDATA[RecNN vs RNN in NLP]]></title>
       <url>/2017/07/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_RecNN_vs_RNN_inNLP/</url>
       <content type="html"><![CDATA[<p>主要是依据 Yoav  17年的新书 NNM for NLP 的 18 章 的内容。</p>
-<p>可以说是NNM for NLP的 读书笔记 ，不过自己会慢慢扩充</p>
-<p>&lt;!-- more --&gt;</p>
+<p>可以说是NNM for NLP的 读书笔记 ，不过自己会慢慢扩充&lt;!-- more --&gt;</p>
 <h2>基础</h2>
 <ul>
 <li>1990 Pollack 提出 RecNN</li>
@@ -511,8 +510,7 @@ linearizing trees into linear sequence that is then fed into a gated RNN accepto
       <title><![CDATA[RNN  and encoder-decoder in NLP]]></title>
       <url>/2017/07/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_RNN_encoder_decoder_inNLP/</url>
       <content type="html"><![CDATA[<p>主要是依据 Yoav  17年的新书 NNM for NLP 的 16 章 的内容。</p>
-<p>可以说是NNM for NLP 的读书笔记 ，不过自己会慢慢扩充</p>
-<p>&lt;!-- more --&gt;</p>
+<p>可以说是NNM for NLP 的读书笔记 ，不过自己会慢慢扩充  &lt;!-- more --&gt;</p>
 <h2>基础</h2>
 <p>又叫做 Sequence to Sequence learning。</p>
 <p>所谓编码，就是将输入序列转化成一个固定长度的向量；解码，就是将之前生成的固定向量再转化成输出序列。</p>
@@ -935,9 +933,9 @@ conditioning context C  表示的是一个序列</p>
         
         <tags>
             
-            <tag> 聊天机器人 </tag>
-            
             <tag> NLP </tag>
+            
+            <tag> 聊天机器人 </tag>
             
             <tag> Python </tag>
             
@@ -1180,9 +1178,9 @@ read_file:
             
             <tag> NLP </tag>
             
-            <tag> Python </tag>
-            
             <tag> DM </tag>
+            
+            <tag> Python </tag>
             
         </tags>
         
@@ -2584,13 +2582,13 @@ IPython notebook对数据科学家来说是个交互地呈现科学和理论工�
         
         <tags>
             
-            <tag> 配置 </tag>
-            
-            <tag> hadoop </tag>
-            
             <tag> linux </tag>
             
+            <tag> 配置 </tag>
+            
             <tag> 安装 </tag>
+            
+            <tag> hadoop </tag>
             
             <tag> SSH </tag>
             
@@ -2632,13 +2630,13 @@ http://localhost:50070/logs/hadoop-wente-datanode-WenteMBP.local.log
         
         <tags>
             
-            <tag> 配置 </tag>
-            
-            <tag> hadoop </tag>
-            
             <tag> linux </tag>
             
+            <tag> 配置 </tag>
+            
             <tag> 安装 </tag>
+            
+            <tag> hadoop </tag>
             
         </tags>
         
@@ -3030,11 +3028,11 @@ F1-Score：precision和recall的调和平均数</p>
             
             <tag> 机器学习 </tag>
             
-            <tag> DM </tag>
-            
             <tag> ML </tag>
             
             <tag> 数据挖掘 </tag>
+            
+            <tag> DM </tag>
             
         </tags>
         
@@ -3258,11 +3256,11 @@ SVM适用于：在维数通常很高的文本分类（很流行）。
             
             <tag> 机器学习 </tag>
             
-            <tag> DM </tag>
-            
             <tag> ML </tag>
             
             <tag> 数据挖掘 </tag>
+            
+            <tag> DM </tag>
             
             <tag> 分数算法 </tag>
             
@@ -3768,9 +3766,9 @@ Python的os模块封装了常见的系统调用，其中就包括fork，可以�
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Python3 </tag>
             
@@ -3837,9 +3835,9 @@ json.dump()方法可以直接把JSON写入一个file-like Object</p>
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Python3 </tag>
             
@@ -4608,13 +4606,13 @@ java -version</p>
         
         <tags>
             
-            <tag> 配置 </tag>
-            
-            <tag> hadoop </tag>
-            
             <tag> linux </tag>
             
+            <tag> 配置 </tag>
+            
             <tag> 安装 </tag>
+            
+            <tag> hadoop </tag>
             
             <tag> 单机 </tag>
             
@@ -4697,9 +4695,9 @@ NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>
             
             <tag> 配置 </tag>
             
-            <tag> hadoop </tag>
-            
             <tag> 安装 </tag>
+            
+            <tag> hadoop </tag>
             
             <tag> 参数 </tag>
             
@@ -4762,11 +4760,11 @@ NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 无向图 </tag>
             
@@ -4863,15 +4861,15 @@ scp 是 secure copy 的简写，用于在 Linux 下进行远程拷贝文件，�
         
         <tags>
             
-            <tag> 配置 </tag>
-            
-            <tag> hadoop </tag>
+            <tag> 集群 </tag>
             
             <tag> linux </tag>
             
+            <tag> 配置 </tag>
+            
             <tag> 安装 </tag>
             
-            <tag> 集群 </tag>
+            <tag> hadoop </tag>
             
         </tags>
         
@@ -4911,11 +4909,11 @@ scp 是 secure copy 的简写，用于在 Linux 下进行远程拷贝文件，�
         
         <tags>
             
-            <tag> Eclipse </tag>
-            
             <tag> 配置 </tag>
             
             <tag> hadoop </tag>
+            
+            <tag> Eclipse </tag>
             
         </tags>
         
@@ -4977,11 +4975,11 @@ scp 是 secure copy 的简写，用于在 Linux 下进行远程拷贝文件，�
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
         </tags>
         
@@ -5159,9 +5157,9 @@ script 运行时需要的环境变量预先宣告与配置。</p>
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Linux </tag>
             
@@ -6397,9 +6395,9 @@ builtin ：表示该指令为bash 内建的指令功能；
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Linux </tag>
             
@@ -7004,11 +7002,11 @@ MSD最坏的情况就是所有的键均相同，同样大量含有相同前缀�
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 排序 </tag>
             
@@ -7062,13 +7060,13 @@ MSD最坏的情况就是所有的键均相同，同样大量含有相同前缀�
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
             
             <tag> 查找算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 散列表 </tag>
             
@@ -7123,11 +7121,11 @@ MSD最坏的情况就是所有的键均相同，同样大量含有相同前缀�
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> 算法 </tag>
             
             <tag> 查找算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 二叉查找树 </tag>
             
@@ -7273,11 +7271,11 @@ rank(排名，找出小于指定键的键的数量)</p>
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 查找 </tag>
             
@@ -7384,11 +7382,11 @@ rank(排名，找出小于指定键的键的数量)</p>
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 排序算法 </tag>
             
@@ -7487,11 +7485,11 @@ rank(排名，找出小于指定键的键的数量)</p>
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 排序 </tag>
             
@@ -7634,11 +7632,11 @@ N! /&lt;= 叶子结点的数量 /&lt;= 2&lt;sup&gt;K=h&lt;/sup&gt;</p>
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 排序 </tag>
             
@@ -7734,11 +7732,11 @@ N! /&lt;= 叶子结点的数量 /&lt;= 2&lt;sup&gt;K=h&lt;/sup&gt;</p>
         
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> java </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 排序 </tag>
             
@@ -11780,9 +11778,9 @@ User Library 即用户类库，用来组织多个 jar 包。在默认位于 Ecli
         
         <tags>
             
-            <tag> Eclipse </tag>
-            
             <tag> 配置 </tag>
+            
+            <tag> Eclipse </tag>
             
             <tag> 快捷键 </tag>
             
@@ -12154,9 +12152,9 @@ Python的错误其实是<code>class</code>，所有的错误类型都继承自Ba
             
             <tag> 学习 </tag>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> 编程 </tag>
             
@@ -12301,9 +12299,9 @@ metaclass允许你创建类或者修改类。换句话说，你可以把类看�
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Python3 </tag>
             
@@ -12492,9 +12490,9 @@ metaclass允许你创建类或者修改类。换句话说，你可以把类看�
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Python3 </tag>
             
@@ -12560,9 +12558,9 @@ Mac或Linux上有可能并存Python 3.x和Python 2.x，因此对应的pip命令�
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Python3 </tag>
             
@@ -12684,9 +12682,9 @@ Mac或Linux上有可能并存Python 3.x和Python 2.x，因此对应的pip命令�
             
             <tag> 学习 </tag>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> 编程 </tag>
             
@@ -12811,9 +12809,9 @@ Python的函数返回多值其实就是返回一个<code>tuple</code>。</p>
             
             <tag> 学习 </tag>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> 编程 </tag>
             
@@ -13026,9 +13024,9 @@ Python的函数返回多值其实就是返回一个<code>tuple</code>。</p>
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Python3 </tag>
             
@@ -13096,9 +13094,9 @@ Python的函数返回多值其实就是返回一个<code>tuple</code>。</p>
         
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Python3 </tag>
             
