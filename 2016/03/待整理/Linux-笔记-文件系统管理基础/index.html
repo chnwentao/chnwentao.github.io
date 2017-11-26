@@ -8,61 +8,45 @@
   root: '/',
   algolia: undefined,
   copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
   },
   localSearch: {"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}"},"path":"search.xml"}
-} </script><link rel="icon" href="/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">文件系统基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">EXT2文件系统（Linux second extended file system ）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">inode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">superblock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">Filesystem Description (文件系统描述说明)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.</span> <span class="toc-text">block bitmap (区块对照表)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.6.</span> <span class="toc-text">inode bitmap (inode 对照表)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.7.</span> <span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">文件系统概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">文件系统与目录树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">文件的存取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">非同步处理概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.4.</span> <span class="toc-text">Linux VFS （Vistual Filesystem Siwitch）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">XFS filesystem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">data section</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.</span> <span class="toc-text">log section</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.3.</span> <span class="toc-text">realtime section</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">文件系统的简单操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.</span> <span class="toc-text">列出文件系统的整体磁盘使用量操作 df</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.</span> <span class="toc-text">du操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.3.</span> <span class="toc-text">Hard Link & Symbolic Link（待研究）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">硬盘操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.1.</span> <span class="toc-text">列出系统上的所有硬盘列表 lsblk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.2.</span> <span class="toc-text">装置的UUID等参数查看blkid</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.3.</span> <span class="toc-text">列出硬盘的分区类型与分区信息查看 parted</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.4.</span> <span class="toc-text">磁盘分割操作： gdisk/fdisk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.5.</span> <span class="toc-text">格式化操作 mkfs.ext4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">文件系统挂载与卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.1.</span> <span class="toc-text">挂载操作 mount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.2.</span> <span class="toc-text">开机挂载操作 /etc/fstab 及 etc/mtab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.3.</span> <span class="toc-text">loop挂载操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">内存交换swap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">文件的压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.1.</span> <span class="toc-text">文件压缩常见命令 gzip zcat/zmore/zless/zgrep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.2.</span> <span class="toc-text">打包指令 tar</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">134</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">184</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">Linux文件系统管理基础学习笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-03-09</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/Linux/">Linux</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">3,678</span><span class="post-meta__separator">|</span><span>阅读时长: 12 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><h2>文件系统基本知识</h2>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><p>我们称呼一个可被挂载的数据为一个文件系统而不是一个分区！</p>
-<p>一个文件系统，文件内容和很多属性，这种数据放在不同和块中，常用的有三个：</p>
+} </script><link rel="icon" href="/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件系统基本知识"><span class="toc-number">1.</span> <span class="toc-text">文件系统基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXT2文件系统（Linux-second-extended-file-system-）"><span class="toc-number">2.</span> <span class="toc-text">EXT2文件系统（Linux second extended file system ）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#block"><span class="toc-number">2.1.</span> <span class="toc-text">block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#inode"><span class="toc-number">2.2.</span> <span class="toc-text">inode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#superblock"><span class="toc-number">2.3.</span> <span class="toc-text">superblock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Filesystem-Description-文件系统描述说明"><span class="toc-number">2.4.</span> <span class="toc-text">Filesystem Description (文件系统描述说明)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#block-bitmap-区块对照表"><span class="toc-number">2.5.</span> <span class="toc-text">block bitmap (区块对照表)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#inode-bitmap-inode-对照表"><span class="toc-number">2.6.</span> <span class="toc-text">inode bitmap (inode 对照表)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优缺点"><span class="toc-number">2.7.</span> <span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件系统概念"><span class="toc-number">3.</span> <span class="toc-text">文件系统概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统与目录树"><span class="toc-number">3.1.</span> <span class="toc-text">文件系统与目录树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的存取"><span class="toc-number">3.2.</span> <span class="toc-text">文件的存取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非同步处理概念"><span class="toc-number">3.3.</span> <span class="toc-text">非同步处理概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-VFS-（Vistual-Filesystem-Siwitch）"><span class="toc-number">3.4.</span> <span class="toc-text">Linux VFS （Vistual Filesystem Siwitch）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XFS-filesystem"><span class="toc-number">4.</span> <span class="toc-text">XFS filesystem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#data-section"><span class="toc-number">4.1.</span> <span class="toc-text">data section</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-section"><span class="toc-number">4.2.</span> <span class="toc-text">log section</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#realtime-section"><span class="toc-number">4.3.</span> <span class="toc-text">realtime section</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件系统的简单操作"><span class="toc-number">5.</span> <span class="toc-text">文件系统的简单操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列出文件系统的整体磁盘使用量操作-df"><span class="toc-number">5.1.</span> <span class="toc-text">列出文件系统的整体磁盘使用量操作 df</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#du操作"><span class="toc-number">5.2.</span> <span class="toc-text">du操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hard-Link-amp-Symbolic-Link（待研究）"><span class="toc-number">5.3.</span> <span class="toc-text">Hard Link & Symbolic Link（待研究）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#硬盘操作"><span class="toc-number">6.</span> <span class="toc-text">硬盘操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列出系统上的所有硬盘列表-lsblk"><span class="toc-number">6.1.</span> <span class="toc-text">列出系统上的所有硬盘列表 lsblk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#装置的UUID等参数查看blkid"><span class="toc-number">6.2.</span> <span class="toc-text">装置的UUID等参数查看blkid</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出硬盘的分区类型与分区信息查看-parted"><span class="toc-number">6.3.</span> <span class="toc-text">列出硬盘的分区类型与分区信息查看 parted</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘分割操作：-gdisk-fdisk"><span class="toc-number">6.4.</span> <span class="toc-text">磁盘分割操作： gdisk/fdisk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式化操作-mkfs-ext4"><span class="toc-number">6.5.</span> <span class="toc-text">格式化操作 mkfs.ext4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件系统挂载与卸载"><span class="toc-number">7.</span> <span class="toc-text">文件系统挂载与卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#挂载操作-mount"><span class="toc-number">7.1.</span> <span class="toc-text">挂载操作 mount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开机挂载操作-etc-fstab-及-etc-mtab"><span class="toc-number">7.2.</span> <span class="toc-text">开机挂载操作 /etc/fstab 及 etc/mtab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loop挂载操作"><span class="toc-number">7.3.</span> <span class="toc-text">loop挂载操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存交换swap"><span class="toc-number">8.</span> <span class="toc-text">内存交换swap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件的压缩"><span class="toc-number">9.</span> <span class="toc-text">文件的压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件压缩常见命令-gzip-zcat-zmore-zless-zgrep"><span class="toc-number">9.1.</span> <span class="toc-text">文件压缩常见命令 gzip zcat/zmore/zless/zgrep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包指令-tar"><span class="toc-number">9.2.</span> <span class="toc-text">打包指令 tar</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">134</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">184</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">Linux文件系统管理基础学习笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-03-09</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/Linux/">Linux</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">3,680</span><span class="post-meta__separator">|</span><span>Reading time: 12 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><h2 id="文件系统基本知识"><a href="#文件系统基本知识" class="headerlink" title="文件系统基本知识"></a>文件系统基本知识</h2><p>我们称呼一个可被挂载的数据为一个文件系统而不是一个分区！</p>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><p>一个文件系统，文件内容和很多属性，这种数据放在不同和块中，常用的有三个：</p>
 <ul>
-<li>
-<p>superblock：记录此filesystem 的整体资讯，包括inode/block的总量、使用量、剩余量， 以及文件系统的格式与相关资讯等；</p>
+<li><p>superblock：记录此filesystem 的整体资讯，包括inode/block的总量、使用量、剩余量， 以及文件系统的格式与相关资讯等；</p>
 </li>
-<li>
-<p>inode：记录文件的属性，一个文件占用一个inode，同时记录此文件的数据所在的block 号码；（能找到inode,就可以找到它的block）</p>
+<li><p>inode：记录文件的属性，一个文件占用一个inode，同时记录此文件的数据所在的block 号码；（能找到inode,就可以找到它的block）</p>
 </li>
-<li>
-<p>block：实际记录文件的内容，若文件太大时，会占用多个block 。</p>
+<li><p>block：实际记录文件的内容，若文件太大时，会占用多个block 。</p>
 </li>
 </ul>
-<p>这种数据存取的方法我们称为**索引式文件系统(**indexed allocation)。</p>
-<p>文件系统一开始就将inode与block规划好了，除非重新格式化(或者利用resize2fs等指令变更文件系统大小)，否则inode与block固定后就不再变动。
-&lt;!-- more --&gt;</p>
-<h2>EXT2文件系统（Linux second extended file system ）</h2>
-<p>Ext2文件系统主要有：boot sector, superblock, inode bitmap, block bitmap, inode table, data block 等六大部分。</p>
-<h3>block</h3>
-<p>Ext2 文件系统的block特点：</p>
+<p>这种数据存取的方法我们称为<strong>索引式文件系统(</strong>indexed allocation)。</p>
+<p>文件系统一开始就将inode与block规划好了，除非重新格式化(或者利用resize2fs等指令变更文件系统大小)，否则inode与block固定后就不再变动。<br><a id="more"></a></p>
+<h2 id="EXT2文件系统（Linux-second-extended-file-system-）"><a href="#EXT2文件系统（Linux-second-extended-file-system-）" class="headerlink" title="EXT2文件系统（Linux second extended file system ）"></a>EXT2文件系统（Linux second extended file system ）</h2><p>Ext2文件系统主要有：boot sector, superblock, inode bitmap, block bitmap, inode table, data block 等六大部分。</p>
+<h3 id="block"><a href="#block" class="headerlink" title="block"></a>block</h3><p>Ext2 文件系统的block特点：</p>
 <ul>
-<li>
-<p>原则上，block 的大小与数量在格式化完就不能够再改变了(除非重新格式化)；</p>
+<li><p>原则上，block 的大小与数量在格式化完就不能够再改变了(除非重新格式化)；</p>
 </li>
-<li>
-<p>每个block 内最多只能够放置一个文件的资料；</p>
+<li><p>每个block 内最多只能够放置一个文件的资料；</p>
 </li>
-<li>
-<p>承上，如果文件大于block 的大小，则一个文件会占用多个block 数量；</p>
+<li><p>承上，如果文件大于block 的大小，则一个文件会占用多个block 数量；</p>
 </li>
-<li>
-<p>承上，若文件小于block ，则该block 的剩余容量就不能够再被使用了(磁盘空间会浪费)。</p>
+<li><p>承上，若文件小于block ，则该block 的剩余容量就不能够再被使用了(磁盘空间会浪费)。</p>
 </li>
 </ul>
 <p>综上：大的block 可能会产生较严重的磁盘容量浪费，但是如果block 较小的话，那么大型文件将会占用数量更多的block ，而inode 也要记录更多的block 号码，此时将可能导致文件系统不良的读写效能。 所以一般选择4K,(现在的磁盘都很大！)</p>
-<h3>inode</h3>
-<p>inode的数量与大小也是在格式化时就已经固定，其他特点：</p>
+<h3 id="inode"><a href="#inode" class="headerlink" title="inode"></a>inode</h3><p>inode的数量与大小也是在格式化时就已经固定，其他特点：</p>
 <ul>
-<li>
-<p>每个inode 大小均固定为128 bytes (新的ext4 与xfs 可设定到256 bytes)；</p>
+<li><p>每个inode 大小均固定为128 bytes (新的ext4 与xfs 可设定到256 bytes)；</p>
 </li>
-<li>
-<p>每个文件（**不管是一般文件还是目录文件）都仅会占用一个inode 而已；</p>
+<li><p>每个文件（**不管是一般文件还是目录文件）都仅会占用一个inode 而已；</p>
 </li>
-<li>
-<p>承上，因此文件系统能够建立的文件数量与inode 的数量有关；</p>
+<li><p>承上，因此文件系统能够建立的文件数量与inode 的数量有关；</p>
 </li>
-<li>
-<p>系统读取文件时需要先找到inode，并分析inode 所记录的权限与使用者是否符合，若符合才能够开始实际读取 block 的内容。</p>
+<li><p>系统读取文件时需要先找到inode，并分析inode 所记录的权限与使用者是否符合，若符合才能够开始实际读取 block 的内容。</p>
 </li>
 </ul>
 <p>inode的大小是有限的，一个block号码要4byte，为了记录更多的数据 ，系统规定：</p>
@@ -70,179 +54,69 @@
 <p>将inode 记录block 号码的区域定义为12个直接，一个间接, 一个双间接与一个三间接记录区。</p>
 </blockquote>
 <p>inode 能够指定多少个block 呢？我们以较小的1K block 来说明好了，可以指定的情况如下：</p>
-<p>12个直接指向： <code>12*1K=12K</code>
-由于是直接指向，所以总共可记录12笔记录，因此总额大小为如上所示；</p>
-<p>间接： <code>256*1K=256K</code>
-每笔block号码的记录会花去4bytes，因此1K的大小能够记录256笔记录，因此一个间接可以记录的文件大小如上；</p>
-<p>双间接： <code>256*256*1K=256 2 K</code>
-第一层block会指定256个第二层，每个第二层可以指定256个号码，因此总额大小如上；</p>
-<p>三间接： <code>256*256*256*1K=256 3 K</code>
-第一层block会指定256个第二层，每个第二层可以指定256个第三层，每个第三层可以指定256个号码，因此总额大小如上；</p>
+<p>12个直接指向： <code>12*1K=12K</code><br>由于是直接指向，所以总共可记录12笔记录，因此总额大小为如上所示；</p>
+<p>间接： <code>256*1K=256K</code><br>每笔block号码的记录会花去4bytes，因此1K的大小能够记录256笔记录，因此一个间接可以记录的文件大小如上； </p>
+<p>双间接： <code>256*256*1K=256 2 K</code><br>第一层block会指定256个第二层，每个第二层可以指定256个号码，因此总额大小如上；</p>
+<p>三间接： <code>256*256*256*1K=256 3 K</code><br>第一层block会指定256个第二层，每个第二层可以指定256个第三层，每个第三层可以指定256个号码，因此总额大小如上；</p>
 <p>总额：将直接、间接、双间接、三间接加总，得到<code>12 + 256 + 256*256 + 256*256*256 (K) = 16GB</code></p>
 <p>Ext4 文件系统的inode 容量已经可以扩大到256bytes 了，更大的inode 容量，可以纪录更多的文件系统资讯，包括新的ACL 以及SELinux 类型等， 当然，可以纪录的单一文件容量达16TB 且单一文件系统总容量可达1EB 哩！</p>
-<h3>superblock</h3>
-<p>一般来说， superblock的大小为1024bytes superblock的功能：</p>
+<h3 id="superblock"><a href="#superblock" class="headerlink" title="superblock"></a>superblock</h3><p>一般来说， superblock的大小为1024bytes superblock的功能：</p>
 <ul>
-<li>
-<p>block 与inode 的总量；</p>
+<li><p>block 与inode 的总量；</p>
 </li>
-<li>
-<p>未使用与已使用的inode / block 数量；</p>
+<li><p>未使用与已使用的inode / block 数量；</p>
 </li>
-<li>
-<p>block 与inode 的大小(block 为1, 2, 4K，inode 为128bytes 或256bytes)；</p>
+<li><p>block 与inode 的大小(block 为1, 2, 4K，inode 为128bytes 或256bytes)；</p>
 </li>
-<li>
-<p>filesystem 的挂载时间、最近一次写入资料的时间、最近一次检验磁盘(fsck) 的时间等文件系统的相关资讯；</p>
+<li><p>filesystem 的挂载时间、最近一次写入资料的时间、最近一次检验磁盘(fsck) 的时间等文件系统的相关资讯；</p>
 </li>
-<li>
-<p>一个valid bit 数值，若此文件系统已被挂载，则valid bit 为0 ，若未被挂载，则valid bit 为1。</p>
+<li><p>一个valid bit 数值，若此文件系统已被挂载，则valid bit 为0 ，若未被挂载，则valid bit 为1。</p>
 </li>
 </ul>
-<h3>Filesystem Description (文件系统描述说明)</h3>
-<h3>block bitmap (区块对照表)</h3>
-<h3>inode bitmap (inode 对照表)</h3>
-<h3>优缺点</h3>
-<h2>文件系统概念</h2>
-<p>EXT家族支持度最广，但格式化超慢！</p>
-<h3>文件系统与目录树</h3>
-<p>我们在Linux下的文件系统建立一个目录时，文件系统会分配一个inode与至少一块block给该目录。</p>
-<p>inode本身并不记录文件名，文件名的记录是在目录的block当中。
-所以 新增/删除/更名文件名与目录的w权限有关！！那么因为文件名是记录在目录的block当中，因此当我们要读取某个文件时，就务必会经过目录的inode与block，然后才能够找到那个待读取文件的inode号码，最终才会读到正确的文件的block内的数据 。</p>
+<h3 id="Filesystem-Description-文件系统描述说明"><a href="#Filesystem-Description-文件系统描述说明" class="headerlink" title="Filesystem Description (文件系统描述说明)"></a>Filesystem Description (文件系统描述说明)</h3><h3 id="block-bitmap-区块对照表"><a href="#block-bitmap-区块对照表" class="headerlink" title="block bitmap (区块对照表)"></a>block bitmap (区块对照表)</h3><h3 id="inode-bitmap-inode-对照表"><a href="#inode-bitmap-inode-对照表" class="headerlink" title="inode bitmap (inode 对照表)"></a>inode bitmap (inode 对照表)</h3><h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><h2 id="文件系统概念"><a href="#文件系统概念" class="headerlink" title="文件系统概念"></a>文件系统概念</h2><p>EXT家族支持度最广，但格式化超慢！</p>
+<h3 id="文件系统与目录树"><a href="#文件系统与目录树" class="headerlink" title="文件系统与目录树"></a>文件系统与目录树</h3><p>我们在Linux下的文件系统建立一个目录时，文件系统会分配一个inode与至少一块block给该目录。</p>
+<p>inode本身并不记录文件名，文件名的记录是在目录的block当中。<br>所以 新增/删除/更名文件名与目录的w权限有关！！那么因为文件名是记录在目录的block当中，因此当我们要读取某个文件时，就务必会经过目录的inode与block，然后才能够找到那个待读取文件的inode号码，最终才会读到正确的文件的block内的数据 。</p>
 <p>查询root 主目录内的文件所占用的inode 号码时，可以使用<code>ls -i</code>这个选项来处理：</p>
-<h3>文件的存取</h3>
-<p>新增一个文件，此时文件系统的行为是：</p>
+<h3 id="文件的存取"><a href="#文件的存取" class="headerlink" title="文件的存取"></a>文件的存取</h3><p>新增一个文件，此时文件系统的行为是：</p>
 <ol>
-<li>
-<p>先确定使用者对于欲新增文件的目录是否具有w 与x 的权限，若有的话才能新增；</p>
+<li><p>先确定使用者对于欲新增文件的目录是否具有w 与x 的权限，若有的话才能新增；</p>
 </li>
-<li>
-<p>根据inode bitmap 找到没有使用的inode 号码，并将新文件的权限/属性写入；</p>
+<li><p>根据inode bitmap 找到没有使用的inode 号码，并将新文件的权限/属性写入；</p>
 </li>
-<li>
-<p>根据block bitmap 找到没有使用中的block 号码，并将实际的数据写入block 中，且更新inode 的block 指向数据；</p>
+<li><p>根据block bitmap 找到没有使用中的block 号码，并将实际的数据写入block 中，且更新inode 的block 指向数据；</p>
 </li>
-<li>
-<p>将刚刚写入的inode 与block 资料同步更新inode bitmap 与block bitmap，并更新superblock 的内容。</p>
+<li><p>将刚刚写入的inode 与block 资料同步更新inode bitmap 与block bitmap，并更新superblock 的内容。</p>
 </li>
 </ol>
-<p>为了检查文件的一下致性，引入了<strong>日志式文件系统</strong>（journaling filesystem）概念。
-当数据的纪录过程当中发生了问题，那么我们的系统只要去检查日志记录区块， 就可以知道哪个文件发生了问题，针对该问题来做一致性的检查即可，而不必针对整块filesystem 去检查， 这样就可以达到快速修复filesystem</p>
-<h3>非同步处理概念</h3>
-<p>当系统载入一个文件到内存后，如果该文件没有被更动过，则在内存内的文件数据会被设定为干净(clean)的。 但如果内存中的文件数据被更改过了(例如你用nano去编辑过这个文件)，此时该内存中的数据会被设定为脏的(Dirty)。此时所有的动作都还在内存中执行，并没有写入到硬盘中！系统会<strong>不定时的</strong>将内存中设定为Dirty的数据 写回，以保持硬盘与内存数据的一致性。</p>
-<h3>Linux VFS （Vistual Filesystem Siwitch）</h3>
-<p>为了可以支持多种filesystem ,整个Linux 的系统都是透过一个名为Virtual Filesystem Switch 的核心功能去读取filesystem 。</p>
-<h2>XFS filesystem</h2>
-<p>xfs 这一个较适合<strong>高容量硬盘</strong>与<strong>巨型文件</strong>性能较佳的文件系统了。</p>
+<p>为了检查文件的一下致性，引入了<strong>日志式文件系统</strong>（journaling filesystem）概念。<br>当数据的纪录过程当中发生了问题，那么我们的系统只要去检查日志记录区块， 就可以知道哪个文件发生了问题，针对该问题来做一致性的检查即可，而不必针对整块filesystem 去检查， 这样就可以达到快速修复filesystem </p>
+<h3 id="非同步处理概念"><a href="#非同步处理概念" class="headerlink" title="非同步处理概念"></a>非同步处理概念</h3><p>当系统载入一个文件到内存后，如果该文件没有被更动过，则在内存内的文件数据会被设定为干净(clean)的。 但如果内存中的文件数据被更改过了(例如你用nano去编辑过这个文件)，此时该内存中的数据会被设定为脏的(Dirty)。此时所有的动作都还在内存中执行，并没有写入到硬盘中！系统会<strong>不定时的</strong>将内存中设定为Dirty的数据 写回，以保持硬盘与内存数据的一致性。</p>
+<h3 id="Linux-VFS-（Vistual-Filesystem-Siwitch）"><a href="#Linux-VFS-（Vistual-Filesystem-Siwitch）" class="headerlink" title="Linux VFS （Vistual Filesystem Siwitch）"></a>Linux VFS （Vistual Filesystem Siwitch）</h3><p>为了可以支持多种filesystem ,整个Linux 的系统都是透过一个名为Virtual Filesystem Switch 的核心功能去读取filesystem 。</p>
+<h2 id="XFS-filesystem"><a href="#XFS-filesystem" class="headerlink" title="XFS filesystem"></a>XFS filesystem</h2><p>xfs 这一个较适合<strong>高容量硬盘</strong>与<strong>巨型文件</strong>性能较佳的文件系统了。</p>
 <p>xfs 文件系统在数据的分布上，主要规划为三个部份，一个数据区(data section)、一个文件系统活动登录区(log section)以及一个即时运作区(realtime section)。</p>
-<h3>data section</h3>
-<p>类似于EXT的block group , 只是inode 与block是动态产生，并非一开始于格式化就完成配置的。所以格式化动作超快！</p>
-<h3>log section</h3>
-<p>类似日志区，因为系统所有动作的时候都会在这个区块做个纪录，因此这个区块的硬盘活动是相当频繁的！所以最好有一个SSD</p>
-<h3>realtime section</h3>
-<p>当有文件要被建立时，xfs 会在这个区段里面找一个到数个的extent 区块，将文件放置在这个区块内，等到分配完毕后，再写入到data section 的inode 与block 去！这个extent 区块的大小得要在格式化的时候就先指定，最小值是4K 最大可到1G。一般非硬盘阵列的硬盘预设为64K，
-而具有类似硬盘阵列的stripe 情况下，则建议extent 设定为与stripe 一样大较佳。</p>
+<h3 id="data-section"><a href="#data-section" class="headerlink" title="data section"></a>data section</h3><p>类似于EXT的block group , 只是inode 与block是动态产生，并非一开始于格式化就完成配置的。所以格式化动作超快！</p>
+<h3 id="log-section"><a href="#log-section" class="headerlink" title="log section"></a>log section</h3><p>类似日志区，因为系统所有动作的时候都会在这个区块做个纪录，因此这个区块的硬盘活动是相当频繁的！所以最好有一个SSD</p>
+<h3 id="realtime-section"><a href="#realtime-section" class="headerlink" title="realtime section"></a>realtime section</h3><p>当有文件要被建立时，xfs 会在这个区段里面找一个到数个的extent 区块，将文件放置在这个区块内，等到分配完毕后，再写入到data section 的inode 与block 去！这个extent 区块的大小得要在格式化的时候就先指定，最小值是4K 最大可到1G。一般非硬盘阵列的硬盘预设为64K，<br>而具有类似硬盘阵列的stripe 情况下，则建议extent 设定为与stripe 一样大较佳。</p>
 <p>这个一般<strong>不要改动，很影响性能</strong>。</p>
-<h2>文件系统的简单操作</h2>
-<h3>列出文件系统的整体磁盘使用量操作 df</h3>
-<p><code>df [-ahikHTm] [目录或文件名]</code>
-选项与参数：
--a ：列出所有的文件系统，包括系统特有的<code>/proc</code> 等文件系统；
--k ：以KBytes 的容量显示各文件系统；
--m ：以MBytes 的容量显示各文件系统；
--h ：<strong><em>以人们较易阅读的GBytes, MBytes, KBytes 等格式自行显示；</em></strong>
--H ：以M=1000K 取代M=1024K 的进位方式；
--T ：连同该partition 的filesystem 名称(例如xfs) 也列出；
--i ：不用磁盘容量，而以inode 的数量来显示</p>
+<h2 id="文件系统的简单操作"><a href="#文件系统的简单操作" class="headerlink" title="文件系统的简单操作"></a>文件系统的简单操作</h2><h3 id="列出文件系统的整体磁盘使用量操作-df"><a href="#列出文件系统的整体磁盘使用量操作-df" class="headerlink" title="列出文件系统的整体磁盘使用量操作 df"></a>列出文件系统的整体磁盘使用量操作 df</h3><p><code>df [-ahikHTm] [目录或文件名]</code><br>选项与参数：<br>-a ：列出所有的文件系统，包括系统特有的<code>/proc</code> 等文件系统；<br>-k ：以KBytes 的容量显示各文件系统；<br>-m ：以MBytes 的容量显示各文件系统；<br>-h ：<strong><em>以人们较易阅读的GBytes, MBytes, KBytes 等格式自行显示；</em></strong><br>-H ：以M=1000K 取代M=1024K 的进位方式；<br>-T ：连同该partition 的filesystem 名称(例如xfs) 也列出；<br>-i ：不用磁盘容量，而以inode 的数量来显示</p>
 <p>在Linux 底下如果df 没有加任何选项，那么预设会将系统内所有的 (不含特殊内存内的文件系统与swap) 都以1 Kbytes 的容量来列出来！</p>
 <p>du读取的范围主要是在Superblock 内的内容， 所以这个指令显示结果的速度非常的快速！</p>
-<h3>du操作</h3>
-<p><code>du [-ahskm]文件或目录名称</code>
-选项与参数：
--a ：列出所有的文件与目录容量，因为预设仅统计目录底下的文件量而已。
--h ：以人们较易读的容量格式(G/M) 显示；
--s ：列出总量而已，而不列出每个各别的目录占用容量；
--S ：不包括子目录下的总计，与-s 有点差别。
--k ：以KBytes 列出容量显示；
--m ：以MBytes 列出容量显示；</p>
-<p>du 这个指令其实会直接到文件系统内去搜寻所有的文件数据 ，所以比较慢。
-常用命令：<code>du -sm /*</code>
-这是个很常被使用的功能～模糊字母* 来代表每个目录，如果想要检查某个目录下，哪个次目录占用最大的容量，可以用这个方法找出来。</p>
-<h3>Hard Link &amp; Symbolic Link（待研究）</h3>
-<h2>硬盘操作</h2>
-<h3>列出系统上的所有硬盘列表 lsblk</h3>
-<p>(list block device)
-<code>lsblk [-dfimpt] [device]</code>
-选项与参数：
--d ：仅列出磁盘本身，并不会列出该磁盘的分割资料
--f ：同时列出该磁盘内的文件系统名称
--i ：使用ASCII 的线段输出，不要使用复杂的编码(再某些环境下很有用)
--m ：同时输出该装置在/dev 底下的权限资料(rwx 的资料)
--p ：列出该装置的完整文件名！而不是仅列出最后的名字而已。
--t ：列出该磁盘装置的详细资料，包括磁盘伫列机制、预读写的资料量大小等</p>
-<p>RM：是否为可卸载装置(removable device)，如光碟、USB 磁盘等等
-RO：是否为唯读装置的意思
-TYPE：是磁盘(disk)、分区(partition) 还是只读(rom) 等输出
-MOUTPOINT：就是前一章谈到的挂载点！</p>
-<h3>装置的UUID等参数查看blkid</h3>
-<h3>列出硬盘的分区类型与分区信息查看 parted</h3>
-<h3>磁盘分割操作： gdisk/fdisk</h3>
-<h3>格式化操作 mkfs.ext4</h3>
-<h2>文件系统挂载与卸载</h2>
-<h3>挂载操作 mount</h3>
-<p>的几个原则：
-单一文件系统不应该被重复挂载在不同的挂载点(目录)中；
-单一目录不应该重复挂载多个文件系统；
-要作为挂载点的目录，理论上应该都是空目录才是。</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount -a </span><br><span class="line">mount [-l] </span><br><span class="line">mount [-t文件系统] LABEL=&apos;&apos;挂载点 </span><br><span class="line">mount [-t文件系统] UUID=&apos;&apos;挂载点  #鸟哥近期建议用这种方式喔！</span><br><span class="line">mount [-t文件系统]装置文件名挂载点</span><br></pre></td></tr></table></figure></p>
-<p>选项与参数：
--a ：依照设定档/etc/fstab的数据将所有未挂载的磁盘都挂载上来
--l ：单纯的输入mount 会显示目前挂载的信息。加上-l 可增列Label 名称！
--t ：可以加上文件系统种类来指定欲挂载的类型。常见的Linux 支援类型有：xfs, ext3, ext4,
-reiserfs, vfat, iso9660(光碟格式), nfs, cifs, smbfs (后三种为网路文件系统类型)</p>
-<h3>开机挂载操作 /etc/fstab 及 etc/mtab</h3>
-<p>开机自动挂载可参考/etc/fstab之设定，设定完毕务必使用mount -a 测试语法正确否；</p>
-<h3>loop挂载操作</h3>
-<p>例子 ：我们可以建立大文件以制作loop 装置文件！</p>
+<h3 id="du操作"><a href="#du操作" class="headerlink" title="du操作"></a>du操作</h3><p><code>du [-ahskm]文件或目录名称</code><br>选项与参数：<br>-a ：列出所有的文件与目录容量，因为预设仅统计目录底下的文件量而已。<br>-h ：以人们较易读的容量格式(G/M) 显示；<br>-s ：列出总量而已，而不列出每个各别的目录占用容量；<br>-S ：不包括子目录下的总计，与-s 有点差别。<br>-k ：以KBytes 列出容量显示；<br>-m ：以MBytes 列出容量显示；</p>
+<p>du 这个指令其实会直接到文件系统内去搜寻所有的文件数据 ，所以比较慢。<br>常用命令：<code>du -sm /*</code><br>这是个很常被使用的功能～模糊字母* 来代表每个目录，如果想要检查某个目录下，哪个次目录占用最大的容量，可以用这个方法找出来。</p>
+<h3 id="Hard-Link-amp-Symbolic-Link（待研究）"><a href="#Hard-Link-amp-Symbolic-Link（待研究）" class="headerlink" title="Hard Link &amp; Symbolic Link（待研究）"></a>Hard Link &amp; Symbolic Link（待研究）</h3><h2 id="硬盘操作"><a href="#硬盘操作" class="headerlink" title="硬盘操作"></a>硬盘操作</h2><h3 id="列出系统上的所有硬盘列表-lsblk"><a href="#列出系统上的所有硬盘列表-lsblk" class="headerlink" title="列出系统上的所有硬盘列表 lsblk"></a>列出系统上的所有硬盘列表 lsblk</h3><p>(list block device)<br><code>lsblk [-dfimpt] [device]</code><br>选项与参数：<br>-d ：仅列出磁盘本身，并不会列出该磁盘的分割资料<br>-f ：同时列出该磁盘内的文件系统名称<br>-i ：使用ASCII 的线段输出，不要使用复杂的编码(再某些环境下很有用)<br>-m ：同时输出该装置在/dev 底下的权限资料(rwx 的资料)<br>-p ：列出该装置的完整文件名！而不是仅列出最后的名字而已。<br>-t ：列出该磁盘装置的详细资料，包括磁盘伫列机制、预读写的资料量大小等</p>
+<p>RM：是否为可卸载装置(removable device)，如光碟、USB 磁盘等等<br>RO：是否为唯读装置的意思<br>TYPE：是磁盘(disk)、分区(partition) 还是只读(rom) 等输出<br>MOUTPOINT：就是前一章谈到的挂载点！</p>
+<h3 id="装置的UUID等参数查看blkid"><a href="#装置的UUID等参数查看blkid" class="headerlink" title="装置的UUID等参数查看blkid"></a>装置的UUID等参数查看blkid</h3><h3 id="列出硬盘的分区类型与分区信息查看-parted"><a href="#列出硬盘的分区类型与分区信息查看-parted" class="headerlink" title="列出硬盘的分区类型与分区信息查看 parted"></a>列出硬盘的分区类型与分区信息查看 parted</h3><h3 id="磁盘分割操作：-gdisk-fdisk"><a href="#磁盘分割操作：-gdisk-fdisk" class="headerlink" title="磁盘分割操作： gdisk/fdisk"></a>磁盘分割操作： gdisk/fdisk</h3><h3 id="格式化操作-mkfs-ext4"><a href="#格式化操作-mkfs-ext4" class="headerlink" title="格式化操作 mkfs.ext4"></a>格式化操作 mkfs.ext4</h3><h2 id="文件系统挂载与卸载"><a href="#文件系统挂载与卸载" class="headerlink" title="文件系统挂载与卸载"></a>文件系统挂载与卸载</h2><h3 id="挂载操作-mount"><a href="#挂载操作-mount" class="headerlink" title="挂载操作 mount"></a>挂载操作 mount</h3><p>的几个原则：<br>单一文件系统不应该被重复挂载在不同的挂载点(目录)中；<br>单一目录不应该重复挂载多个文件系统；<br>要作为挂载点的目录，理论上应该都是空目录才是。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount -a </span><br><span class="line">mount [-l] </span><br><span class="line">mount [-t文件系统] LABEL=&apos;&apos;挂载点 </span><br><span class="line">mount [-t文件系统] UUID=&apos;&apos;挂载点  #鸟哥近期建议用这种方式喔！</span><br><span class="line">mount [-t文件系统]装置文件名挂载点</span><br></pre></td></tr></table></figure>
+<p>选项与参数：<br>-a ：依照设定档/etc/fstab的数据将所有未挂载的磁盘都挂载上来<br>-l ：单纯的输入mount 会显示目前挂载的信息。加上-l 可增列Label 名称！<br>-t ：可以加上文件系统种类来指定欲挂载的类型。常见的Linux 支援类型有：xfs, ext3, ext4,<br>      reiserfs, vfat, iso9660(光碟格式), nfs, cifs, smbfs (后三种为网路文件系统类型)</p>
+<h3 id="开机挂载操作-etc-fstab-及-etc-mtab"><a href="#开机挂载操作-etc-fstab-及-etc-mtab" class="headerlink" title="开机挂载操作 /etc/fstab 及 etc/mtab"></a>开机挂载操作 /etc/fstab 及 etc/mtab</h3><p>开机自动挂载可参考/etc/fstab之设定，设定完毕务必使用mount -a 测试语法正确否；</p>
+<h3 id="loop挂载操作"><a href="#loop挂载操作" class="headerlink" title="loop挂载操作"></a>loop挂载操作</h3><p>例子 ：我们可以建立大文件以制作loop 装置文件！</p>
 <p><code>mount -o loop UUID=&quot;7dd97bd2-4446-48fd-9d23-a8b03ffdd5ee&quot; /mnt(目标目录)</code></p>
-<h2>内存交换swap</h2>
-<h2>文件的压缩</h2>
-<h3>文件压缩常见命令 gzip zcat/zmore/zless/zgrep</h3>
-<p>gzip 可以说是应用度最广的压缩指令了！
-<code>gzip [-cdtv#]文件名</code>
-<code>zcat文件名.gz</code>
-选项与参数：
--c ：将压缩的资料输出到萤幕上，可透过资料流重导向来处理；
--d ：解压缩的参数；
--t ：可以用来检验一个压缩档的一致性～看看文件有无错误；
--v ：可以显示出原文件/压缩文件的压缩比等资讯；
--# ：# 为数字的意思，代表压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好！预设是-6</p>
+<h2 id="内存交换swap"><a href="#内存交换swap" class="headerlink" title="内存交换swap"></a>内存交换swap</h2><h2 id="文件的压缩"><a href="#文件的压缩" class="headerlink" title="文件的压缩"></a>文件的压缩</h2><h3 id="文件压缩常见命令-gzip-zcat-zmore-zless-zgrep"><a href="#文件压缩常见命令-gzip-zcat-zmore-zless-zgrep" class="headerlink" title="文件压缩常见命令 gzip zcat/zmore/zless/zgrep"></a>文件压缩常见命令 gzip zcat/zmore/zless/zgrep</h3><p>gzip 可以说是应用度最广的压缩指令了！<br><code>gzip [-cdtv#]文件名</code><br><code>zcat文件名.gz</code><br>选项与参数：<br>-c ：将压缩的资料输出到萤幕上，可透过资料流重导向来处理；<br>-d ：解压缩的参数；<br>-t ：可以用来检验一个压缩档的一致性～看看文件有无错误；<br>-v ：可以显示出原文件/压缩文件的压缩比等资讯；<br>-# ：# 为数字的意思，代表压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好！预设是-6</p>
 <p>bzip2压缩率高，对于大容量文件来说，bzip2 压缩时间会花比较久</p>
-<p><code>bzip2 [-cdkzv#]文件名</code>
-<code>bzcat文件名.bz2</code>
-选项与参数：
--c ：将压缩的过程产生的资料输出到萤幕上！
--d ：解压缩的参数
--k ：保留原始文件，而不会删除原始的文件喔！
--z ：压缩的参数(预设值，可以不加)
--v ：可以显示出原文件/压缩文件的压缩比等资讯；
--# ：与gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快！(默认是6，很不错的)</p>
+<p><code>bzip2 [-cdkzv#]文件名</code><br><code>bzcat文件名.bz2</code><br>选项与参数：<br>-c ：将压缩的过程产生的资料输出到萤幕上！<br>-d ：解压缩的参数<br>-k ：保留原始文件，而不会删除原始的文件喔！<br>-z ：压缩的参数(预设值，可以不加)<br>-v ：可以显示出原文件/压缩文件的压缩比等资讯；<br>-# ：与gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快！(默认是6，很不错的)</p>
 <p>xz压缩率更高，对于大容量文件来说，xz 压缩时间会花更久</p>
-<p><code>xz [-dtlkc#]文件名</code>
-<code>xcat 文件名.xz</code>
-选项与参数：
--d ：就是解压缩啊！
--t ：测试压缩档的完整性，看有没有错误
--l ：列出压缩档的相关资讯
--k ：保留原本的文件不删除～
--c ：同样的，就是将资料由萤幕上输出的意思！
--# ：同样的，也有较佳的压缩比的意思！</p>
-<h3>打包指令 tar</h3>
-<p>他的参数是非常多，常用的有：
-压缩：<code>tar -j c v -f filename.tar.bz2要被压缩的文件或目录名称</code>
-查询：<code>tar -j t v -f filename.tar.bz2</code>
-解压缩：<code>tar -j x v -f filename.tar.bz2 -C欲解压缩的目录</code></p>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info">http://chnwentao.com/2016/03/待整理/Linux-笔记-文件系统管理基础/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/笔记/">笔记</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/管理/">管理</a><a class="post-meta__tags" href="/tags/文件系统/">文件系统</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/03/待整理/Linux-笔记-帐号管理/"><i class="fa fa-chevron-left">  </i><span>Linux用户管理学习笔记</span></a></div><div class="next-post pull-right"><a href="/2016/03/待整理/Linux-笔记-Shell/"><span>LinuxShell学习笔记</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+<p><code>xz [-dtlkc#]文件名</code><br><code>xcat 文件名.xz</code><br>选项与参数：<br>-d ：就是解压缩啊！<br>-t ：测试压缩档的完整性，看有没有错误<br>-l ：列出压缩档的相关资讯<br>-k ：保留原本的文件不删除～<br>-c ：同样的，就是将资料由萤幕上输出的意思！<br>-# ：同样的，也有较佳的压缩比的意思！</p>
+<h3 id="打包指令-tar"><a href="#打包指令-tar" class="headerlink" title="打包指令 tar"></a>打包指令 tar</h3><p>他的参数是非常多，常用的有：<br>压缩：<code>tar -j c v -f filename.tar.bz2要被压缩的文件或目录名称</code><br>查询：<code>tar -j t v -f filename.tar.bz2</code><br>解压缩：<code>tar -j x v -f filename.tar.bz2 -C欲解压缩的目录</code></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2016/03/待整理/Linux-笔记-文件系统管理基础/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/笔记/">笔记</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/管理/">管理</a><a class="post-meta__tags" href="/tags/文件系统/">文件系统</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/03/待整理/Linux-笔记-帐号管理/"><i class="fa fa-chevron-left">  </i><span>Linux用户管理学习笔记</span></a></div><div class="next-post pull-right"><a href="/2016/03/待整理/Linux-笔记-Shell/"><span>LinuxShell学习笔记</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
     processEscapes: true,

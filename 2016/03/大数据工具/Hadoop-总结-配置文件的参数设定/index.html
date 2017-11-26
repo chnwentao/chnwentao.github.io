@@ -8,71 +8,42 @@
   root: '/',
   algolia: undefined,
   copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
   },
   localSearch: {"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}"},"path":"search.xml"}
-} </script><link rel="icon" href="/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">core-site.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">hdfs-site.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">mapred-site.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">mapred-site.xml</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">134</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">184</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">hadoop配置文件的参数设定</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-03-23</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/hadoop/">hadoop</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">388</span><span class="post-meta__separator">|</span><span>阅读时长: 2 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><h2>core-site.xml</h2>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><ol>
-<li><code>fs.defaultFS</code>
-NameNode的URI 一般设定为：<code>hdfs://localhost:9000</code></li>
+} </script><link rel="icon" href="/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#core-site-xml"><span class="toc-number">1.</span> <span class="toc-text">core-site.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs-site-xml"><span class="toc-number">2.</span> <span class="toc-text">hdfs-site.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mapred-site-xml"><span class="toc-number">3.</span> <span class="toc-text">mapred-site.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mapred-site-xml-1"><span class="toc-number">4.</span> <span class="toc-text">mapred-site.xml</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://7xiuu0.com1.z0.glb.clouddn.com/17-11-23/22222257.jpg"></div><div class="author-info__name text-center">Wente Guo</div><div class="author-info__description text-center">一个学习的博客网站，专注于计算机科学、机器学习、数据挖掘等的 技术分享、相关咨询及经验总结</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">134</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">184</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true);"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">CS Learning of CHNwentao</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">hadoop配置文件的参数设定</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-03-23</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"> </i><a class="post-meta__categories" href="/categories/hadoop/">hadoop</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">394</span><span class="post-meta__separator">|</span><span>Reading time: 2 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><ol>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><li><code>fs.defaultFS</code><br>NameNode的URI 一般设定为：<code>hdfs://localhost:9000</code></li>
 </ol>
-<p>SequenceFile&lt;!-- more --&gt;</p>
-<h2>hdfs-site.xml</h2>
-<ol start="2">
+<p>SequenceFile<a id="more"></a></p>
+<h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><ol>
 <li><code>dfs.namenode.secondary.http-address</code></li>
 </ol>
 <p>添加secondarynamenode的机器名  一般设定为：<code>{your_namenode_ip}:50070</code></p>
-<ol start="3">
-<li>
-<p><code>dfs.replication</code>
-首先 dfs.replication这个参数是个client参数，即node level参数。需要在每台datanode上设置。
-其实默认为3个副本已经够用了，设置太多也没什么用。
-一个文件，上传到hdfs上时指定的是几个副本就是几个。以后你修改了副本数，对已经上传了的文件也不会起作用。</p>
-</li>
-<li>
-<p><code>dfs.namenode.name.dir</code>
-If this is a comma-delimited list of directories then the name table is replicated in all of the directories, for redundancy.
-不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和 dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
-</li>
-<li>
-<p><code>dfs.datanode.data.dir</code>
-同上</p>
-</li>
-</ol>
-<h2>mapred-site.xml</h2>
 <ol>
-<li>
-<p><code>mapreduce.framework.name</code>
-一般设定为：<code>yarn</code>	 Execution framework set to Hadoop YARN.</p>
+<li><p><code>dfs.replication</code><br>首先 dfs.replication这个参数是个client参数，即node level参数。需要在每台datanode上设置。<br>其实默认为3个副本已经够用了，设置太多也没什么用。<br>一个文件，上传到hdfs上时指定的是几个副本就是几个。以后你修改了副本数，对已经上传了的文件也不会起作用。</p>
 </li>
-<li>
-<p><code>mapreduce.jobhistory.addres</code>s
-一般设定为：<code>WenteMBP:10020</code>
-MapReduce JobHistory Server host:port	Default port is 10020.</p>
+<li><p><code>dfs.namenode.name.dir</code><br>If this is a comma-delimited list of directories then the name table is replicated in all of the directories, for redundancy.<br>不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和 dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
 </li>
-<li>
-<p><code>apreduce.jobhistory.webapp.address</code>
-一般设定为：<code>WenteMBP:19880</code>
-MapReduce JobHistory Server Web UI host:port	Default port is 19888.</p>
+<li><p><code>dfs.datanode.data.dir</code><br>同上</p>
 </li>
 </ol>
-<h2>mapred-site.xml</h2>
-<ol>
-<li>
-<p><code>yarn.resourcemanager.hostname</code>
-ResourceManager host.
-host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components.</p>
+<h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
+<li><p><code>mapreduce.framework.name</code><br>一般设定为：<code>yarn</code>     Execution framework set to Hadoop YARN.</p>
 </li>
-<li>
-<p><code>yarn.nodemanager.aux-services</code>
-一般设定为：<code>mapreduce_shuffle</code>
-NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>，才可运行MapReduce程序
-默认值：“”</p>
+<li><p><code>mapreduce.jobhistory.addres</code>s<br>一般设定为：<code>WenteMBP:10020</code><br>MapReduce JobHistory Server host:port    Default port is 10020.</p>
+</li>
+<li><p><code>apreduce.jobhistory.webapp.address</code><br>一般设定为：<code>WenteMBP:19880</code><br>MapReduce JobHistory Server Web UI host:port    Default port is 19888.</p>
 </li>
 </ol>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info">http://chnwentao.com/2016/03/大数据工具/Hadoop-总结-配置文件的参数设定/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/配置/">配置</a><a class="post-meta__tags" href="/tags/安装/">安装</a><a class="post-meta__tags" href="/tags/hadoop/">hadoop</a><a class="post-meta__tags" href="/tags/参数/">参数</a><a class="post-meta__tags" href="/tags/配置文件/">配置文件</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/03/大数据工具/Hadoop-总结-单机配置日志/"><i class="fa fa-chevron-left">  </i><span>hadoop伪分布安装配置</span></a></div><div class="next-post pull-right"><a href="/2016/03/coding/基础_算法/Algorithms-笔记-无向图/"><span>Algorithms-笔记-无向图性质及实现</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+<h2 id="mapred-site-xml-1"><a href="#mapred-site-xml-1" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
+<li><p><code>yarn.resourcemanager.hostname</code><br>ResourceManager host.<br>host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components.</p>
+</li>
+<li><p><code>yarn.nodemanager.aux-services</code><br>一般设定为：<code>mapreduce_shuffle</code><br>NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>，才可运行MapReduce程序<br>默认值：“”</p>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info">Wente Guo</span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info">http://chnwentao.com/2016/03/大数据工具/Hadoop-总结-配置文件的参数设定/</span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/配置/">配置</a><a class="post-meta__tags" href="/tags/安装/">安装</a><a class="post-meta__tags" href="/tags/hadoop/">hadoop</a><a class="post-meta__tags" href="/tags/参数/">参数</a><a class="post-meta__tags" href="/tags/配置文件/">配置文件</a></div></article><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/03/工具/工具-GitAndGithub/"><i class="fa fa-chevron-left">  </i><span>Git&amp;GitHub常用概念及操作指南</span></a></div><div class="next-post pull-right"><a href="/2016/03/大数据工具/Hadoop-总结-单机配置日志/"><span>hadoop伪分布安装配置</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">©2015 - 2017 By Wente Guo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.3"></script><script src="/js/fancybox.js?version=1.3"></script><script src="/js/sidebar.js?version=1.3"></script><script src="/js/copy.js?version=1.3"></script><script src="/js/fireworks.js?version=1.3"></script><script src="/js/transition.js?version=1.3"></script><script src="/js/scroll.js?version=1.3"></script><script src="/js/head.js?version=1.3"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
     processEscapes: true,
