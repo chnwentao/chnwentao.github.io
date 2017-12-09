@@ -33,6 +33,29 @@
     </entry>
     
     <entry>
+      <title><![CDATA[激活函数_理解.md]]></title>
+      <url>/2017/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0_%E7%90%86%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/21568660" target="_blank" rel="noopener">【神经网络】激活函数面面观</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 深度学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 激活函数 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[word2vec学习]]></title>
       <url>/2017/12/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/word2vec%E5%AD%A6%E4%B9%A0/</url>
       <content type="html"><![CDATA[<p>等待施工<br><a id="more"></a></p>
@@ -65,29 +88,6 @@
             <tag> NLP </tag>
             
             <tag> word2vec </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[激活函数_理解.md]]></title>
-      <url>/2017/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0_%E7%90%86%E8%A7%A3/</url>
-      <content type="html"><![CDATA[<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/21568660" target="_blank" rel="noopener">【神经网络】激活函数面面观</a></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 深度学习 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 激活函数 </tag>
             
         </tags>
         
@@ -593,6 +593,92 @@
             <tag> DM </tag>
             
             <tag> 数据预处理 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Jupyter Notebook 使用小结]]></title>
+      <url>/2017/11/%E5%B7%A5%E5%85%B7/JupyterNotebook%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h2 id="为什么要用-Jupyter-NoteBook"><a href="#为什么要用-Jupyter-NoteBook" class="headerlink" title="为什么要用 Jupyter NoteBook"></a>为什么要用 Jupyter NoteBook</h2><p>IPython 是一个 Python REPl shell，环境远比 Python 自带的强大，而 Jupyter Notebook 则是一个基于 IPython REPl 的 Web 应用，运行结果可保存为后缀.ipynb，交互性强，所见即所得，数据分析，写分析报告等的不二利器。</p>
+<p>NoteBook 几乎涵括了 QT Console 具有的全部交互式功能，如代码高亮，自动补全，实时帮助，内嵌显示绘图结果等.</p>
+<p>其次，计算过程及结果可以方便地保存为多种格式，如默认的 JSON 格式，Python 脚本以及 PDF 等；此外，借助 Markdown 及 MathJax，我们可以在计算过程中插入详尽细致的描述，甚至以描述为主，计算为辅!</p>
+<p>对我厂来说,最主要的是可以远程访问!!! 这样多们就可以操作本机一样在本地的浏览器上,互交的操作远程的虚拟机(测试机)啦!</p>
+<h2 id="前期工作"><a href="#前期工作" class="headerlink" title="前期工作"></a>前期工作</h2><p>在我厂的机子上用任何工具都是一个很艰难的过程:</p>
+<ul>
+<li><p>安装 jumbo : <code>bash -c &quot;$( curl http://jumbo.baidu.com/install_jumbo.sh )&quot;; source ~/.bashrc</code></p>
+</li>
+<li><p>安装 python : <code>jumbo install python</code></p>
+</li>
+<li><p>安装 setuptools (pip 依赖 setuptools，in python 2.7):  <code>jumbo install python-setuptools</code></p>
+</li>
+<li><p>安装 pip : <code>jumbo install python-pip</code></p>
+</li>
+</ul>
+<p>-</p>
+<ul>
+<li><p>安装 ipython : <code>pip install ipython</code></p>
+</li>
+<li><p>安装 jupyter : <code>pip install jupyter</code></p>
+</li>
+</ul>
+<p>到这里 我们就可以愉快的使用  Jupyter NoteBook 啦!</p>
+<h2 id="快速启动"><a href="#快速启动" class="headerlink" title="快速启动"></a>快速启动</h2><p>在命令如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook  # 正常启动</span><br><span class="line"></span><br><span class="line">jupyter notebook --no-browser # 不自动加载浏览器 (我们的测试机没有浏览器,,所以这个必须有的!)</span><br><span class="line">jupyter notebook --port 9999 # 指定 port</span><br><span class="line">jupyter notebook --help # help</span><br><span class="line">jupyter notebook --ip=your_hostname  #外部访问的地址, 也可以是 ip</span><br><span class="line"></span><br><span class="line">jupyter notebook --no-browser --port 8888  --ip=your_hostname  #常用</span><br></pre></td></tr></table></figure>
+<p>接下来在 你的mac / pc 上浏览器中输入 <code>http://your_hostname:8888</code> 就可以愉快的使用啦</p>
+<h2 id="远程登录-amp-安全配置"><a href="#远程登录-amp-安全配置" class="headerlink" title="远程登录 &amp; 安全配置"></a>远程登录 &amp; 安全配置</h2><p>上面的这样不是安全,知道你hostname 或 ip 的人可以随便访问,这是不符合 公司要求和个人利益的. 还好,Jupyter Notebook 提供的安全的登录认证,配置也不是很麻烦.</p>
+<h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h3><p>输入：<code>jupyter notebook --generate-config</code></p>
+<p>这样自动生成了: ~/.jupyter/jupyter_notebook_config.py 的配置文件.</p>
+<h3 id="生成密码"><a href="#生成密码" class="headerlink" title="生成密码"></a>生成密码</h3><p>打开ipython，创建一个密文的密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from notebook.auth import passwd</span><br><span class="line">passwd()</span><br><span class="line">-----</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">Out[2]: &apos;sha1:67c9e60bb8b6:9ffede234234042ea597d771089e11aed&apos;</span><br></pre></td></tr></table></figure>
+<p>记得把生成的密文‘sha:ce…’复制下来!</p>
+<h3 id="创建一个自签名证书：-可选"><a href="#创建一个自签名证书：-可选" class="headerlink" title="创建一个自签名证书：(可选)"></a>创建一个自签名证书：(可选)</h3><p>使用openssl创建一个自签名证书，由于是自签名所以浏览器会提示警告，选择信任exception即可。</p>
+<p>如果不想引起警告，需具备合格证compliant certificate，可参照tutorial.<br>我感觉有密码就够了…..</p>
+<p>with the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem</span><br><span class="line">-----</span><br><span class="line"># 这个随便填一下:</span><br><span class="line">Country Name (2 letter code) [AU]:CN</span><br><span class="line">State or Province Name (full name) [Some-State]:BEIJING</span><br><span class="line">Locality Name (eg, city) []:BEIJING</span><br><span class="line">Organization Name (eg, company) [Internet Widgits Pty Ltd]:BAIDU</span><br><span class="line">Organizational Unit Name (eg, section) []:KG</span><br><span class="line">Email Address []:guowentao01@baidu.com</span><br><span class="line">Common Name (e.g. server FQDN or YOUR name) []:GUOWENTAO01</span><br></pre></td></tr></table></figure>
+<h3 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><p>编辑文件jupyter_notebook_config.py，在~/.jupyter/文件夹里:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip=&apos;your_hostname&apos;</span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line">c.NotebookApp.port =8888 #随便指定一个端口</span><br><span class="line">c.NotebookApp.password = u&apos;sha:ce...刚才复制的那个密文&apos;</span><br><span class="line"></span><br><span class="line"># 可选那两个 这个设置了 (记得使用https://)</span><br><span class="line">c.NotebookApp.certfile = u&apos;/absolute/path/to/your/certificate/mycert.pem&apos;</span><br><span class="line">c.NotebookApp.keyfile = u&apos;/absolute/path/to/your/certificate/mykey.key</span><br></pre></td></tr></table></figure>
+<h3 id="最后启动服务器："><a href="#最后启动服务器：" class="headerlink" title="最后启动服务器："></a>最后启动服务器：</h3><p>with the command: <code>jupyter notebook</code></p>
+<p>接下来在 你的mac / pc 上浏览器中输入 <code>http://your_hostname:8888</code> 就可以放心的使用啦 !!!</p>
+<h3 id="显示-line-number"><a href="#显示-line-number" class="headerlink" title="显示 line number"></a>显示 line number</h3><p>虽然 在编辑模式，esc键启用之后摁键盘L键开启当前单元格行号 。 但是这对于一个 debug 是很不发方便的，我们想默认是显示行号。</p>
+<p>我们想默认是显示行号的话可以这么做：</p>
+<p><a href="http://stackoverflow.com/questions/20197471/how-to-display-line-numbers-in-ipython-notebook-code-cell-by-default" target="_blank" rel="noopener">http://stackoverflow.com/questions/20197471/how-to-display-line-numbers-in-ipython-notebook-code-cell-by-default</a></p>
+<h2 id="配置-amp-插件-安装"><a href="#配置-amp-插件-安装" class="headerlink" title="配置&amp; 插件 安装"></a>配置&amp; 插件 安装</h2><blockquote>
+<p>插件多的的编辑器绝对是个好编译器.比如vim</p>
+</blockquote>
+<h3 id="插件管理器"><a href="#插件管理器" class="headerlink" title="插件管理器"></a>插件管理器</h3><p>下面这个是Jupyter 非常流行的插件管理器: 拓展：<a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions" target="_blank" rel="noopener">IPython-notebook-extensions</a></p>
+<p>install: <code>pip install jupyter_contrib_nbextensions</code></p>
+<p>with the command: <code>jupyter contrib nbextension install --user</code></p>
+<p>最后进入<code>http:// XXXXXXXXXXXX:8888/nbextensions</code>:去挑吧!</p>
+<h2 id="jupyterlab"><a href="#jupyterlab" class="headerlink" title="jupyterlab"></a>jupyterlab</h2><p>增强jupyter的编辑能力(强烈推荐！)，使jupyter如IDE一般强大.<br><a href="https://github.com/jupyterlab/jupyterlab" target="_blank" rel="noopener">https://github.com/jupyterlab/jupyterlab</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyterlab</span><br><span class="line">jupyter serverextension enable --py jupyterlab</span><br></pre></td></tr></table></figure>
+<p>Start up JupyterLab: <code>jupyter lab</code></p>
+<h2 id="主题-："><a href="#主题-：" class="headerlink" title="主题 ："></a>主题 ：</h2><p>Theme-ify your Jupyter Notebooks!</p>
+<p>jupyterthemes <a href="https://github.com/dunovank/jupyter-themes" target="_blank" rel="noopener">https://github.com/dunovank/jupyter-themes</a></p>
+<p><code>jt -t chesterish -T -N -nfs 12 -fs 10 -tfs 12 -lineh 1</code></p>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="http://jupyter.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">Jupyter Documentation</a></p>
+<h2 id="with-Spark"><a href="#with-Spark" class="headerlink" title="with_Spark"></a>with_Spark</h2><p>to do</p>
+<h2 id="参考文件"><a href="#参考文件" class="headerlink" title="参考文件"></a>参考文件</h2><ul>
+<li><p><a href="http://www.liuchengxu.org/pelican-blog/jupyter-notebook-tips.html" target="_blank" rel="noopener">27 个Jupyter Notebook的小提示与技巧</a></p>
+</li>
+<li><p><a href="http://jupyter-notebook.readthedocs.io/en/latest/public_server.html" target="_blank" rel="noopener">http://jupyter-notebook.readthedocs.io/en/latest/public_server.html</a></p>
+</li>
+<li><p><a href="http://blog.just4fun.site/jupyter-summary.html" target="_blank" rel="noopener">jupyter使用小结</a></p>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Jupyter </tag>
             
         </tags>
         
