@@ -3,6 +3,36 @@
   
     
     <entry>
+      <title><![CDATA[B+/B- 树总结]]></title>
+      <url>/2017/12/coding/B+:B-%20%E6%A0%91%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>B-Tree 读 B树，不是 B减树</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>mysql使用 B+tree<br>MongoDB 使用 B-tree</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li><a href="http://blog.jobbole.com/111757/" target="_blank" rel="noopener">漫画算法：什么是 B 树？</a></li>
+<li><a href="http://wx.imspender.com/articles/man-hua-suan-fa-shi-yao-shi--1" target="_blank" rel="noopener">漫画算法：什么是 B+ 树？</a></li>
+</ul>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
+<li>B+树最大的好处，方便扫库(支持区间查询)</li>
+<li>B树的优势是当你要查找的值处在非叶子节点时，当到该非叶节点时查找就成功并结束了；而B+树由于非叶节点只是索引部分，必须向下直到叶子节点才结束。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Coding </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[销售预测入门]]></title>
       <url>/2017/12/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E9%94%80%E5%94%AE%E9%A2%84%E6%B5%8B%E5%85%A5%E9%97%A8/</url>
       <content type="html"><![CDATA[<p>下面是一篇讲的很全面的给初学者的文章，主要介绍了：</p>
@@ -3841,6 +3871,64 @@ avg / total       0.95      0.93      0.93        60
     </entry>
     
     <entry>
+      <title><![CDATA[hadoop配置文件的参数设定]]></title>
+      <url>/2016/03/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%85%B7/Hadoop-%E6%80%BB%E7%BB%93-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%82%E6%95%B0%E8%AE%BE%E5%AE%9A/</url>
+      <content type="html"><![CDATA[<h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><ol>
+<li><code>fs.defaultFS</code><br>NameNode的URI 一般设定为：<code>hdfs://localhost:9000</code></li>
+</ol>
+<p>SequenceFile<a id="more"></a></p>
+<h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><ol>
+<li><code>dfs.namenode.secondary.http-address</code></li>
+</ol>
+<p>添加secondarynamenode的机器名  一般设定为：<code>{your_namenode_ip}:50070</code></p>
+<ol>
+<li><p><code>dfs.replication</code><br>首先 dfs.replication这个参数是个client参数，即node level参数。需要在每台datanode上设置。<br>其实默认为3个副本已经够用了，设置太多也没什么用。<br>一个文件，上传到hdfs上时指定的是几个副本就是几个。以后你修改了副本数，对已经上传了的文件也不会起作用。</p>
+</li>
+<li><p><code>dfs.namenode.name.dir</code><br>If this is a comma-delimited list of directories then the name table is replicated in all of the directories, for redundancy.<br>不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和 dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
+</li>
+<li><p><code>dfs.datanode.data.dir</code><br>同上</p>
+</li>
+</ol>
+<h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
+<li><p><code>mapreduce.framework.name</code><br>一般设定为：<code>yarn</code>     Execution framework set to Hadoop YARN.</p>
+</li>
+<li><p><code>mapreduce.jobhistory.addres</code>s<br>一般设定为：<code>WenteMBP:10020</code><br>MapReduce JobHistory Server host:port    Default port is 10020.</p>
+</li>
+<li><p><code>apreduce.jobhistory.webapp.address</code><br>一般设定为：<code>WenteMBP:19880</code><br>MapReduce JobHistory Server Web UI host:port    Default port is 19888.</p>
+</li>
+</ol>
+<h2 id="mapred-site-xml-1"><a href="#mapred-site-xml-1" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
+<li><p><code>yarn.resourcemanager.hostname</code><br>ResourceManager host.<br>host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components.</p>
+</li>
+<li><p><code>yarn.nodemanager.aux-services</code><br>一般设定为：<code>mapreduce_shuffle</code><br>NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>，才可运行MapReduce程序<br>默认值：“”</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> hadoop </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 配置 </tag>
+            
+            <tag> 安装 </tag>
+            
+            <tag> hadoop </tag>
+            
+            <tag> 参数 </tag>
+            
+            <tag> 配置文件 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[hadoop伪分布安装配置]]></title>
       <url>/2016/03/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%85%B7/Hadoop-%E6%80%BB%E7%BB%93-%E5%8D%95%E6%9C%BA%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97/</url>
       <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="vim的安装"><a href="#vim的安装" class="headerlink" title="vim的安装"></a>vim的安装</h3><p>if ubuntu默认没有安装vim ：解决：<br>命令行输入：<code>sudo apt-get install vim</code>　　然后安装，出现确认的时候，输入y确认就行<a id="more"></a></p>
@@ -3948,64 +4036,6 @@ avg / total       0.95      0.93      0.93        60
             <tag> 安装 </tag>
             
             <tag> hadoop </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[hadoop配置文件的参数设定]]></title>
-      <url>/2016/03/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%85%B7/Hadoop-%E6%80%BB%E7%BB%93-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%82%E6%95%B0%E8%AE%BE%E5%AE%9A/</url>
-      <content type="html"><![CDATA[<h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><ol>
-<li><code>fs.defaultFS</code><br>NameNode的URI 一般设定为：<code>hdfs://localhost:9000</code></li>
-</ol>
-<p>SequenceFile<a id="more"></a></p>
-<h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><ol>
-<li><code>dfs.namenode.secondary.http-address</code></li>
-</ol>
-<p>添加secondarynamenode的机器名  一般设定为：<code>{your_namenode_ip}:50070</code></p>
-<ol>
-<li><p><code>dfs.replication</code><br>首先 dfs.replication这个参数是个client参数，即node level参数。需要在每台datanode上设置。<br>其实默认为3个副本已经够用了，设置太多也没什么用。<br>一个文件，上传到hdfs上时指定的是几个副本就是几个。以后你修改了副本数，对已经上传了的文件也不会起作用。</p>
-</li>
-<li><p><code>dfs.namenode.name.dir</code><br>If this is a comma-delimited list of directories then the name table is replicated in all of the directories, for redundancy.<br>不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和 dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
-</li>
-<li><p><code>dfs.datanode.data.dir</code><br>同上</p>
-</li>
-</ol>
-<h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
-<li><p><code>mapreduce.framework.name</code><br>一般设定为：<code>yarn</code>     Execution framework set to Hadoop YARN.</p>
-</li>
-<li><p><code>mapreduce.jobhistory.addres</code>s<br>一般设定为：<code>WenteMBP:10020</code><br>MapReduce JobHistory Server host:port    Default port is 10020.</p>
-</li>
-<li><p><code>apreduce.jobhistory.webapp.address</code><br>一般设定为：<code>WenteMBP:19880</code><br>MapReduce JobHistory Server Web UI host:port    Default port is 19888.</p>
-</li>
-</ol>
-<h2 id="mapred-site-xml-1"><a href="#mapred-site-xml-1" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><ol>
-<li><p><code>yarn.resourcemanager.hostname</code><br>ResourceManager host.<br>host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components.</p>
-</li>
-<li><p><code>yarn.nodemanager.aux-services</code><br>一般设定为：<code>mapreduce_shuffle</code><br>NodeManager上运行的附属服务。需配置成<code>mapreduce_shuffle</code>，才可运行MapReduce程序<br>默认值：“”</p>
-</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> hadoop </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 配置 </tag>
-            
-            <tag> 安装 </tag>
-            
-            <tag> hadoop </tag>
-            
-            <tag> 参数 </tag>
-            
-            <tag> 配置文件 </tag>
             
         </tags>
         
